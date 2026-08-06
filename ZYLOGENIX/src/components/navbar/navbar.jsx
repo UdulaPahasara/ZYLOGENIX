@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, IconButton, useTheme, useMediaQuery, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -10,6 +10,29 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const [isWhiteBackground, setIsWhiteBackground] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const whiteSections = document.querySelectorAll('.white-section');
+      let isWhite = false;
+      
+      whiteSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // Check if the center of the navbar (y=45) is inside the section
+        if (rect.top <= 45 && rect.bottom >= 45) {
+          isWhite = true;
+        }
+      });
+      
+      setIsWhiteBackground(isWhite);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -47,14 +70,15 @@ const Navbar = () => {
         height: 90,
         padding: '9.78px 24.46px',
         gap: '9.78px',
-        background: 'rgba(0, 0, 0, 0.3)',
-        boxShadow: `
+        background: isWhiteBackground ? 'rgb(26, 26, 26)' : 'rgba(0, 0, 0, 0.3)',
+        boxShadow: isWhiteBackground ? 'none' : `
           inset 0.98px 0.98px 1.96px 0px rgba(0, 0, 0, 0.3),
           inset -0.98px -0.98px 1.96px 0px rgba(0, 0, 0, 0.1),
           inset 0px 0px 9.78px 0px rgba(0, 0, 0, 0.3)
         `,
-        backdropFilter: 'blur(10px)',
-        boxSizing: 'border-box'
+        backdropFilter: isWhiteBackground ? 'none' : 'blur(10px)',
+        boxSizing: 'border-box',
+        transition: 'all 0.3s ease'
       }}
     >
       {/* Logo */}
