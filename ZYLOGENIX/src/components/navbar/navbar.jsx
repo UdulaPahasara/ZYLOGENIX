@@ -59,17 +59,10 @@ const Navbar = () => {
       sx={{
         position: 'fixed',
         top: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
+        left: 0,
         zIndex: 1100,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
         width: '100%',
-        maxWidth: 1440,
         height: 90,
-        padding: '9.78px 24.46px',
-        gap: '9.78px',
         background: isWhiteBackground ? 'rgb(26, 26, 26)' : 'rgba(0, 0, 0, 0.3)',
         boxShadow: isWhiteBackground ? 'none' : `
           inset 0.98px 0.98px 1.96px 0px rgba(0, 0, 0, 0.3),
@@ -77,10 +70,24 @@ const Navbar = () => {
           inset 0px 0px 9.78px 0px rgba(0, 0, 0, 0.3)
         `,
         backdropFilter: isWhiteBackground ? 'none' : 'blur(10px)',
-        boxSizing: 'border-box',
-        transition: 'all 0.3s ease'
+        transition: 'all 0.3s ease',
+        display: 'flex',
+        justifyContent: 'center'
       }}
     >
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          maxWidth: 1440,
+          height: '100%',
+          padding: '9.78px 24.46px',
+          gap: '9.78px',
+          boxSizing: 'border-box'
+        }}
+      >
       {/* Logo */}
       <Box
         component="img"
@@ -212,6 +219,7 @@ const Navbar = () => {
           </Typography>
         </MenuItem>
       </Menu>
+      </Box>
     </Box>
   );
 };
