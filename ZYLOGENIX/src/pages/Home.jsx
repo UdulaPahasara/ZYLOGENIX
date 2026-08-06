@@ -12,6 +12,9 @@ import P2Img from '../assets/home/p2.webp';
 import P2_1Img from '../assets/home/p2.1.webp';
 import P3Img from '../assets/home/p3.webp';
 import P3_1Img from '../assets/home/p3.1.webp';
+import RoodwaveImg from '../assets/company/roodwave.webp';
+import LevestageImg from '../assets/company/levestage.webp';
+import InfluencerhubImg from '../assets/company/influencerhub.webp';
 
 const servicesData = [
   [
@@ -753,6 +756,111 @@ const Home = () => {
               }}
             />
           ))}
+        </Box>
+      </Box>
+
+      {/* Our Partnerships Section */}
+      <Box
+        className="white-section"
+        sx={{
+          width: '100%',
+          backgroundColor: '#FFFFFF',
+          padding: { xs: '60px 20px', md: '100px 20px' },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          boxSizing: 'border-box'
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: 'Poppins',
+            fontWeight: 600,
+            fontSize: '16px',
+            lineHeight: '25px',
+            textTransform: 'uppercase',
+            color: '#A953E2',
+            mb: '15px',
+            textAlign: 'center'
+          }}
+        >
+          OUR PARTNERSHIPS
+        </Typography>
+
+        <Typography
+          sx={{
+            fontFamily: 'Poppins',
+            fontWeight: 700,
+            fontSize: { xs: '28px', md: '40px' },
+            lineHeight: { xs: '38px', md: '50px' },
+            textAlign: 'center',
+            color: '#000000',
+            mb: '20px',
+            maxWidth: '650px'
+          }}
+        >
+          Stronger Together Through Strategic Collaboration
+        </Typography>
+
+        <Typography
+          sx={{
+            fontFamily: 'Poppins',
+            fontWeight: 400,
+            fontSize: '16px',
+            lineHeight: '25px',
+            textAlign: 'center',
+            color: '#666666',
+            mb: '60px',
+            maxWidth: '850px'
+          }}
+        >
+          At Zylogenix, We Believe Powerful Collaborations Create Stronger Digital Outcomes. We Work Alongside Creative, Technical, And Growth-Focused Partners To Expand Capabilities, Deliver Greater Value, And Provide Businesses With Complete Digital Solutions Under One Ecosystem.
+        </Typography>
+
+        {/* Company Logos */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: { xs: '40px', md: '80px' },
+            width: '100%'
+          }}
+        >
+          <Box
+            component="img"
+            src={RoodwaveImg}
+            alt="Roodwave"
+            sx={{
+              width: '98.48px',
+              height: '89.93px',
+              objectFit: 'contain'
+            }}
+          />
+          
+          <Box
+            component="img"
+            src={LevestageImg}
+            alt="Levestage"
+            sx={{
+              width: '163.24px',
+              height: '101px',
+              objectFit: 'contain'
+            }}
+          />
+          
+          <Box
+            component="img"
+            src={InfluencerhubImg}
+            alt="Influencer Hub"
+            sx={{
+              width: '175px',
+              height: '68px',
+              borderRadius: '8.18px',
+              objectFit: 'contain'
+            }}
+          />
         </Box>
       </Box>
     </Box>
