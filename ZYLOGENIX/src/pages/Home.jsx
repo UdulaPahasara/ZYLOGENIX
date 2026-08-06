@@ -16,6 +16,7 @@ import RoodwaveImg from '../assets/company/roodwave.webp';
 import LevestageImg from '../assets/company/levestage.webp';
 import InfluencerhubImg from '../assets/company/influencerhub.webp';
 import TransformBusinessImg from '../assets/home/transformBussines.webp';
+import ZylogenixImg from '../assets/home/ZYLOGENIX.webp';
 
 const servicesData = [
   [
@@ -908,73 +909,219 @@ const Home = () => {
             textAlign: 'center'
           }}
         >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Poppins',
+                fontWeight: 700,
+                fontSize: { xs: '32px', md: '48px' },
+                lineHeight: { xs: '42px', md: '58px' },
+                color: '#FFFFFF',
+                mb: '25px',
+                maxWidth: '900px'
+              }}
+            >
+              Ready To Transform Your Business With Smart Digital Solutions ?
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Poppins',
+                fontWeight: 400,
+                fontSize: { xs: '14px', md: '16px' },
+                lineHeight: { xs: '24px', md: '26px' },
+                color: '#FFFFFF',
+                mb: '40px',
+                maxWidth: '850px'
+              }}
+            >
+              Whether You're Building A New Digital Presence, Improving An Existing Platform, Launching A Product, Or Scaling Your Business Through Technology, Zylogenix Is Here To Help. Let's Create Solutions That Are Innovative, Reliable, And Built For Growth.
+            </Typography>
+          </motion.div>
+
+          {/* Contact Us Button Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <Box
+              sx={{
+                width: '161px',
+                height: '54px',
+                borderRadius: '20px',
+                padding: '9.78px 24.46px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                boxShadow: `
+                  0.98px 0.98px 1.96px 0px rgba(255, 255, 255, 0.3) inset,
+                  -0.98px -0.98px 1.96px 0px rgba(255, 255, 255, 0.1) inset,
+                  0px 0px 9.78px 0px rgba(255, 255, 255, 0.3) inset
+                `,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '9.78px',
+                cursor: 'pointer',
+                boxSizing: 'border-box',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  transform: 'scale(1.05)'
+                }
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: 'Poppins',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  color: '#FFFFFF',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                CONTACT US
+              </Typography>
+              <ArrowForwardIcon sx={{ color: '#FFFFFF', fontSize: '18px' }} />
+            </Box>
+          </motion.div>
+        </Box>
+      </Box>
+
+      {/* Trusted Partner Section */}
+      <Box
+        className="white-section"
+        sx={{
+          width: '100%',
+          backgroundColor: '#FFFFFF',
+          padding: { xs: '60px 20px', md: '100px 40px', lg: '120px 80px' },
+          display: 'flex',
+          flexDirection: { xs: 'column-reverse', sm: 'row' },
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: { xs: '30px', sm: '40px', md: '75px', lg: '100px' },
+          boxSizing: 'border-box'
+        }}
+      >
+        {/* Left Side: Image Container */}
+        <Box
+          sx={{
+            flex: { xs: '1 1 auto', sm: '0 0 40%', md: '0 0 456px' },
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+            position: 'relative',
+            width: '100%',
+            maxWidth: '456px',
+            height: { xs: 'auto', md: '590px' },
+            mt:{md:'-100px',lg:'-140px'}
+            
+          }}
+        >
+          {/* Background Blob */}
+          <Box
+            sx={{
+              position: 'absolute',
+              width: '100%',
+              height: {xs:'230px', md:'380px'},
+              bottom: 9,
+              background: 'linear-gradient(116.48deg, #BE52CE 22.81%, #8D53DB 83.13%)',
+              borderRadius: '53.42px',
+              zIndex: 1
+            }}
+          />
+          {/* Foreground Image */}
+          <Box
+            component="img"
+            src={ZylogenixImg}
+            alt="Zylogenix Trusted Partner"
+            sx={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'bottom',
+              borderRadius: '64.05px',
+              zIndex: 2
+            }}
+          />
+        </Box>
+
+        {/* Right Side: Content Container */}
+        <Box
+          sx={{
+            flex: '1',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            maxWidth: '550px',
+            textAlign: { xs: 'center', sm: 'left' }
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 600,
+              fontSize: '16px',
+              lineHeight: '25px',
+              textTransform: 'uppercase',
+              color: '#A953E2',
+              mb: '10px'
+            }}
+          >
+            ZYLOGENIX
+          </Typography>
+
           <Typography
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 700,
-              fontSize: { xs: '32px', md: '48px' },
-              lineHeight: { xs: '42px', md: '58px' },
-              color: '#FFFFFF',
-              mb: '25px',
-              maxWidth: '900px'
+              fontSize: { xs: '24px', md: '30px' },
+              lineHeight: { xs: '32px', md: '38px' },
+              textTransform: 'capitalize',
+              color: 'rgba(0, 0, 0, 1)',
+              mb: '25px'
             }}
           >
-            Ready To Transform Your Business With Smart Digital Solutions ?
+            Your Trusted Partner In Digital Transformation
           </Typography>
 
           <Typography
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: { xs: '14px', md: '16px' },
-              lineHeight: { xs: '24px', md: '26px' },
-              color: '#FFFFFF',
-              mb: '40px',
-              maxWidth: '850px'
+              fontSize: '16px',
+              lineHeight: '25px',
+              color: 'rgba(0, 0, 0, 1)',
+              mb: '15px'
             }}
           >
-            Whether You're Building A New Digital Presence, Improving An Existing Platform, Launching A Product, Or Scaling Your Business Through Technology, Zylogenix Is Here To Help. Let's Create Solutions That Are Innovative, Reliable, And Built For Growth.
+            We combine creativity, strategy, and cutting-edge technology to build powerful digital solutions that help businesses stay competitive. Every project is crafted with precision, innovation, and a commitment to delivering measurable results.
           </Typography>
 
-          {/* Contact Us Button Box */}
-          <Box
+          <Typography
             sx={{
-              width: '161px',
-              height: '54px',
-              borderRadius: '20px',
-              padding: '9.78px 24.46px',
-              background: 'rgba(255, 255, 255, 0.1)',
-              boxShadow: `
-                0.98px 0.98px 1.96px 0px rgba(255, 255, 255, 0.3) inset,
-                -0.98px -0.98px 1.96px 0px rgba(255, 255, 255, 0.1) inset,
-                0px 0px 9.78px 0px rgba(255, 255, 255, 0.3) inset
-              `,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '9.78px',
-              cursor: 'pointer',
-              boxSizing: 'border-box',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                background: 'rgba(255, 255, 255, 0.2)',
-                transform: 'scale(1.05)'
-              }
+              fontFamily: 'Poppins',
+              fontWeight: 400,
+              fontSize: '16px',
+              lineHeight: '25px',
+              color: 'rgba(0, 0, 0, 1)'
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: 'Poppins',
-                fontWeight: 600,
-                fontSize: '14px',
-                color: '#FFFFFF',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              CONTACT US
-            </Typography>
-            <ArrowForwardIcon sx={{ color: '#FFFFFF', fontSize: '18px' }} />
-          </Box>
+            Whether it's a high-performing website, enterprise software, mobile application, or complete digital marketing strategy, Zylogenix delivers scalable solutions that accelerate growth and unlock new opportunities
+          </Typography>
         </Box>
       </Box>
     </Box>
