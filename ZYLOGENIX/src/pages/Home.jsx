@@ -124,7 +124,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       paginateService(1);
-    }, 30000);
+    }, 12000);
     return () => clearInterval(timer);
   }, [activeServiceSlide]);
 
