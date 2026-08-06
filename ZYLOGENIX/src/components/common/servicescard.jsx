@@ -8,7 +8,7 @@ import BulbIcon from '../../assets/icon/bulb.webp';
 import BellIcon from '../../assets/icon/bell.webp';
 import PaperPlaneIcon from '../../assets/icon/paperPlane.webp';
 
-const ServicesCard = ({ title, description, imageSrc, reverse }) => {
+const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => {
   return (
     <Box
       sx={{
@@ -28,7 +28,7 @@ const ServicesCard = ({ title, description, imageSrc, reverse }) => {
         sx={{
           flex: { xs: '1 1 auto', md: '0 0 618px' },
           minHeight: '378px',
-          background: 'linear-gradient(113.49deg, #8D53DB 5.01%, #4B2C75 79.43%)',
+          background: bgGradient || 'linear-gradient(113.49deg, #8D53DB 5.01%, #4B2C75 79.43%)',
           borderRadius: '20px',
           padding: { xs: '30px 20px', md: '50px 45px' }, 
           display: 'flex',
@@ -114,20 +114,29 @@ const ServicesCard = ({ title, description, imageSrc, reverse }) => {
         </Box>
       </Box>
 
-      {/* Image Box */}
+      {/* Image Wrapper */}
       <Box
-        component="img"
-        src={imageSrc}
-        alt={title}
         sx={{
-          flex: { xs: '1 1 auto', md: '0 0 300px' }, // Fixed 300px width on desktop
-          height: { xs: 'auto', md: '378px' }, // Fixed 378px height on desktop
-          width: '100%',
-          objectFit: 'cover',
-          borderRadius: '20px',
-          boxSizing: 'border-box'
+          flex: { xs: '1 1 auto', md: '0 0 300px' },
+          display: 'flex',
+          alignItems: 'stretch',
+          width: '100%'
         }}
-      />
+      >
+        <Box
+          component="img"
+          src={imageSrc}
+          alt={title}
+          sx={{
+            width: '100%',
+            height: '100%',
+            minHeight: { xs: '200px', md: '378px' },
+            objectFit: 'cover',
+            borderRadius: '20px',
+            boxSizing: 'border-box'
+          }}
+        />
+      </Box>
     </Box>
   );
 };

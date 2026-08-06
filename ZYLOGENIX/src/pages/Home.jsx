@@ -8,6 +8,61 @@ import DeliverCard from '../components/common/deleverCard';
 import ServicesCard from '../components/common/servicescard';
 import P1Img from '../assets/home/p1.webp';
 import P1_1Img from '../assets/home/p1.1.webp';
+import P2Img from '../assets/home/p2.webp';
+import P2_1Img from '../assets/home/p2.1.webp';
+import P3Img from '../assets/home/p3.webp';
+import P3_1Img from '../assets/home/p3.1.webp';
+
+const servicesData = [
+  [
+    {
+      title: "Web Design & Development",
+      description: "We create modern, responsive, and performance-driven websites tailored to your brand and business goals. From corporate websites to advanced custom platforms, our team delivers solutions that combine aesthetics, usability, and functionality.",
+      imageSrc: P1Img,
+      bgGradient: "linear-gradient(113.49deg, #8D53DB 5.01%, #4B2C75 79.43%)",
+      reverse: false
+    },
+    {
+      title: "Mobile App & Custom Software Development",
+      description: "Bring your ideas to life with scalable mobile applications and custom-built software solutions. We develop digital products that streamline operations, improve user experiences, and support long-term business growth",
+      imageSrc: P1_1Img,
+      bgGradient: "linear-gradient(113.49deg, #8D53DB 5.01%, #4B2C75 79.43%)",
+      reverse: true
+    }
+  ],
+  [
+    {
+      title: "UI/UX Design",
+      description: "Deliver exceptional digital experiences through intuitive interfaces and user-centered design. Our UI/UX experts craft engaging, accessible, and visually compelling products that enhance usability and maximize customer satisfaction.",
+      imageSrc: P2Img,
+      bgGradient: "linear-gradient(113.49deg, #5373DB 5.01%, #2F2C75 79.43%)",
+      reverse: false
+    },
+    {
+      title: "Digital Marketing & Branding",
+      description: "Grow your brand with strategic digital marketing solutions, including SEO, social media management, content marketing, paid advertising, and creative branding that helps your business reach the right audience and generate measurable results.",
+      imageSrc: P2_1Img,
+      bgGradient: "linear-gradient(116.48deg, #52CE69 22.81%, #1F5C17 83.13%)",
+      reverse: true
+    }
+  ],
+  [
+    {
+      title: "Cloud Hosting & Maintenance",
+      description: "Ensure your digital platforms remain secure, reliable, and optimized with professional hosting, server management, website maintenance, performance monitoring, backups, and ongoing technical support for uninterrupted business operations.",
+      imageSrc: P3Img,
+      bgGradient: "linear-gradient(113.49deg, #DB9753 5.01%, #633500 79.43%)",
+      reverse: false
+    },
+    {
+      title: "Creative Media & Content Production",
+      description: "Capture attention with impactful visual content, including graphic design, promotional videos, motion graphics, photography, print media, and multimedia assets that strengthen your brand identity across digital and traditional channels.",
+      imageSrc: P3_1Img,
+      bgGradient: "linear-gradient(116.48deg, #CE5252 22.81%, #4A0808 83.13%)",
+      reverse: true
+    }
+  ]
+];
 
 const slidesData = [
   {
@@ -35,9 +90,59 @@ const slidesData = [
 
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [[activeServiceSlide, serviceDirection], setServiceSlideState] = useState([0, 0]);
+  const swipeConfidenceThreshold = 5000;
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity;
+  };
+  
   const sliderRef = useRef(null);
   const activeSlideRef = useRef(activeSlide);
   const isScrolling = useRef(false);
+
+  const paginateService = (newDirection) => {
+    setServiceSlideState((prev) => {
+      let nextSlide = prev[0] + newDirection;
+      if (nextSlide < 0) nextSlide = servicesData.length - 1;
+      if (nextSlide >= servicesData.length) nextSlide = 0;
+      return [nextSlide, newDirection];
+    });
+  };
+
+  const handleServiceDotClick = (index) => {
+    setServiceSlideState((prev) => {
+      const direction = index > prev[0] ? 1 : -1;
+      return [index, direction];
+    });
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      paginateService(1);
+    }, 30000);
+    return () => clearInterval(timer);
+  }, [activeServiceSlide]);
+
+  const serviceVariants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? 50 : -50,
+        opacity: 0
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 50 : -50,
+        opacity: 0
+      };
+    }
+  };
 
   useEffect(() => {
     activeSlideRef.current = activeSlide;
@@ -576,21 +681,47 @@ const Home = () => {
           Meet Our Experts And Elevate Your Business With Zylogenix
         </Typography>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '20px', md: '28px' }, width: '100%', alignItems: 'center' }}>
-          <ServicesCard 
-            title="Web Design & Development"
-            description="We create modern, responsive, and performance-driven websites tailored to your brand and business goals. From corporate websites to advanced custom platforms, our team delivers solutions that combine aesthetics, usability, and functionality."
-            imageSrc={P1Img}
-            reverse={false} // Image on the right
-          />
+        <AnimatePresence mode="wait" custom={serviceDirection}>
+          <motion.div
+            key={activeServiceSlide}
+            custom={serviceDirection}
+            variants={serviceVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "tween", duration: 0.6, ease: "easeInOut" },
+              opacity: { duration: 0.8, ease: "easeInOut" }
+            }}
+            style={{ width: '100%', cursor: 'grab', touchAction: 'pan-y' }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
 
-          <ServicesCard 
-            title="Mobile App & Custom Software Development"
-            description="Bring your ideas to life with scalable mobile applications and custom-built software solutions. We develop digital products that streamline operations, improve user experiences, and support long-term business growth"
-            imageSrc={P1_1Img}
-            reverse={true} // Image on the left
-          />
-        </Box>
+              if (swipe < -swipeConfidenceThreshold) {
+                paginateService(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                paginateService(-1);
+              }
+            }}
+            whileTap={{ cursor: "grabbing" }}
+          >
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '20px', md: '28px' }, width: '100%', alignItems: 'center' }}>
+              {servicesData[activeServiceSlide].map((service, index) => (
+                <ServicesCard 
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  imageSrc={service.imageSrc}
+                  bgGradient={service.bgGradient}
+                  reverse={service.reverse}
+                />
+              ))}
+            </Box>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Horizontal Pagination Dots */}
         <Box
@@ -601,44 +732,27 @@ const Home = () => {
             mt: { xs: '30px', md: '30px',lg:'35px' },
           }}
         >
-          {/* Active Dot */}
-          <Box
-            sx={{
-              width: '35px',
-              height: '16px',
-              borderRadius: '100px',
-              background: 'linear-gradient(180deg, #BE52CE 0%, #8D53DB 100%)',
-              cursor: 'pointer',
-            }}
-          />
-          {/* Inactive Dot 1 */}
-          <Box
-            sx={{
-              width: '16px',
-              height: '16px',
-              borderRadius: '100px',
-              backgroundColor: 'rgba(221, 221, 221, 1)',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s ease',
-              '&:hover': {
-                backgroundColor: 'rgba(180, 180, 180, 1)',
-              }
-            }}
-          />
-          {/* Inactive Dot 2 */}
-          <Box
-            sx={{
-              width: '16px',
-              height: '16px',
-              borderRadius: '100px',
-              backgroundColor: 'rgba(221, 221, 221, 1)',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s ease',
-              '&:hover': {
-                backgroundColor: 'rgba(180, 180, 180, 1)',
-              }
-            }}
-          />
+          {servicesData.map((_, index) => (
+            <Box
+              key={index}
+              onClick={() => handleServiceDotClick(index)}
+              sx={{
+                width: activeServiceSlide === index ? '35px' : '16px',
+                height: '16px',
+                borderRadius: '100px',
+                background: activeServiceSlide === index 
+                  ? 'linear-gradient(180deg, #BE52CE 0%, #8D53DB 100%)' 
+                  : 'rgba(221, 221, 221, 1)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  background: activeServiceSlide === index 
+                    ? 'linear-gradient(180deg, #BE52CE 0%, #8D53DB 100%)' 
+                    : 'rgba(180, 180, 180, 1)',
+                }
+              }}
+            />
+          ))}
         </Box>
       </Box>
     </Box>
