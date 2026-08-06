@@ -15,6 +15,7 @@ import P3_1Img from '../assets/home/p3.1.webp';
 import RoodwaveImg from '../assets/company/roodwave.webp';
 import LevestageImg from '../assets/company/levestage.webp';
 import InfluencerhubImg from '../assets/company/influencerhub.webp';
+import TransformBusinessImg from '../assets/home/transformBussines.webp';
 
 const servicesData = [
   [
@@ -861,6 +862,119 @@ const Home = () => {
               objectFit: 'contain'
             }}
           />
+        </Box>
+      </Box>
+
+      {/* Transform Business Section */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          minHeight: { xs: 'auto', md: '500px' },
+          backgroundImage: `url(${TransformBusinessImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: { xs: '60px 20px', md: '100px 20px' },
+          boxSizing: 'border-box',
+          overflow: 'hidden'
+        }}
+      >
+        {/* Dark Overlay */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0, 0, 0, 0.6)',
+            zIndex: 1
+          }}
+        />
+
+        {/* Content Container */}
+        <Box
+          sx={{
+            position: 'relative',
+            zIndex: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            maxWidth: '1000px',
+            textAlign: 'center'
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 700,
+              fontSize: { xs: '32px', md: '48px' },
+              lineHeight: { xs: '42px', md: '58px' },
+              color: '#FFFFFF',
+              mb: '25px',
+              maxWidth: '900px'
+            }}
+          >
+            Ready To Transform Your Business With Smart Digital Solutions ?
+          </Typography>
+
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 400,
+              fontSize: { xs: '14px', md: '16px' },
+              lineHeight: { xs: '24px', md: '26px' },
+              color: '#FFFFFF',
+              mb: '40px',
+              maxWidth: '850px'
+            }}
+          >
+            Whether You're Building A New Digital Presence, Improving An Existing Platform, Launching A Product, Or Scaling Your Business Through Technology, Zylogenix Is Here To Help. Let's Create Solutions That Are Innovative, Reliable, And Built For Growth.
+          </Typography>
+
+          {/* Contact Us Button Box */}
+          <Box
+            sx={{
+              width: '161px',
+              height: '54px',
+              borderRadius: '20px',
+              padding: '9.78px 24.46px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              boxShadow: `
+                0.98px 0.98px 1.96px 0px rgba(255, 255, 255, 0.3) inset,
+                -0.98px -0.98px 1.96px 0px rgba(255, 255, 255, 0.1) inset,
+                0px 0px 9.78px 0px rgba(255, 255, 255, 0.3) inset
+              `,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '9.78px',
+              cursor: 'pointer',
+              boxSizing: 'border-box',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.2)',
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Poppins',
+                fontWeight: 600,
+                fontSize: '14px',
+                color: '#FFFFFF',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              CONTACT US
+            </Typography>
+            <ArrowForwardIcon sx={{ color: '#FFFFFF', fontSize: '18px' }} />
+          </Box>
         </Box>
       </Box>
     </Box>
