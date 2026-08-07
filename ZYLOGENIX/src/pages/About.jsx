@@ -361,6 +361,7 @@ const About = () => {
 
       {/* Get Found Section */}
       <Box
+      className="white-section"
         sx={{
           width: '100%',
           backgroundColor: '#FFFFFF',

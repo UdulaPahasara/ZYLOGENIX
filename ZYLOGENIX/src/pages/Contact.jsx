@@ -103,6 +103,7 @@ const Contact = () => {
 
       {/* ─── Main Content Area ─── */}
       <Box
+        className="white-section"
         sx={{
           width: '100%',
           boxSizing: 'border-box',
@@ -160,7 +161,7 @@ const Contact = () => {
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
                 gap: '8px',
-                mb: '8px',
+                mb: '18px',
               }}
             >
               <Box
@@ -195,7 +196,7 @@ const Contact = () => {
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
                 gap: '8px',
-                mb: '8px',
+                mb: '18px',
               }}
             >
               <Box
