@@ -17,6 +17,7 @@ import LevestageImg from '../assets/company/levestage.webp';
 import InfluencerhubImg from '../assets/company/influencerhub.webp';
 import TransformBusinessImg from '../assets/home/transformBussines.webp';
 import ZylogenixImg from '../assets/home/ZYLOGENIX.webp';
+import Footer from '../components/footer/footer';
 
 const servicesData = [
   [
@@ -1125,6 +1126,9 @@ const Home = () => {
           </Typography>
         </Box>
       </Box>
+
+      {/* Footer Section */}
+      <Footer />
     </Box>
   );
 };
