@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import AboutWhyCard from '../components/common/aboutWhycard';
 import DocumentIcon from '../assets/About/document.webp';
@@ -45,6 +45,42 @@ const cardsData = [
 ];
 
 const About = () => {
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Handle manual scrolling to update active dot
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const cardWidth = 310; // 280px card + 30px gap
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
+    }
+  };
+
+  // Auto-swipe feature for mobile & tablet
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Only auto-swipe on screens smaller than desktop (1024px)
+      if (window.innerWidth < 1024 && scrollRef.current) {
+        const maxIndex = cardsData.length - 1;
+        const nextIndex = activeIndex >= maxIndex ? 0 : activeIndex + 1;
+        const cardWidth = 310;
+        
+        scrollRef.current.scrollTo({
+          left: nextIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        
+        setActiveIndex(nextIndex);
+      }
+    }, 3000); // Swipe every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
       {/* Blank Hero Section (To be implemented later) */}
@@ -113,25 +149,36 @@ const About = () => {
           
           {/* Scrollable Container */}
           <Box
+            ref={scrollRef}
+            onScroll={handleScroll}
             sx={{
               display: 'flex',
               gap: '30px',
               overflowX: 'auto',
               paddingBottom: '20px',
               paddingRight: { xs: '20px', md: '200px' }, // padding for the fade overlap
+              scrollSnapType: { xs: 'x mandatory', md: 'none' }, // Snap for mobile swipe
               '::-webkit-scrollbar': { display: 'none' },
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'
             }}
           >
             {cardsData.map((card, index) => (
-              <AboutWhyCard
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-                bgColor={card.bgColor}
-              />
+              <Box 
+                key={index} 
+                sx={{ 
+                  scrollSnapAlign: 'start',
+                  // Ensure correct margin/padding reset inside snap container
+                  display: 'flex'
+                }}
+              >
+                <AboutWhyCard
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  bgColor={card.bgColor}
+                />
+              </Box>
             ))}
           </Box>
 
@@ -148,6 +195,39 @@ const About = () => {
               display: { xs: 'none', md: 'block' }
             }}
           />
+        </Box>
+
+        {/* Pagination Dots (Mobile & Tablet Only) */}
+        <Box 
+          sx={{ 
+            display: { xs: 'flex', md: 'none' }, 
+            justifyContent: 'center', 
+            gap: '10px',
+            marginTop: '20px' 
+          }}
+        >
+          {cardsData.map((_, index) => (
+            <Box
+              key={index}
+              onClick={() => {
+                if (scrollRef.current) {
+                  scrollRef.current.scrollTo({
+                    left: index * 310,
+                    behavior: 'smooth'
+                  });
+                  setActiveIndex(index);
+                }
+              }}
+              sx={{
+                width: activeIndex === index ? '24px' : '10px',
+                height: '10px',
+                borderRadius: '5px',
+                backgroundColor: activeIndex === index ? '#BE52CE' : '#D9D9D9',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+            />
+          ))}
         </Box>
       </Box>
 
@@ -168,14 +248,14 @@ const About = () => {
             flexDirection: { xs: 'column', md: 'row' }
           }}
         >
-          {/* Left Side: Text Area */}
           <Box
             sx={{
-              flex: { xs: '1 1 auto', md: '0 0 778px' },
-              width: { xs: '100%', md: '778px' },
+              flex: { xs: '1 1 100%', md: '1 1 55.5%' },
+              width: { xs: '100%', md: '55.5%' },
               height: { xs: 'auto', md: '639px' },
               backgroundColor: '#161616',
-              padding: { xs: '60px 40px', md: '0' },
+              padding: { xs: '100px 20px', sm: '120px 40px', md: '0 40px', lg: '0' },
+              boxSizing: 'border-box',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -186,8 +266,8 @@ const About = () => {
             <Typography
               sx={{
                 position: 'absolute',
-                top: { xs: '20px', md: '97px' },
-                left: { xs: '20px', md: '139px' },
+                top: { xs: '75px', md: '97px', sm: '40px' },
+                left: { xs: '20px', md: '10%', lg: '139px' },
                 fontFamily: 'Monda, sans-serif',
                 fontWeight: 400,
                 fontSize: { xs: '80px', md: '110.4px' },
@@ -206,7 +286,7 @@ const About = () => {
                   fontSize: '16px',
                   lineHeight: '25px',
                   color: '#FFFFFF',
-                  textAlign: 'justify',
+                  textAlign: { xs: 'center', md: 'justify' },
                   mb: '25px'
                 }}
               >
@@ -219,7 +299,7 @@ const About = () => {
                   fontSize: '16px',
                   lineHeight: '25px',
                   color: '#FFFFFF',
-                  textAlign: 'justify'
+                  textAlign: { xs: 'center', md: 'justify' }
                 }}
               >
                 Embracing a culture of open communication across the organization, Zylogenix ensures a seamless implementation process. We cater to clients of all sizes, from small SMEs to large corporations, offering the perfect solution regardless of your business scale.
@@ -230,8 +310,8 @@ const About = () => {
             <Typography
               sx={{
                 position: 'absolute',
-                bottom: { xs: '10px', md: '52px' },
-                right: { xs: '20px', md: '135px' },
+                bottom: { xs: '40px', md: '52px' },
+                right: { xs: '20px', md: '10%', lg: '135px' },
                 fontFamily: 'Monda, sans-serif',
                 fontWeight: 400,
                 fontSize: { xs: '80px', md: '110.4px' },
@@ -248,8 +328,8 @@ const About = () => {
           {/* Right Side: Image Area with Animation */}
           <Box
             sx={{
-              flex: { xs: '1 1 auto', md: '0 0 622px' },
-              width: { xs: '100%', md: '622px' },
+              flex: { xs: '1 1 100%', md: '1 1 44.5%' },
+              width: { xs: '100%', md: '44.5%' },
               height: { xs: '350px', sm: '450px', md: '639px' },
               position: 'relative',
               overflow: 'hidden'
@@ -295,9 +375,11 @@ const About = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
-            fontSize: { xs: '32px', md: '50px' },
-            lineHeight: { xs: '45px', md: '70px' },
-            color: 'rgba(53, 53, 53, 1)',
+            fontSize: { xs: '28px', sm: '36px', md: '50px' },
+            lineHeight: { xs: '38px', sm: '50px', md: '70px' },
+            background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 36.97%, #8D53DB 82.38%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
             textAlign: 'center',
             textTransform: 'capitalize',
             maxWidth: '940px',
@@ -311,8 +393,8 @@ const About = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 400,
-            fontSize: { xs: '16px', md: '20px' },
-            lineHeight: { xs: '25px', md: '30px' },
+            fontSize: { xs: '14px', sm: '16px', md: '20px' },
+            lineHeight: { xs: '22px', sm: '26px', md: '30px' },
             color: 'rgba(0, 0, 0, 1)',
             textAlign: 'center',
             textTransform: 'capitalize',
@@ -346,15 +428,15 @@ const About = () => {
         </Button>
 
         {/* Image Container with Background Shape */}
-        <Box sx={{ position: 'relative', width: '100%', maxWidth: '940px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
+        <Box sx={{ position: 'relative', width: '100%', maxWidth: '940px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', mb: { xs: '40px', md: '80px' } }}>
           {/* Background Gradient Box */}
           <Box
             sx={{
               position: 'absolute',
               bottom: 0,
               width: '100%',
-              height: { xs: '200px', md: '311px' },
-              borderRadius: { xs: '40px', md: '75px' },
+              aspectRatio: '940 / 311', // Ensures proportional scaling across all devices
+              borderRadius: { xs: '20px', sm: '40px', md: '75px' },
               background: 'linear-gradient(116.48deg, #BE52CE 22.81%, #602968 83.13%)',
               zIndex: 1
             }}
@@ -367,8 +449,7 @@ const About = () => {
             sx={{
               position: 'relative',
               zIndex: 2,
-              width: '100%',
-              maxWidth: '768px',
+              width: { xs: '81.7%', md: '768px' }, // Maintains exact proportion (768/940 = 81.7%)
               height: 'auto',
               display: 'block' 
             }}

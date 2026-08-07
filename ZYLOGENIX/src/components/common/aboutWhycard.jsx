@@ -15,6 +15,12 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
         height: '320px',
         boxSizing: 'border-box',
         flexShrink: 0,
+        transition: 'all 0.3s ease',
+        cursor: 'pointer',
+        '&:hover': {
+          transform: 'translateY(-10px) scale(1.02)',
+          boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.1)',
+        }
       }}
     >
       <Box
