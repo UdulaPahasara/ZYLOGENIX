@@ -145,7 +145,7 @@ const About = () => {
         </Typography>
 
         {/* Cards Container with Horizontal Scroll and Right Fade */}
-        <Box sx={{ position: 'relative', width: '100%', maxWidth: '1400px' }}>
+        <Box sx={{ position: 'relative', width: '100%', maxWidth: '1400px',paddingLeft:{xs:'0px',lg:'280px'},pt:"15px" }}>
           
           {/* Scrollable Container */}
           <Box
@@ -155,9 +155,10 @@ const About = () => {
               display: 'flex',
               gap: '30px',
               overflowX: 'auto',
+              pt:'20px',
               paddingBottom: '20px',
-              paddingRight: { xs: '20px', md: '200px' }, // padding for the fade overlap
-              scrollSnapType: { xs: 'x mandatory', md: 'none' }, // Snap for mobile swipe
+              paddingRight: { xs: '20px', sm: '200px' }, 
+              scrollSnapType: { xs: 'x mandatory', md: 'none' }, 
               '::-webkit-scrollbar': { display: 'none' },
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'
@@ -168,7 +169,6 @@ const About = () => {
                 key={index} 
                 sx={{ 
                   scrollSnapAlign: 'start',
-                  // Ensure correct margin/padding reset inside snap container
                   display: 'flex'
                 }}
               >
@@ -182,7 +182,7 @@ const About = () => {
             ))}
           </Box>
 
-          {/* Right Gradient Fade (Desktop only to prevent mobile touch blocking) */}
+          {/* Right Gradient Fade */}
           <Box
             sx={{
               position: 'absolute',
@@ -192,15 +192,16 @@ const About = () => {
               height: '100%',
               background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.07%)',
               pointerEvents: 'none', // Allows clicking/swiping through the gradient
-              display: { xs: 'none', md: 'block' }
+              zIndex: 10,
+              display: { xs: 'none', sm: 'block' }
             }}
           />
         </Box>
 
-        {/* Pagination Dots (Mobile & Tablet Only) */}
+        {/* Pagination Dots (Mobile Only) */}
         <Box 
           sx={{ 
-            display: { xs: 'flex', md: 'none' }, 
+            display: { xs: 'flex', sm: 'none' }, 
             justifyContent: 'center', 
             gap: '10px',
             marginTop: '20px' 
@@ -266,8 +267,8 @@ const About = () => {
             <Typography
               sx={{
                 position: 'absolute',
-                top: { xs: '75px', md: '97px', sm: '40px' },
-                left: { xs: '20px', md: '10%', lg: '139px' },
+                top: { xs: '75px', md: '100px', sm: '160px' },
+                left: { xs: '20px', md: '6%',sm: '16%', lg: '139px' },
                 fontFamily: 'Monda, sans-serif',
                 fontWeight: 400,
                 fontSize: { xs: '80px', md: '110.4px' },
@@ -310,8 +311,8 @@ const About = () => {
             <Typography
               sx={{
                 position: 'absolute',
-                bottom: { xs: '40px', md: '52px' },
-                right: { xs: '20px', md: '10%', lg: '135px' },
+                bottom: { xs: '40px', sm: '140px', md: 'px' },
+                right: { xs: '20px', md: '10%', sm: '18%', lg: '135px' },
                 fontFamily: 'Monda, sans-serif',
                 fontWeight: 400,
                 fontSize: { xs: '80px', md: '110.4px' },
