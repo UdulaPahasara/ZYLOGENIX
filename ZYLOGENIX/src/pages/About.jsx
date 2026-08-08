@@ -145,7 +145,7 @@ const About = () => {
         </Typography>
 
         {/* Cards Container with Horizontal Scroll and Right Fade */}
-        <Box sx={{ position: 'relative', width: '100%', maxWidth: '1400px',paddingLeft:{xs:'0px',lg:'280px'},pt:"15px" }}>
+        <Box sx={{ position: 'relative', width: '100%', maxWidth: '1440px', pt:"15px" }}>
           
           {/* Scrollable Container */}
           <Box
@@ -157,7 +157,8 @@ const About = () => {
               overflowX: 'auto',
               pt:'20px',
               paddingBottom: '20px',
-              paddingRight: { xs: '20px', sm: '200px' }, 
+              paddingLeft: { xs: 'calc(50vw - 140px)', sm: '0px', lg: '160px' },
+              paddingRight: { xs: 'calc(50vw - 140px)', sm: '160px' }, 
               scrollSnapType: { xs: 'x mandatory', md: 'none' }, 
               '::-webkit-scrollbar': { display: 'none' },
               scrollbarWidth: 'none',
@@ -168,7 +169,7 @@ const About = () => {
               <Box 
                 key={index} 
                 sx={{ 
-                  scrollSnapAlign: 'start',
+                  scrollSnapAlign: { xs: 'center', md: 'start' },
                   display: 'flex'
                 }}
               >
@@ -246,16 +247,16 @@ const About = () => {
             width: '100%',
             maxWidth: '1400px',
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' }
+            flexDirection: { xs: 'column', sm: 'row' }
           }}
         >
           <Box
             sx={{
-              flex: { xs: '1 1 100%', md: '1 1 55.5%' },
-              width: { xs: '100%', md: '55.5%' },
+              flex: { xs: '1 1 100%', sm: '1 1 55.5%' },
+              width: { xs: '100%', sm: '55.5%' },
               height: { xs: 'auto', md: '639px' },
               backgroundColor: '#161616',
-              padding: { xs: '100px 20px', sm: '120px 40px', md: '0 40px', lg: '0' },
+              padding: { xs: '60px 20px', sm: '40px 30px', md: '0 40px', lg: '0' },
               boxSizing: 'border-box',
               display: 'flex',
               alignItems: 'center',
@@ -263,32 +264,35 @@ const About = () => {
               position: 'relative'
             }}
           >
-            {/* Top Quote */}
-            <Typography
-              sx={{
-                position: 'absolute',
-                top: { xs: '75px', md: '100px', sm: '160px' },
-                left: { xs: '20px', md: '6%',sm: '16%', lg: '139px' },
-                fontFamily: 'Monda, sans-serif',
-                fontWeight: 400,
-                fontSize: { xs: '80px', md: '110.4px' },
-                lineHeight: { xs: 1, md: '110px' },
-                color: '#BE52CE'
-              }}
-            >
-              “
-            </Typography>
+            <Box sx={{ maxWidth: '424px', zIndex: 2, position: 'relative', left: { lg: '55px' } }}>
+              {/* Top Quote */}
+              <Typography
+                sx={{
+                  position: 'absolute',
+                  top: '-20px',
+                  left: { md: '-50px', lg: '-50px' },
+                  fontFamily: 'Monda, sans-serif',
+                  fontWeight: 400,
+                  fontSize: { xs: '80px', sm: '110.4px' },
+                  lineHeight: { xs: 1, sm: '110px' },
+                  color: '#BE52CE',
+                  display: { xs: 'none', md: 'block' }
+                }}
+              >
+                “
+              </Typography>
 
-            <Box sx={{ maxWidth: '424px', zIndex: 2, position: 'relative' }}>
               <Typography
                 sx={{
                   fontFamily: 'Poppins',
                   fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '25px',
+                  fontSize: { xs: '14px', sm: '15px', md: '16px' },
+                  lineHeight: { xs: '22px', sm: '24px', md: '25px' },
                   color: '#FFFFFF',
-                  textAlign: { xs: 'center', md: 'justify' },
-                  mb: '25px'
+                  textAlign: { xs: 'center', sm: 'justify' },
+                  mb: '25px',
+                  position: 'relative',
+                  zIndex: 2
                 }}
               >
                 Zylogenix, a global Digital Solutions Company with a strong presence in Sri Lanka, specializes in Software Development. With our extensive experience in creating intelligent solutions, we take pride in our formidable team of highly skilled resources. Our mission is to create value for our clients by delivering effective and efficient solutions that harness the latest technologies, including PHP, Android, 10S, and more.
@@ -297,41 +301,43 @@ const About = () => {
                 sx={{
                   fontFamily: 'Poppins',
                   fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '25px',
+                  fontSize: { xs: '14px', sm: '15px', md: '16px' },
+                  lineHeight: { xs: '22px', sm: '24px', md: '25px' },
                   color: '#FFFFFF',
-                  textAlign: { xs: 'center', md: 'justify' }
+                  textAlign: { xs: 'center', sm: 'justify' },
+                  position: 'relative',
+                  zIndex: 2
                 }}
               >
                 Embracing a culture of open communication across the organization, Zylogenix ensures a seamless implementation process. We cater to clients of all sizes, from small SMEs to large corporations, offering the perfect solution regardless of your business scale.
               </Typography>
-            </Box>
 
-            {/* Bottom Quote */}
-            <Typography
-              sx={{
-                position: 'absolute',
-                bottom: { xs: '40px', sm: '140px', md: 'px' },
-                right: { xs: '20px', md: '10%', sm: '18%', lg: '135px' },
-                fontFamily: 'Monda, sans-serif',
-                fontWeight: 400,
-                fontSize: { xs: '80px', md: '110.4px' },
-                lineHeight: { xs: 1, md: '110px' },
-                color: '#BE52CE',
-                transform: 'rotateY(180deg)',
-                display: 'block'
-              }}
-            >
-             “
-            </Typography>
+              {/* Bottom Quote */}
+              <Typography
+                sx={{
+                  position: 'absolute',
+                  bottom: '-65px',
+                  right: { md: '-50px', lg: '-50px' },
+                  fontFamily: 'Monda, sans-serif',
+                  fontWeight: 400,
+                  fontSize: { xs: '80px', sm: '110.4px' },
+                  lineHeight: { xs: 1, sm: '110px' },
+                  color: '#BE52CE',
+                  transform: 'rotateY(180deg)',
+                  display: { xs: 'none', md: 'block' }
+                }}
+              >
+               “
+              </Typography>
+            </Box>
           </Box>
 
           {/* Right Side: Image Area with Animation */}
           <Box
             sx={{
-              flex: { xs: '1 1 100%', md: '1 1 44.5%' },
-              width: { xs: '100%', md: '44.5%' },
-              height: { xs: '350px', sm: '450px', md: '639px' },
+              flex: { xs: '1 1 100%', sm: '1 1 44.5%' },
+              width: { xs: '100%', sm: '44.5%' },
+              height: { xs: '350px', sm: '639px' },
               position: 'relative',
               overflow: 'hidden'
             }}
