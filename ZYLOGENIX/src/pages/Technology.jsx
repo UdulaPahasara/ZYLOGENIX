@@ -1,10 +1,198 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import Footer from '../components/footer/footer';
+import TecCard from '../components/common/tecCard';
+
+// Hero Image
+import TecHeroImg from '../assets/Technology/tecHero.webp';
+
+// Tech stack icons
+import Icon1 from '../assets/Technology/Rectangle 39999.webp';
+import Icon2 from '../assets/Technology/Rectangle 40000.webp';
+import Icon3 from '../assets/Technology/Rectangle 40001.webp';
+import Icon4 from '../assets/Technology/Rectangle 40002.webp';
+import Icon5 from '../assets/Technology/Rectangle 40003.webp';
+import Icon6 from '../assets/Technology/Rectangle 40004.webp';
+import Icon7 from '../assets/Technology/Rectangle 40005.webp';
+import Icon8 from '../assets/Technology/Rectangle 40006.webp';
+import Icon9 from '../assets/Technology/Rectangle 40007.webp';
+
+// Card Images
+import AiImg from '../assets/Technology/Ai.webp';
+import WebImg from '../assets/Technology/web.webp';
+import MobileImg from '../assets/Technology/mobile.webp';
+import EcommerceImg from '../assets/Technology/e-commerce.webp';
+
+const techIcons = [Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9];
 
 const Technology = () => {
   return (
-    <Box sx={{ pt: '100px', p: 4, minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#121212' }}>
-      <Typography variant="h2" sx={{ color: 'white' }}>Technology Page</Typography>
+    <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      {/* ─── Hero Section ─── */}
+      <Box
+        sx={{
+          width: '100%',
+          height: { xs: '400px', md: '642px' },
+          backgroundImage: `url(${TecHeroImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative'
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: 'Poppins',
+            fontWeight: 800,
+            fontSize: { xs: '40px', md: '75.72px' },
+            lineHeight: { xs: 1.2, md: '89.4px' },
+            color: '#FFFFFF',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+            mt: { xs: '80px', md: '0px' } // Accounts for navbar on mobile
+          }}
+        >
+          Technology
+        </Typography>
+      </Box>
+
+      {/* ─── Main White Section ─── */}
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', pb: '100px' }}>
+        
+        {/* Tech Stack Marquee */}
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            pt: { xs: '50px', md: '100px' },
+            mb: '40px',
+            overflow: 'hidden'
+          }}
+        >
+          <Box
+            sx={{
+              maxWidth: '764px',
+              width: '100%',
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                gap: '40px',
+                animation: 'scroll 15s linear infinite',
+                '@keyframes scroll': {
+                  '0%': { transform: 'translateX(0)' },
+                  '100%': { transform: 'translateX(calc(-50% - 20px))' } // -50% of the total width minus half the gap
+                },
+                width: 'max-content'
+              }}
+            >
+              {[...techIcons, ...techIcons].map((icon, i) => (
+                <Box
+                  key={i}
+                  component="img"
+                  src={icon}
+                  alt={`Tech icon ${i}`}
+                  sx={{
+                    width: '49px',
+                    height: '49px',
+                    objectFit: 'contain'
+                  }}
+                />
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Section Heading */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '80px' }}>
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 800,
+              fontSize: { xs: '32px', md: '55.51px' },
+              lineHeight: { xs: 1.2, md: '66.61px' },
+              textAlign: 'center',
+              textTransform: 'capitalize',
+              background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 36.97%, #8D53DB 82.38%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              maxWidth: '600px',
+              mb: '20px'
+            }}
+          >
+            Solutions that<br/>evolve with you
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 400,
+              fontSize: '16px',
+              lineHeight: '25px',
+              textAlign: 'center',
+              color: '#333333',
+              maxWidth: '735px'
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor
+          </Typography>
+        </Box>
+
+        {/* ─── Technology Cards Container ─── */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: { xs: '30px', md: '60px' },
+            width: '100%',
+            boxSizing: 'border-box',
+            px: { xs: '16px', sm: '24px', md: '40px' }
+          }}
+        >
+          <TecCard 
+            image={AiImg}
+            badgeText="LOREM LIPSUM SOLOR"
+            title="AI Solutions"
+            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            bgColor="#161616"
+            imagePosition="right"
+          />
+          <TecCard 
+            image={WebImg}
+            badgeText="LOREM LIPSUM SOLOR"
+            title="Web Platform Development"
+            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            bgColor="#13012a"
+            imagePosition="left"
+          />
+          <TecCard 
+            image={MobileImg}
+            badgeText="LOREM LIPSUM SOLOR"
+            title="Mobile Applications"
+            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            bgColor="#011531"
+            imagePosition="right"
+          />
+          <TecCard 
+            image={EcommerceImg}
+            badgeText="LOREM LIPSUM SOLOR"
+            title="e-Commerce Development"
+            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            bgColor="#330101"
+            imagePosition="left"
+          />
+        </Box>
+
+      </Box>
+
+      <Footer />
     </Box>
   );
 };
