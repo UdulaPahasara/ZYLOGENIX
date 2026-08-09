@@ -10,6 +10,7 @@ import DesignBranding from './pages/Design&Branding';
 import ContentSocialMedia from './pages/Content&SocialMedia';
 import DigitalMarketing from './pages/DigitalMarketing';
 import WebApp from './pages/Web&App';
+import ITTechnicalSupport from './pages/IT&TechnicalSupport';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/content-social-media" element={<ContentSocialMedia />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/web-app" element={<WebApp />} />
+        <Route path="/it-technical-support" element={<ITTechnicalSupport />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

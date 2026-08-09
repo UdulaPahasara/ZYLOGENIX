@@ -825,10 +825,10 @@ const Home = () => {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: { xs: 'column', sm: 'row' },
             alignItems: 'center',
             justifyContent: 'center',
-            gap: { xs: '40px', md: '80px' },
+            gap: { xs: '40px', sm: '60px', md: '80px' },
             width: '100%'
           }}
         >
