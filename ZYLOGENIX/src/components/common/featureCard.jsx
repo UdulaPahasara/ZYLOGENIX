@@ -11,7 +11,9 @@ const FeatureCard = ({
   bgColor = 'rgba(0, 0, 0, 1)', 
   textColor = 'rgba(255, 255, 255, 1)',
   imagePosition = 'left',
-  className
+  className,
+  disableBottomMargin = false,
+  imageScale = 1
 }) => {
   const isImageRight = imagePosition === 'right';
 
@@ -21,7 +23,7 @@ const FeatureCard = ({
       sx={{
         width: '100%',
         maxWidth: '1407px',
-        minHeight: { xs: 'auto', sm: '400px', lg: '639px' },
+        minHeight: { xs: 'auto', sm: '450px', md: '500px', lg: '639px' },
         backgroundColor: bgColor,
         display: 'flex',
         flexDirection: { 
@@ -42,14 +44,15 @@ const FeatureCard = ({
           flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 629px' },
           width: { xs: '100%', sm: '50%', lg: '639px' },
           height: { xs: 'auto', lg: '659px' },
+          alignSelf: { sm: 'stretch' },
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'stretch',
           zIndex: 1,
-          px: { xs: '20px', sm: '20px', md: '0px' },
-          mt: { xs: '0px', sm: 9, lg: 0 },
-          mb: { lg: bgColor === '#FFFFFF' ? -8 : 0 },
+          px: { xs: '20px', sm: '0px', md: '0px' },
+          mt: 0,
+          mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : 0 },
         }}
       >
         <motion.div
@@ -57,7 +60,7 @@ const FeatureCard = ({
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
-          style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'stretch', alignSelf: 'stretch' }}
         >
           <Box
             component="img"
@@ -66,7 +69,9 @@ const FeatureCard = ({
             sx={{
               width: '100%',
               height: '100%',
-              objectFit: bgColor === '#FFFFFF' ? 'contain' : 'cover'
+              display: 'block',
+              objectFit: bgColor === '#FFFFFF' ? 'contain' : 'cover',
+              transform: `scale(${imageScale})`
             }}
           />
         </motion.div>

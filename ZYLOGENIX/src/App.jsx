@@ -8,6 +8,7 @@ import Technology from './pages/Technology';
 import Contact from './pages/Contact';
 import DesignBranding from './pages/Design&Branding';
 import ContentSocialMedia from './pages/Content&SocialMedia';
+import DigitalMarketing from './pages/DigitalMarketing';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/technology" element={<Technology />} />
         <Route path="/design-branding" element={<DesignBranding />} />
         <Route path="/content-social-media" element={<ContentSocialMedia />} />
+        <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
