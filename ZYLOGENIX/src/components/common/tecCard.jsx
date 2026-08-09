@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -103,9 +103,13 @@ const TecCard = ({
         </Typography>
 
         {/* Learn More Glass Button */}
-        <Button
-          endIcon={<ArrowForwardIcon sx={{ fontSize: '18px' }} />}
+        <Box
+          component="button"
+          onClick={() => {}}
           sx={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
             background: 'rgba(255, 255, 255, 0.1)',
             borderRadius: '8px',
             padding: '8px 20px',
@@ -113,18 +117,26 @@ const TecCard = ({
             fontFamily: 'Poppins',
             fontWeight: 500,
             fontSize: '14px',
-            textTransform: 'none',
-            boxShadow: 'inset 0.77px 0.77px 1.54px 0px rgba(255, 255, 255, 0.3), inset -0.77px -0.77px 1.54px 0px rgba(255, 255, 255, 0.1), inset 0px 0px 7.72px 0px rgba(255, 255, 255, 0.3)',
+            cursor: 'pointer',
+            border: 'none',
+            outline: 'none',
+            boxShadow: [
+              'inset 0.77px 0.77px 1.54px 1px rgba(255, 255, 255, 0.3)',
+              'inset -0.77px -0.77px 1.54px 1px rgba(255, 255, 255, 0.1)',
+              'inset 0px 0px 7.92px 1px rgba(255, 255, 255, 0.3)'
+            ].join(', '),
             backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
             transition: 'all 0.3s ease',
             '&:hover': {
-              background: 'rgba(255, 255, 255, 0.2)',
+              background: 'rgba(255, 255, 255, 0.1)',
               transform: 'translateY(-2px)'
             }
           }}
         >
           Learn More
-        </Button>
+          <ArrowForwardIcon sx={{ fontSize: '18px' }} />
+        </Box>
       </Box>
 
       {/* Image Section with Animations */}
