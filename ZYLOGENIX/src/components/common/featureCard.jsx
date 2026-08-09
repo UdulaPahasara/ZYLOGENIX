@@ -41,15 +41,16 @@ const FeatureCard = ({
       <Box
         sx={{
           flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 629px' },
-          width: { xs: '100%', sm: '50%', lg: '629px' },
-          height: { xs: 'auto', lg: '593px' },
+          width: { xs: '100%', sm: '50%', lg: '639px' },
+          height: { xs: 'auto', lg: '639px' },
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           zIndex: 1,
-          px: { xs: '20px', sm: '20px', md: '30px' },
-          mt: { xs: '0px', sm: 9,lg: 6}
+          px: { xs: '20px', sm: '20px', md: '0px' },
+          mt: { xs: '0px', sm: 9, lg: 0 },
+          
         }}
       >
         <motion.div
@@ -66,7 +67,7 @@ const FeatureCard = ({
             sx={{
               width: '100%',
               height: '100%',
-              objectFit: 'contain'
+              objectFit: bgColor === '#FFFFFF' ? 'contain' : 'cover'
             }}
           />
         </motion.div>

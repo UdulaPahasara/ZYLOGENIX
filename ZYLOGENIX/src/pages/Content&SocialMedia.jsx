@@ -6,15 +6,22 @@ import FeatureCard from '../components/common/featureCard';
 import InterestedCard from '../components/common/interestedCard';
 
 // Assets
-import HeroImg from '../assets/Design&Branding/hero.webp';
-import Vector1 from '../assets/Design&Branding/vector 1.webp';
-import Vector2 from '../assets/Design&Branding/vector 2.webp';
-import Vector3 from '../assets/Design&Branding/vector 3.webp';
-import Img1 from '../assets/Design&Branding/img1.webp';
-import Img2 from '../assets/Design&Branding/img2.webp';
-import Img3 from '../assets/Design&Branding/img3.webp';
+import HeroImg from '../assets/Content&SocialMedia/hero.webp';
+import Vector1 from '../assets/Content&SocialMedia/vector 2.webp';
+import Vector2 from '../assets/Content&SocialMedia/vector 4.webp';
+import Vector3 from '../assets/Content&SocialMedia/vector 5.webp';
+import Vector4 from '../assets/Content&SocialMedia/vector 6.webp';
+import Vector5 from '../assets/Content&SocialMedia/vector 7.webp';
+import Vector6 from '../assets/Content&SocialMedia/vector 8.webp';
 
-const DesignBranding = () => {
+import Section1 from '../assets/Content&SocialMedia/section1.webp';
+import Section2 from '../assets/Content&SocialMedia/section2.webp';
+import Section3 from '../assets/Content&SocialMedia/section3.webp';
+import Section4 from '../assets/Content&SocialMedia/section4.webp';
+import Section5 from '../assets/Content&SocialMedia/section5.webp';
+import Section6 from '../assets/Content&SocialMedia/section6.webp';
+
+const ContentSocialMedia = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
       {/* ─── Hero Section ─── */}
@@ -63,7 +70,7 @@ const DesignBranding = () => {
               mb: '10px'
             }}
           >
-            DESIGN & BRANDING
+            CONTENT & SOCIAL MEDIA
           </Typography>
           <Typography
             sx={{
@@ -86,34 +93,39 @@ const DesignBranding = () => {
             justifyContent: 'center', 
             alignItems: 'center',
             gap: { xs: '40px', md: '60px' },
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            maxWidth: '1200px',
+            margin: '0 auto'
           }}
         >
-          <IconCard icon={Vector1} title="Custom Graphic Design" />
-          <IconCard icon={Vector2} title="Branding & Identity" />
-          <IconCard icon={Vector3} title="UI/UX Design" />
+          <IconCard icon={Vector1} title="Content Creation & Marketing" />
+          <IconCard icon={Vector2} title="Social Media Management" />
+          <IconCard icon={Vector3} title="Blog Management" />
+          <IconCard icon={Vector4} title="YouTube Management" />
+          <IconCard icon={Vector5} title="LinkedIn Profile Optimization" />
+          <IconCard icon={Vector6} title="Video Production" />
         </Box>
       </Box>
 
       {/* ─── Feature Cards Section ─── */}
-      <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', }}>
+      <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         
-        {/* Card 1: Black Background */}
+        {/* Card 1 */}
         <FeatureCard 
-          image={Img1}
-          badgeText="Custom Graphic Design"
+          image={Section1}
+          badgeText="Content Creation & Marketing"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
-          bgColor="rgba(0, 0, 0, 1)"
+          bgColor="rgba(16, 8, 1, 1)"
           imagePosition="left"
         />
 
-        {/* Card 2: White Background */}
+        {/* Card 2 */}
         <FeatureCard 
-          className='white-section'
-          image={Img2}
-          badgeText="Branding & Identity"
+          className="white-section"
+          image={Section2}
+          badgeText="Social Media Management"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
@@ -122,19 +134,57 @@ const DesignBranding = () => {
           imagePosition="right"
         />
 
-        {/* Card 3: Dark Brown Background */}
+        {/* Card 3 */}
         <FeatureCard 
-          image={Img3}
-          badgeText="UI/UX Design"
+          image={Section3}
+          badgeText="Blog Management"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
-          bgColor="rgba(16, 8, 1, 1)"
+          bgColor="#1E0B36"
           imagePosition="left"
+        />
+
+        {/* Card 4 */}
+        <FeatureCard 
+          className="white-section"
+          image={Section4}
+          badgeText="YouTube Management"
+          title={"Lorem Lipsum Solor\nLorem Lipsms"}
+          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          bgColor="#FFFFFF"
+          textColor="#000000"
+          imagePosition="right"
+        />
+
+        {/* Card 5 */}
+        <FeatureCard 
+          image={Section5}
+          badgeText="LinkedIn Profile Optimization"
+          title={"Lorem Lipsum Solor\nLorem Lipsms"}
+          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          bgColor="#000000"
+          imagePosition="left"
+        />
+
+        {/* Card 6 */}
+        <FeatureCard 
+          className="white-section"
+          image={Section6}
+          badgeText="Video Production"
+          title={"Lorem Lipsum Solor\nLorem Lipsms"}
+          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          bgColor="#FFFFFF"
+          textColor="#000000"
+          imagePosition="right"
         />
 
       </Box>
 
+      {/* ─── Informational Grid Section (White Area) ─── */}
       <InterestedCard />
 
       {/* Footer */}
@@ -143,4 +193,4 @@ const DesignBranding = () => {
   );
 };
 
-export default DesignBranding;
+export default ContentSocialMedia;
