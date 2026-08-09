@@ -13,7 +13,8 @@ const FeatureCard = ({
   imagePosition = 'left',
   className,
   disableBottomMargin = false,
-  imageScale = 1
+  imageScale = 1,
+  objectFitOverride
 }) => {
   const isImageRight = imagePosition === 'right';
 
@@ -51,8 +52,8 @@ const FeatureCard = ({
           alignItems: 'stretch',
           zIndex: 1,
           px: { xs: '20px', sm: '0px', md: '0px' },
-          mt: 0,
-          mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : 0 },
+          //mt:{ lg: bgColor === '#FFFFFF' ? 1 : 0 },
+          //mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : 0 },
         }}
       >
         <motion.div
@@ -70,7 +71,7 @@ const FeatureCard = ({
               width: '100%',
               height: '100%',
               display: 'block',
-              objectFit: bgColor === '#FFFFFF' ? 'contain' : 'cover',
+              objectFit: objectFitOverride || (bgColor === '#FFFFFF' ? 'contain' : 'cover'),
               transform: `scale(${imageScale})`
             }}
           />
