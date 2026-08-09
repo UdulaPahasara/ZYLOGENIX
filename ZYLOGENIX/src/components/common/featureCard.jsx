@@ -33,8 +33,7 @@ const FeatureCard = ({
         position: 'relative',
         margin: '0 auto',
         overflow: 'hidden',
-        // Optional: you can add borderRadius if you want it rounded on the page, 
-        // but design spec didn't list it for the major box.
+        
       }}
     >
       {/* Image Section */}
@@ -42,7 +41,7 @@ const FeatureCard = ({
         sx={{
           flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 629px' },
           width: { xs: '100%', sm: '50%', lg: '639px' },
-          height: { xs: 'auto', lg: '639px' },
+          height: { xs: 'auto', lg: '659px' },
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
@@ -50,7 +49,7 @@ const FeatureCard = ({
           zIndex: 1,
           px: { xs: '20px', sm: '20px', md: '0px' },
           mt: { xs: '0px', sm: 9, lg: 0 },
-          
+          mb: { lg: bgColor === '#FFFFFF' ? -8 : 0 },
         }}
       >
         <motion.div

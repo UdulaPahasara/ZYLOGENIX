@@ -88,13 +88,11 @@ const ContentSocialMedia = () => {
 
         <Box 
           sx={{ 
-            display: 'flex', 
-            flexDirection: { xs: 'column', sm: 'row' }, 
-            justifyContent: 'center', 
-            alignItems: 'center',
-            gap: { xs: '40px', md: '60px' },
-            flexWrap: 'wrap',
-            maxWidth: '1200px',
+            display: 'grid', 
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+            justifyItems: 'center',
+            gap: { xs: '40px', md: '40px 60px' },
+            maxWidth: 'fit-content',
             margin: '0 auto'
           }}
         >
@@ -132,6 +130,7 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          
         />
 
         {/* Card 3 */}
