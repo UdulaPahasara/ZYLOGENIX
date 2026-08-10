@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useMotionTemplate } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HomeHero from '../assets/home/Homehero.webp';
 import WhyZylogenixImg from '../assets/home/WHY ZYLOGENIX.webp';
@@ -112,6 +112,24 @@ const Home = () => {
     const y = (clientY - top) / height - 0.5;
     mouseX.set(x);
     mouseY.set(y);
+  };
+
+  const spotlightX = useMotionValue(-1000);
+  const spotlightY = useMotionValue(-1000);
+  const smoothSpotlightX = useSpring(spotlightX, { damping: 40, stiffness: 250 });
+  const smoothSpotlightY = useSpring(spotlightY, { damping: 40, stiffness: 250 });
+  const spotlightBackground = useMotionTemplate`radial-gradient(150px circle at ${smoothSpotlightX}px ${smoothSpotlightY}px, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)`;
+
+  const handleSpotlightMouseMove = (e) => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top } = currentTarget.getBoundingClientRect();
+    spotlightX.set(clientX - left);
+    spotlightY.set(clientY - top);
+  };
+
+  const handleSpotlightMouseLeave = () => {
+    spotlightX.set(-1000);
+    spotlightY.set(-1000);
   };
   const [[activeServiceSlide, serviceDirection], setServiceSlideState] = useState([0, 0]);
   const swipeConfidenceThreshold = 5000;
@@ -933,6 +951,8 @@ const Home = () => {
 
       {/* Transform Business Section */}
       <Box
+        onMouseMove={handleSpotlightMouseMove}
+        onMouseLeave={handleSpotlightMouseLeave}
         sx={{
           position: 'relative',
           width: '100%',
@@ -949,15 +969,16 @@ const Home = () => {
           overflow: 'hidden'
         }}
       >
-        {/* Dark Overlay */}
+        {/* Dark Overlay (Spotlight) */}
         <Box
+          component={motion.div}
+          style={{ background: spotlightBackground }}
           sx={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'rgba(0, 0, 0, 0.6)',
             zIndex: 1
           }}
         />
