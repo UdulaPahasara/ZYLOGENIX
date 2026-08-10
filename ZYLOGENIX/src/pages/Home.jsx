@@ -884,7 +884,13 @@ const Home = () => {
             sx={{
               width: '98.48px',
               height: '89.93px',
-              objectFit: 'contain'
+              objectFit: 'contain',
+              filter: 'grayscale(100%) opacity(0.6)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              '&:hover': {
+                filter: 'grayscale(0%) opacity(1)'
+              }
             }}
           />
           
@@ -895,7 +901,13 @@ const Home = () => {
             sx={{
               width: '163.24px',
               height: '101px',
-              objectFit: 'contain'
+              objectFit: 'contain',
+              filter: 'grayscale(100%) opacity(0.6)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              '&:hover': {
+                filter: 'grayscale(0%) opacity(1)'
+              }
             }}
           />
           
@@ -907,7 +919,13 @@ const Home = () => {
               width: '175px',
               height: '68px',
               borderRadius: '8.18px',
-              objectFit: 'contain'
+              objectFit: 'contain',
+              filter: 'grayscale(100%) opacity(0.6)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              '&:hover': {
+                filter: 'grayscale(0%) opacity(1)'
+              }
             }}
           />
         </Box>
