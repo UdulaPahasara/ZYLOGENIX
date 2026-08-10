@@ -706,7 +706,7 @@ const Home = () => {
           width: '100%',
           minHeight: 'auto',
           backgroundColor: '#000000',
-          padding: { xs: '60px 20px', md: '100px 0' },
+          padding: { xs: '60px 20px', md: '80px 40px', lg: '100px 80px', xl: '100px 120px' },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
