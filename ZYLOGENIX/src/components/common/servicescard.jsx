@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { motion } from 'framer-motion';
 
 // Icons
 import HumanIcon from '../../assets/icon/human.webp';
@@ -9,6 +10,18 @@ import BellIcon from '../../assets/icon/bell.webp';
 import PaperPlaneIcon from '../../assets/icon/paperPlane.webp';
 
 const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => {
+  const leftVariants = {
+    enter: { x: -250, opacity: 0 },
+    center: { x: 0, opacity: 1 },
+    exit: { x: -250, opacity: 0 }
+  };
+
+  const rightVariants = {
+    enter: { x: 250, opacity: 0 },
+    center: { x: 0, opacity: 1 },
+    exit: { x: 250, opacity: 0 }
+  };
+
   return (
     <Box
       sx={{
@@ -19,18 +32,22 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
         },
         gap: '20px',
         width: '100%',
-        maxWidth: '940px', 
+        height:"250px",
+        maxWidth: '1150px', 
         margin: '0 auto',
       }}
     >
       {/* Text Box */}
       <Box
+        component={motion.div}
+        variants={reverse ? rightVariants : leftVariants}
+        transition={{ type: "tween", duration: 1.2, ease: "easeOut" }}
         sx={{
-          flex: { xs: '1 1 auto', md: '0 0 618px' },
-          minHeight: '378px',
+          flex: { xs: '1 1 auto', md: '1 1 70%' },
+          minHeight: '250px',
           background: bgGradient || 'linear-gradient(113.49deg, #8D53DB 5.01%, #4B2C75 79.43%)',
           borderRadius: '20px',
-          padding: { xs: '30px 20px', md: '50px 45px' }, 
+          padding: { xs: '20px', md: '30px 40px' }, 
           display: 'flex',
           flexDirection: 'column',
           boxSizing: 'border-box',
@@ -41,11 +58,11 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 700,
-            fontSize: { xs: '26px', md: '34.04px' },
-            lineHeight: { xs: '34px', md: '43.12px' },
+            fontSize: { xs: '22px', md: '26px' },
+            lineHeight: { xs: '30px', md: '34px' },
             textTransform: 'capitalize',
             color: 'rgba(255, 255, 255, 1)',
-            mb: '20px',
+            mb: '15px',
             textAlign: { xs: 'center', md: 'left' }
           }}
         >
@@ -56,8 +73,8 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 400,
-            fontSize: '16px',
-            lineHeight: '25px',
+            fontSize: '14px',
+            lineHeight: '22px',
             textTransform: 'capitalize',
             textAlign: { xs: 'center', md: 'justify' },
             color: 'rgba(255, 255, 255, 1)',
@@ -75,7 +92,9 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
             justifyContent: { xs: 'center', md: 'space-between' },
             alignItems: 'center',
             gap: { xs: '20px', md: '0px' },
-            mt: '30px'
+            mt: '20px',
+            pt: '15px',
+            borderTop: '1px solid rgba(255,255,255,0.2)'
           }}
         >
           {/* Icons Group */}
@@ -116,8 +135,11 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
 
       {/* Image Wrapper */}
       <Box
+        component={motion.div}
+        variants={reverse ? leftVariants : rightVariants}
+        transition={{ type: "tween", duration: 1.2, ease: "easeOut" }}
         sx={{
-          flex: { xs: '1 1 auto', md: '0 0 300px' },
+          flex: { xs: '1 1 auto', md: '0 0 350px' },
           display: 'flex',
           alignItems: 'stretch',
           width: '100%'
@@ -130,7 +152,7 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
           sx={{
             width: '100%',
             height: '100%',
-            minHeight: { xs: '200px', md: '378px' },
+            minHeight: { xs: '200px', md: '250px' },
             objectFit: 'cover',
             borderRadius: '20px',
             boxSizing: 'border-box'

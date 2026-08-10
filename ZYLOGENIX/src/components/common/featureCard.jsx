@@ -52,8 +52,8 @@ const FeatureCard = ({
           alignItems: 'stretch',
           zIndex: 1,
           px: { xs: '20px', sm: '0px', md: '0px' },
-          //mt:{ lg: bgColor === '#FFFFFF' ? 1 : 0 },
-          //mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : 0 },
+          mt:{ lg: bgColor === '#FFFFFF' ? 6 : 0, },
+          mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : -1,md:bgColor === '#FFFFFF' ? -8 : 0,xs:bgColor === '#FFFFFF' ? -8 : 0, },
         }}
       >
         <motion.div

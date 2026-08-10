@@ -106,6 +106,8 @@ const DesignBranding = () => {
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="rgba(0, 0, 0, 1)"
+          objectFitOverride='contain'
+          imageScale={0.8}
           imagePosition="left"
         />
 
@@ -119,6 +121,7 @@ const DesignBranding = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#FFFFFF"
           textColor="#000000"
+          imageScale={0.8}
           imagePosition="right"
         />
 

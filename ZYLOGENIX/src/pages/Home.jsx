@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HomeHero from '../assets/home/Homehero.webp';
 import WhyZylogenixImg from '../assets/home/WHY ZYLOGENIX.webp';
@@ -96,6 +96,23 @@ const slidesData = [
 
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springConfig = { damping: 25, stiffness: 150 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+  const imageX = useTransform(smoothX, [-0.5, 0.5], [-25, 25]);
+  const imageY = useTransform(smoothY, [-0.5, 0.5], [-25, 25]);
+
+  const handleWhyZylogenixMouseMove = (e) => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const x = (clientX - left) / width - 0.5;
+    const y = (clientY - top) / height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
   const [[activeServiceSlide, serviceDirection], setServiceSlideState] = useState([0, 0]);
   const swipeConfidenceThreshold = 5000;
   const swipePower = (offset, velocity) => {
@@ -105,6 +122,10 @@ const Home = () => {
   const sliderRef = useRef(null);
   const activeSlideRef = useRef(activeSlide);
   const isScrolling = useRef(false);
+
+  const servicesRef = useRef(null);
+  const activeServiceSlideRef = useRef(activeServiceSlide);
+  const isServicesScrolling = useRef(false);
 
   const paginateService = (newDirection) => {
     setServiceSlideState((prev) => {
@@ -123,28 +144,53 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      paginateService(1);
-    }, 12000);
-    return () => clearInterval(timer);
+    activeServiceSlideRef.current = activeServiceSlide;
   }, [activeServiceSlide]);
+
+  useEffect(() => {
+    const servicesSlider = servicesRef.current;
+    if (!servicesSlider) return;
+
+    const handleServicesWheel = (e) => {
+      if (isServicesScrolling.current) {
+        e.preventDefault();
+        return;
+      }
+
+      if (e.deltaY > 0) {
+        if (activeServiceSlideRef.current < servicesData.length - 1) {
+          e.preventDefault();
+          isServicesScrolling.current = true;
+          paginateService(1);
+          setTimeout(() => { isServicesScrolling.current = false; }, 800);
+        }
+      } else if (e.deltaY < 0) {
+        if (activeServiceSlideRef.current > 0) {
+          e.preventDefault();
+          isServicesScrolling.current = true;
+          paginateService(-1);
+          setTimeout(() => { isServicesScrolling.current = false; }, 800);
+        }
+      }
+    };
+
+    servicesSlider.addEventListener('wheel', handleServicesWheel, { passive: false });
+    return () => servicesSlider.removeEventListener('wheel', handleServicesWheel);
+  }, []);
 
   const serviceVariants = {
     enter: (direction) => {
       return {
-        x: direction > 0 ? 50 : -50,
         opacity: 0
       };
     },
     center: {
       zIndex: 1,
-      x: 0,
       opacity: 1
     },
     exit: (direction) => {
       return {
         zIndex: 0,
-        x: direction < 0 ? 50 : -50,
         opacity: 0
       };
     }
@@ -425,11 +471,14 @@ const Home = () => {
       </Box>
 
       <Box
+        onMouseMove={handleWhyZylogenixMouseMove}
+        onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
         sx={{
           width: '100%',
+          
           maxWidth: '1440px',
           margin: '0 auto',
-          height: { xs: 'auto', md: '639px' },
+          height: { xs: 'auto', md: '500px' },
           backgroundColor: 'rgba(26, 12, 47, 1)',
           position: 'relative',
           overflow: 'hidden',
@@ -457,23 +506,31 @@ const Home = () => {
         />
 
         <Box
-          component="img"
-          src={WhyZylogenixImg}
-          alt="Why Zylogenix"
+          component={motion.div}
+          style={{ x: imageX, y: imageY }}
           sx={{
-            width: { xs: '100%', sm: '400px', md: '45%', lg: '500px' },
-            height: { xs: 'auto', md: '550px' },
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
-            alignSelf: { xs: 'center', md: 'flex-end' },
             zIndex: 1,
-            transform: { 
-              xs: 'scale(1.1) translateY(30px)', 
-              md: 'scale(1.25) translateY(110px)' 
-            }, 
-            transformOrigin: 'bottom center',
+            alignSelf: { xs: 'center', md: 'flex-end' },
+            display: 'flex',
           }}
-        />
+        >
+          <Box
+            component="img"
+            src={WhyZylogenixImg}
+            alt="Why Zylogenix"
+            sx={{
+              width: { xs: '100%', sm: '400px', md: '45%', lg: '500px' },
+              height: { xs: 'auto', md: '450px' },
+              objectFit: 'contain',
+              objectPosition: 'bottom center',
+              transform: { 
+                xs: 'scale(1.1) translateY(30px)', 
+                md: 'scale(1.15) translateY(40px)' 
+              }, 
+              transformOrigin: 'bottom center',
+            }}
+          />
+        </Box>
 
         <Box
           sx={{
@@ -644,9 +701,10 @@ const Home = () => {
       </Box>
       {/* Services Cards Section */}
       <Box
+        ref={servicesRef}
         sx={{
           width: '100%',
-          minHeight: { xs: 'auto', md: '1115px' },
+          minHeight: 'auto',
           backgroundColor: '#000000',
           padding: { xs: '60px 20px', md: '100px 0' },
           display: 'flex',
@@ -697,23 +755,10 @@ const Home = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "tween", duration: 0.6, ease: "easeInOut" },
-              opacity: { duration: 0.8, ease: "easeInOut" }
+              x: { type: "tween", duration: 1.2, ease: "easeOut" },
+              opacity: { duration: 1.0, ease: "easeInOut" }
             }}
-            style={{ width: '100%', cursor: 'grab', touchAction: 'pan-y' }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-
-              if (swipe < -swipeConfidenceThreshold) {
-                paginateService(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginateService(-1);
-              }
-            }}
-            whileTap={{ cursor: "grabbing" }}
+            style={{ width: '100%' }}
           >
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '20px', md: '28px' }, width: '100%', alignItems: 'center' }}>
               {servicesData[activeServiceSlide].map((service, index) => (

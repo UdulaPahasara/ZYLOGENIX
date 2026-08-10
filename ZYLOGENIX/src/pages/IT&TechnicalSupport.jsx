@@ -170,6 +170,7 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           image={Img5}
           objectFitOverride="contain"
+
           badgeText="Virtual Tech Support"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
@@ -182,6 +183,7 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           className="white-section"
           image={Img6}
+          imageScale={0.8}
           badgeText="WhatsApp Business Integration"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
