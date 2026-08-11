@@ -16,6 +16,8 @@ import LoadingScreen from './components/common/LoadingScreen';
 import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
+import ScrollToTopButton from './components/common/ScrollToTopButton';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,6 +29,7 @@ function App() {
       
       <Router>
         <ScrollToTop />
+        {!isLoading && <ScrollToTopButton />}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
