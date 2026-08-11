@@ -166,6 +166,16 @@ const ContentSocialMedia = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#000000"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 573px' }, 
+            width: { xs: '100%', sm: '50%', lg: '573px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '535px' },
+            ml: { xs: '0px', lg: '39px' },
+            mt: { xs: '0px', lg: '104px' } 
+          }}
         />
 
         {/* Card 6 */}
