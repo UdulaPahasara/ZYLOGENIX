@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 import ScrollToTop from './components/common/ScrollToTop';
@@ -12,26 +12,36 @@ import ContentSocialMedia from './pages/Content&SocialMedia';
 import DigitalMarketing from './pages/DigitalMarketing';
 import WebApp from './pages/Web&App';
 import ITTechnicalSupport from './pages/IT&TechnicalSupport';
+import LoadingScreen from './components/common/LoadingScreen';
+import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/capabilities" element={<Capabilities />} />
-        <Route path="/technology" element={<Technology />} />
-        <Route path="/design-branding" element={<DesignBranding />} />
-        <Route path="/content-social-media" element={<ContentSocialMedia />} />
-        <Route path="/digital-marketing" element={<DigitalMarketing />} />
-        <Route path="/web-app" element={<WebApp />} />
-        <Route path="/it-technical-support" element={<ITTechnicalSupport />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <>
+      <AnimatePresence>
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+      
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/design-branding" element={<DesignBranding />} />
+          <Route path="/content-social-media" element={<ContentSocialMedia />} />
+          <Route path="/digital-marketing" element={<DigitalMarketing />} />
+          <Route path="/web-app" element={<WebApp />} />
+          <Route path="/it-technical-support" element={<ITTechnicalSupport />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

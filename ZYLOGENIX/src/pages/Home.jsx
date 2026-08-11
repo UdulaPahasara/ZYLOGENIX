@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useMotionTemplate } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HomeHero from '../assets/home/Homehero.webp';
+import HomeHeroVideo from '../assets/home/Vhero.mp4';
 import WhyZylogenixImg from '../assets/home/WHY ZYLOGENIX.webp';
 import DeliverCard from '../components/common/deleverCard';
 import ServicesCard from '../components/common/servicescard';
@@ -254,16 +254,24 @@ const Home = () => {
       <Box
         sx={{
           width: '100%',
-          height: { xs: '99vh', md: '781px' },
-          backgroundImage: `url(${HomeHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          height: { xs: '356px', md: '580px',sm:'400px' },
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          overflow: 'hidden',
         }}
       >
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hero-bg-video"
+          src={HomeHeroVideo}
+        />
+
         <Box
           sx={{
             position: 'absolute',
@@ -272,6 +280,7 @@ const Home = () => {
             width: '100%',
             height: '100%',
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            zIndex: 1,
           }}
         />
         
@@ -296,8 +305,8 @@ const Home = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '40px', md: '72px' },
-              lineHeight: { xs: '50px', md: '85px' },
+              fontSize: { xs: '32px', sm: '52px', md: '72px' },
+              lineHeight: { xs: '42px', sm: '62px', md: '85px' },
               textTransform: 'uppercase',
               color: 'rgba(255, 255, 255, 1)',
             }}
@@ -322,8 +331,8 @@ const Home = () => {
               sx={{
                 fontFamily: 'Poppins',
                 fontWeight: 800,
-                fontSize: { xs: '40px', md: '72px' },
-                lineHeight: { xs: '50px', md: '85px' },
+                fontSize: { xs: '32px', sm: '52px', md: '72px' },
+                lineHeight: { xs: '42px', sm: '62px', md: '85px' },
                 textTransform: 'uppercase',
                 color: 'rgba(255, 255, 255, 1)',
               }}
@@ -722,32 +731,44 @@ const Home = () => {
         ref={servicesRef}
         sx={{
           width: '100%',
+        
           minHeight: 'auto',
           backgroundColor: '#000000',
-          padding: { xs: '60px 20px', md: '80px 40px', lg: '100px 80px', xl: '100px 120px' },
+          padding: { xs: '60px 20px', md: '70px 40px', lg: '70px 80px', xl: '80px 120px' },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           boxSizing: 'border-box'
+          
         }}
       >
-        <Typography
+        <Box
           sx={{
-            fontFamily: 'Poppins',
-            fontWeight: 600,
-            fontSize: '16px',
-            lineHeight: '25px',
-            textTransform: 'uppercase',
-            background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            mt: { xs: "0px", lg: "-70px" },
-            mb: '15px',
-            textAlign: 'center'
+            backgroundColor: '#000000',
+            border: '1px solid rgba(190, 82, 206, 0.4)',
+            borderRadius: '100px',
+            padding: '6px 20px',
+            mb: '18px',
+            mt: { xs: "0px", lg: "-35px" },
           }}
         >
-          OUR SERVICES
-        </Typography>
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 600,
+              fontSize: '13px',
+              lineHeight: '25px',
+              textTransform: 'uppercase',
+              background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textAlign: 'center',
+              letterSpacing: '1.5px',
+            }}
+          >
+            OUR SERVICES
+          </Typography>
+        </Box>
 
         <Typography
           sx={{
@@ -778,7 +799,7 @@ const Home = () => {
             }}
             style={{ width: '100%' }}
           >
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '20px', md: '28px' }, width: '100%', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '14px', md: '16px' }, width: '100%', alignItems: 'center' }}>
               {servicesData[activeServiceSlide].map((service, index) => (
                 <ServicesCard 
                   key={index}
