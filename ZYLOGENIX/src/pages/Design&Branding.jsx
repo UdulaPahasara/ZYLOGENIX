@@ -107,8 +107,16 @@ const DesignBranding = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="rgba(0, 0, 0, 1)"
           objectFitOverride='contain'
-          imageScale={0.8}
+          imageScale={1}
           imagePosition="left"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 483px' }, 
+            width: { xs: '100%', sm: '50%', lg: '483px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '613px' },
+            ml: { xs: '0px', lg: '105px' },
+            mt: { xs: '0px', lg: '26px' } 
+          }}
         />
 
         {/* Card 2: White Background */}
@@ -121,8 +129,29 @@ const DesignBranding = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#FFFFFF"
           textColor="#000000"
-          imageScale={0.8}
+          imageScale={1}
           imagePosition="right"
+          objectFitOverride='contain'
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 433px' }, 
+            width: { xs: '100%', sm: '50%', lg: '433px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '600px' }
+          }}
+          badgeSx={{ 
+            width: { lg: '153px' }, 
+            height: { lg: '24px' },
+            padding: { lg: '0px' } // Reset default padding since we set fixed width/height
+          }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         />
 
         {/* Card 3: Dark Brown Background */}
@@ -134,6 +163,16 @@ const DesignBranding = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="rgba(16, 8, 1, 1)"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride='cover'
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 682px' }, 
+            width: { xs: '100%', sm: '50%', lg: '682px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '639px' },
+            mt: { xs: '0px', lg: '0px' }, // Flush with top
+            mb: { xs: '0px', lg: '0px' }  // Flush with bottom
+          }}
         />
 
       </Box>

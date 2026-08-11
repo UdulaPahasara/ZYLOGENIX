@@ -14,7 +14,14 @@ const FeatureCard = ({
   className,
   disableBottomMargin = false,
   imageScale = 1,
-  objectFitOverride
+  objectFitOverride,
+  containerSx = {},
+  imageContainerSx = {},
+  imageSx = {},
+  textContainerSx = {},
+  badgeSx = {},
+  titleSx = {},
+  descriptionSx = {}
 }) => {
   const isImageRight = imagePosition === 'right';
 
@@ -36,7 +43,7 @@ const FeatureCard = ({
         position: 'relative',
         margin: '0 auto',
         overflow: 'hidden',
-        
+        ...containerSx
       }}
     >
       {/* Image Section */}
@@ -54,6 +61,7 @@ const FeatureCard = ({
           px: { xs: '20px', sm: '0px', md: '0px' },
           mt:{ lg: bgColor === '#FFFFFF' ? 6 : 0, },
           mb: disableBottomMargin ? 0 : { lg: bgColor === '#FFFFFF' ? -8 : -1,md:bgColor === '#FFFFFF' ? -8 : 0,xs:bgColor === '#FFFFFF' ? -8 : 0, },
+          ...imageContainerSx
         }}
       >
         <motion.div
@@ -72,7 +80,8 @@ const FeatureCard = ({
               height: '100%',
               display: 'block',
               objectFit: objectFitOverride || (bgColor === '#FFFFFF' ? 'contain' : 'cover'),
-              transform: `scale(${imageScale})`
+              transform: `scale(${imageScale})`,
+              ...imageSx
             }}
           />
         </motion.div>
@@ -91,6 +100,7 @@ const FeatureCard = ({
           py: { xs: '40px', sm: '40px', md: '60px' },
           pl: { xs: '20px', sm: '24px', lg: isImageRight ? '60px' : '45px' }, 
           pr: { xs: '20px', sm: '24px', lg: isImageRight ? '45px' : '60px' },
+          ...textContainerSx
         }}
       >
         {/* Gradient Badge */}
@@ -112,7 +122,8 @@ const FeatureCard = ({
               fontSize: '11.52px',
               lineHeight: '23.99px',
               color: 'rgba(255, 255, 255, 1)',
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
+              ...badgeSx
             }}
           >
             {badgeText}
@@ -130,7 +141,8 @@ const FeatureCard = ({
             mb: '30px',
             textTransform: 'capitalize',
             maxWidth: '472px',
-            whiteSpace: 'pre-line' // Respects \n characters in the title prop
+            whiteSpace: 'pre-line', // Respects \n characters in the title prop
+            ...titleSx
           }}
         >
           {title}
@@ -146,7 +158,8 @@ const FeatureCard = ({
               lineHeight: '25px',
               color: textColor,
               mb: '20px',
-              maxWidth: '486px'
+              maxWidth: '486px',
+              ...descriptionSx
             }}
           >
             {description1}
@@ -162,7 +175,8 @@ const FeatureCard = ({
               fontSize: '16px',
               lineHeight: '25px',
               color: textColor,
-              maxWidth: '486px'
+              maxWidth: '486px',
+              ...descriptionSx
             }}
           >
             {description2}
