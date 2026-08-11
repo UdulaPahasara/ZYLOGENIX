@@ -923,14 +923,15 @@ const Home = () => {
             src={RoodwaveImg}
             alt="Roodwave"
             sx={{
-              width: '98.48px',
-              height: '89.93px',
+              width: '70.48px',
+              height: '70.93px',
               objectFit: 'contain',
               filter: 'grayscale(100%) opacity(0.6)',
               transition: 'all 0.3s ease',
               cursor: 'pointer',
               '&:hover': {
-                filter: 'grayscale(0%) opacity(1)'
+                filter: 'grayscale(0%) opacity(1)',
+                transform: 'scale(1.15)'
               }
             }}
           />
@@ -940,14 +941,15 @@ const Home = () => {
             src={LevestageImg}
             alt="Levestage"
             sx={{
-              width: '163.24px',
+              width: '110.24px',
               height: '101px',
               objectFit: 'contain',
               filter: 'grayscale(100%) opacity(0.6)',
               transition: 'all 0.3s ease',
               cursor: 'pointer',
               '&:hover': {
-                filter: 'grayscale(0%) opacity(1)'
+                filter: 'grayscale(0%) opacity(1)',
+                transform: 'scale(1.15)'
               }
             }}
           />
@@ -957,7 +959,7 @@ const Home = () => {
             src={InfluencerhubImg}
             alt="Influencer Hub"
             sx={{
-              width: '175px',
+              width: '145px',
               height: '68px',
               borderRadius: '8.18px',
               objectFit: 'contain',
@@ -965,7 +967,8 @@ const Home = () => {
               transition: 'all 0.3s ease',
               cursor: 'pointer',
               '&:hover': {
-                filter: 'grayscale(0%) opacity(1)'
+                filter: 'grayscale(0%) opacity(1)',
+                transform: 'scale(1.15)'
               }
             }}
           />
