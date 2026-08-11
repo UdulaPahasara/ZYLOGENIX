@@ -113,15 +113,24 @@ const WebApp = () => {
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
-          bgColor="#0A0A0A"
+          bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride='cover'
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 580px' }, 
+            width: { xs: '100%', sm: '50%', lg: '580px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '639px' },
+            ml: { xs: '0px', lg: '45px' },
+            mt: { xs: '0px', lg: '0px' } 
+          }}
         />
 
         {/* Card 2 */}
         <FeatureCard 
           className="white-section"
           image={Img2}
-          imageScale={0.80}
           badgeText="Website Redesign & Maintenance"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
@@ -129,19 +138,49 @@ const WebApp = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride='contain'
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
+            width: { xs: '100%', sm: '50%', lg: '487px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '614px' }
+          }}
+          badgeSx={{ 
+            width: { lg: '153px' }, 
+            height: { lg: '24px' },
+            padding: { lg: '0px' } 
+          }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         />
 
         {/* Card 3 */}
         <FeatureCard 
           image={Img3}
-          objectFitOverride="contain"
-          imageScale={0.78}
           badgeText="E-Commerce Development"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#0B1117"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride='contain'
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 391px' }, 
+            width: { xs: '100%', sm: '50%', lg: '391px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '557px' },
+            ml: { xs: '0px', lg: '148px' },
+            mt: { xs: '0px', lg: '84px' } 
+          }}
         />
 
         {/* Card 4 */}
@@ -155,6 +194,14 @@ const WebApp = () => {
           bgColor="rgba(232, 232, 232, 1)"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride='cover'
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '633px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 537px' }, 
+            width: { xs: '100%', sm: '50%', lg: '537px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '634px' }
+          }}
         />
 
         {/* Card 5 */}
@@ -166,6 +213,14 @@ const WebApp = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#0D1614"
           imagePosition="left"
+          imageScale={0.999}
+          objectFitOverride='cover'
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 590px' }, 
+            width: { xs: '100%', sm: '50%', lg: '590px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '638px' }
+          }}
         />
 
       </Box>
