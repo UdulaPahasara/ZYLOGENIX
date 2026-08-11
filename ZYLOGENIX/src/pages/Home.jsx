@@ -1129,6 +1129,11 @@ const Home = () => {
       >
         {/* Left Side: Image Container */}
         <Box
+          component={motion.div}
+          initial={{ opacity: 0, x: -150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
           sx={{
             flex: { xs: '1 1 auto', sm: '0 0 40%', md: '0 0 456px' },
             display: 'flex',
