@@ -199,17 +199,23 @@ const Home = () => {
   const serviceVariants = {
     enter: (direction) => {
       return {
-        opacity: 0
+        opacity: 0,
+        filter: 'brightness(1)',
+        transition: { duration: 1.2, ease: "easeInOut" }
       };
     },
     center: {
       zIndex: 1,
-      opacity: 1
+      opacity: 1,
+      filter: 'brightness(1)',
+      transition: { duration: 1.2, ease: "easeInOut" }
     },
     exit: (direction) => {
       return {
         zIndex: 0,
-        opacity: 0
+        opacity: 0,
+        filter: 'brightness(0.2)',
+        transition: { duration: 0.3, ease: "easeInOut" }
       };
     }
   };
@@ -793,10 +799,6 @@ const Home = () => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{
-              x: { type: "tween", duration: 1.2, ease: "easeOut" },
-              opacity: { duration: 1.0, ease: "easeInOut" }
-            }}
             style={{ width: '100%' }}
           >
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '14px', md: '16px' }, width: '100%', alignItems: 'center' }}>

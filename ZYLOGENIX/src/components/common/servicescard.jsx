@@ -11,15 +11,15 @@ import PaperPlaneIcon from '../../assets/icon/paperPlane.webp';
 
 const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => {
   const leftVariants = {
-    enter: { x: -250, opacity: 0 },
-    center: { x: 0, opacity: 1 },
-    exit: { x: -250, opacity: 0 }
+    enter: { x: -250, opacity: 0, filter: 'brightness(1)', transition: { duration: 1.2, ease: "easeInOut" } },
+    center: { x: 0, opacity: 1, filter: 'brightness(1)', transition: { duration: 1.2, ease: "easeInOut" } },
+    exit: { x: -250, opacity: 0, filter: 'brightness(0.2)', transition: { duration: 0.4, ease: "easeInOut" } }
   };
 
   const rightVariants = {
-    enter: { x: 250, opacity: 0 },
-    center: { x: 0, opacity: 1 },
-    exit: { x: 250, opacity: 0 }
+    enter: { x: 250, opacity: 0, filter: 'brightness(1)', transition: { duration: 1.2, ease: "easeInOut" } },
+    center: { x: 0, opacity: 1, filter: 'brightness(1)', transition: { duration: 1.2, ease: "easeInOut" } },
+    exit: { x: 250, opacity: 0, filter: 'brightness(0.2)', transition: { duration: 0.4, ease: "easeInOut" } }
   };
 
   return (
@@ -41,7 +41,6 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
       <Box
         component={motion.div}
         variants={reverse ? rightVariants : leftVariants}
-        transition={{ type: "tween", duration: 1.2, ease: "easeOut" }}
         sx={{
           flex: { xs: '1 1 auto', sm: '1 1 68%' },
           minHeight: { xs: 'auto', sm: '230px' },
@@ -141,7 +140,6 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
       <Box
         component={motion.div}
         variants={reverse ? leftVariants : rightVariants}
-        transition={{ type: "tween", duration: 1.2, ease: "easeOut" }}
         sx={{
           flex: { xs: '1 1 auto', sm: '0 0 250px', md: '0 0 310px' },
           display: 'flex',
