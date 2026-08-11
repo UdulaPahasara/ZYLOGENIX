@@ -9,6 +9,8 @@ import KeyIcon from '../assets/About/key.webp';
 import Footer from '../components/footer/footer';
 import VrBoxImg from '../assets/About/vrbox.webp';
 import HandTogetherImg from '../assets/About/handtogather.webp';
+import HeroBg from '../assets/About/hero.webp';
+import HeroManImg from '../assets/About/heroMan.webp';
 import { motion } from 'framer-motion';
 
 const cardsData = [
@@ -83,21 +85,98 @@ const About = () => {
 
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
-      {/* Blank Hero Section (To be implemented later) */}
+      {/* Hero Section */}
       <Box
         sx={{
+          position: 'relative',
           width: '100%',
-          height: { xs: 'auto', md: '768px',lg:'768px' },
-          minHeight: '400px',
-          backgroundColor: '#121212', // Placeholder dark background
+          height: { xs: '450px', sm: '430px', md: '410px',lg:'560px' },
+          backgroundColor: '#0a0a0a', 
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          overflow: 'hidden',
+          pt: { xs: '60px', md: '80px' } // offset for navbar if needed
         }}
       >
-        <Typography sx={{ color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'Poppins', fontSize: '24px' }}>
-          [ Hero Content Placeholder ]
-        </Typography>
+        {/* Matrix Background */}
+        <Box
+          component="img"
+          src={HeroBg}
+          alt="Matrix Background"
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.6,
+            zIndex: 0
+          }}
+        />
+
+        {/* Huge Background Text */}
+        <Box
+          sx={{
+            position: 'absolute',
+            zIndex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            top: { xs: '15%', sm: '39%', md: '25%' },
+            width: '100%',
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 800,
+              fontSize: { xs: '60px', sm: '100px', md: '160px', lg: '200px' },
+              lineHeight: 1,
+              color: 'rgba(255, 255, 255, 0.4)',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              letterSpacing: { xs: '2px', md: '5px' }
+            }}
+          >
+            ABOUT
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: 800,
+              fontSize: { xs: '40px', sm: '70px', md: '110px', lg: '140px' },
+              lineHeight: 1,
+              color: 'rgba(255, 255, 255, 0.4)',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              letterSpacing: { xs: '2px', md: '5px' }
+            }}
+          >
+            ZYLOGENIX
+          </Typography>
+        </Box>
+
+        {/* Hero Character Image overriding text */}
+        <Box
+          component={motion.img}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          src={HeroManImg}
+          alt="Zylogenix Hero"
+          sx={{
+            position: 'absolute',
+            zIndex: 2,
+            bottom: { xs: '-20px', sm: '-40px', md: '-50px' }, // sticks to bottom of section
+            width: { xs: '320px', sm: '450px', md: '600px', lg: '768px' },
+            height: 'auto',
+            objectFit: 'contain',
+            pointerEvents: 'none'
+          }}
+        />
       </Box>
 
       {/* Why Choose Zylogenix Section */}

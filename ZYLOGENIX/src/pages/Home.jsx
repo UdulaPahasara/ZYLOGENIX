@@ -260,7 +260,7 @@ const Home = () => {
       <Box
         sx={{
           width: '100%',
-          height: { xs: '356px', md: '580px',sm:'400px' },
+          height: { xs: '356px', md: '580px',sm:'400px',lg:'640px' },
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
@@ -559,7 +559,7 @@ const Home = () => {
               transform: { 
                 xs: 'scale(1) translateY(30px)',
                 sm: 'scale(1.05) translateY(20px)',
-                md: 'scale(1.15) translateY(40px)' 
+                md: 'scale(1) translateY(40px)' 
               }, 
               transformOrigin: 'bottom center',
             }}
