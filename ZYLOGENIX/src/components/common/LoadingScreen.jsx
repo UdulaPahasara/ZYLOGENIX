@@ -7,8 +7,8 @@ const LoadingScreen = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // 7 seconds total duration = 7000ms
-    // We update progress every 70ms to get 100 steps (70ms * 100 = 7000ms)
+    // 7 seconds total duration = 5000ms
+   
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -17,7 +17,7 @@ const LoadingScreen = ({ onComplete }) => {
         }
         return prev + 1;
       });
-    }, 70);
+    }, 50);
 
     return () => clearInterval(interval);
   }, []);
@@ -63,7 +63,7 @@ const LoadingScreen = ({ onComplete }) => {
         alt="Zylogenix Logo"
         sx={{
           width: '100%',
-          maxWidth: { xs: '180px', sm: '220px', md: '250px' },
+          maxWidth: { xs: '180px', sm: '220px', md: '150px' },
           height: 'auto',
           mb: 4, // margin bottom to space out the progress bar
         }}
@@ -73,7 +73,7 @@ const LoadingScreen = ({ onComplete }) => {
       <Box
         sx={{
           width: '100%',
-          maxWidth: { xs: '250px', sm: '300px', md: '400px' },
+          maxWidth: { xs: '250px', sm: '300px', md: '200px' },
           height: '2px',
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           position: 'relative',

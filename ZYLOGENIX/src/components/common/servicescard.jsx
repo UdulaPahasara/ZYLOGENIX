@@ -27,8 +27,9 @@ const ServicesCard = ({ title, description, imageSrc, reverse, bgGradient }) => 
       sx={{
         display: 'flex',
         flexDirection: { 
-          xs: 'column-reverse', 
-          sm: reverse ? 'row-reverse' : 'row' 
+          xs: 'column-reverse',
+          sm: 'row-reverse',           // tablet: image (DOM 2nd) on left, text on right
+          md: reverse ? 'row-reverse' : 'row'  // desktop: alternating layout
         },
         gap: '16px',
         width: '100%',

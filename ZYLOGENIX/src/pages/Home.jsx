@@ -508,19 +508,18 @@ const Home = () => {
         onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
         sx={{
           width: '100%',
-          
           maxWidth: '1440px',
           margin: '0 auto',
-          height: { xs: 'auto', md: '500px' },
+          height: { xs: 'auto', sm: '380px', md: '500px' },
           backgroundColor: 'rgba(26, 12, 47, 1)',
           position: 'relative',
           overflow: 'hidden',
           display: 'flex',
-          flexDirection: { xs: 'column-reverse', md: 'row' },
+          flexDirection: { xs: 'column-reverse', sm: 'row', md: 'row' },
           alignItems: 'center',
           justifyContent: 'center',
-          gap: { xs: '20px', md: '40px', lg: '85px' },
-          padding: { xs: '60px 20px 0 20px', md: '0 40px', lg: '0' },
+          gap: { xs: '20px', sm: '24px', md: '40px', lg: '85px' },
+          padding: { xs: '60px 20px 0 20px', sm: '0 24px', md: '0 40px', lg: '0' },
           boxSizing: 'border-box'
         }}
       >
@@ -543,8 +542,9 @@ const Home = () => {
           style={{ x: imageX, y: imageY }}
           sx={{
             zIndex: 1,
-            alignSelf: { xs: 'center', md: 'flex-end' },
+            alignSelf: { xs: 'center', sm: 'flex-end', md: 'flex-end' },
             display: 'flex',
+            flexShrink: 0,
           }}
         >
           <Box
@@ -552,12 +552,13 @@ const Home = () => {
             src={WhyZylogenixImg}
             alt="Why Zylogenix"
             sx={{
-              width: { xs: '100%', sm: '400px', md: '45%', lg: '500px' },
-              height: { xs: 'auto', md: '450px' },
+              width: { xs: '100%', sm: '280px', md: '450px', lg: '500px' },
+              height: { xs: 'auto', sm: '320px', md: '450px', lg: '500px' },
               objectFit: 'contain',
               objectPosition: 'bottom center',
               transform: { 
-                xs: 'scale(1.1) translateY(30px)', 
+                xs: 'scale(1) translateY(30px)',
+                sm: 'scale(1.05) translateY(20px)',
                 md: 'scale(1.15) translateY(40px)' 
               }, 
               transformOrigin: 'bottom center',
@@ -569,10 +570,10 @@ const Home = () => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: { xs: '100%', md: '50%', lg: 'auto' },
+            width: { xs: '100%', sm: '55%', md: '45%', lg: 'auto' },
             maxWidth: '530px',
             zIndex: 1,
-            alignItems: { xs: 'center', md: 'flex-start' },
+            alignItems: { xs: 'center', sm: 'flex-start', md: 'flex-start' },
           }}
         >
           <Typography
@@ -586,7 +587,7 @@ const Home = () => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               mb: '11px',
-              textAlign: { xs: 'center', md: 'left' }
+              textAlign: { xs: 'center', sm: 'left', md: 'left' }
             }}
           >
             WHY ZYLOGENIX
@@ -596,14 +597,14 @@ const Home = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 600,
-              fontSize: { xs: '22px', sm: '26px', md: '30px' },
-              lineHeight: { xs: '30px', sm: '34px', md: '38px' },
+              fontSize: { xs: '22px', sm: '20px', md: '30px' },
+              lineHeight: { xs: '30px', sm: '28px', md: '38px' },
               textTransform: 'capitalize',
               color: 'rgba(255, 255, 255, 1)',
               mb: '22px', 
               wordWrap: 'break-word',
               width: '100%',
-              textAlign: { xs: 'center', md: 'left' }
+              textAlign: { xs: 'center', sm: 'left', md: 'left' }
             }}
           >
             Solutions Built Around Your Business Vision
@@ -613,12 +614,12 @@ const Home = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: { xs: '14px', sm: '16px' },
-              lineHeight: { xs: '22px', sm: '25px' },
+              fontSize: { xs: '14px', sm: '12px', md: '16px' },
+              lineHeight: { xs: '22px', sm: '18px', md: '25px' },
               textTransform: 'capitalize',
-              textAlign: { xs: 'center', md: 'justify' },
+              textAlign: { xs: 'center', sm: 'justify', md: 'justify' },
               color: 'rgba(255, 255, 255, 1)',
-              mb: '30px',
+              mb: { xs: '30px', sm: '16px', md: '30px' },
               wordWrap: 'break-word',
               width: '100%',
             }}
