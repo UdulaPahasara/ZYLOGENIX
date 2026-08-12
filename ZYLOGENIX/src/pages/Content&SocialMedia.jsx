@@ -117,6 +117,15 @@ const ContentSocialMedia = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="rgba(16, 8, 1, 1)"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride="cover"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 627px' }, 
+            width: { xs: '100%', sm: '50%', lg: '627px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '637px' }
+          }}
+          imageSx={{ transform: { xs: 'scale(0.999)', sm: 'scale(0.99) ', md: 'scale(1)', lg: 'scale(1) ' } }}
         />
 
         {/* Card 2 */}
@@ -130,7 +139,17 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
-          
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 578px' }, 
+            width: { xs: '100%', sm: '50%', lg: '578px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '609px' },
+            mb:{xs:'0',sm:'-150px',md:'-130px',lg:'-10px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.99)', sm: 'scale(0.99)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />
 
         {/* Card 3 */}
@@ -142,6 +161,15 @@ const ContentSocialMedia = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#1E0B36"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride="cover"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 632px' }, 
+            width: { xs: '100%', sm: '50%', lg: '632px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '631px' }
+          }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1)', md: 'scale(0.999)', lg: 'scale(1)' } }}
         />
 
         {/* Card 4 */}
@@ -155,6 +183,18 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 635px' }, 
+            width: { xs: '100%', sm: '50%', lg: '635px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '583px' },
+            mb:{xs:'0',sm:'-190px',md:'-150px',lg:'-10px'},
+            mr:{xs:'0',sm:'40px',md:'-14px',lg:'-10px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.99)', sm: 'scale(1.4)', md: 'scale(0.95)', lg: 'scale(1)' } }}
         />
 
         {/* Card 5 */}
@@ -174,8 +214,10 @@ const ContentSocialMedia = () => {
             width: { xs: '100%', sm: '50%', lg: '573px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '535px' },
             ml: { xs: '0px', lg: '39px' },
-            mt: { xs: '0px', lg: '104px' } 
+            mt: { xs: '0px', lg: '104px' } ,
+            mb:{xs:'0',sm:'-140px',md:'-150px',lg:'-10px'}
           }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1.2)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />
 
         {/* Card 6 */}
@@ -189,6 +231,16 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 635px' }, 
+            width: { xs: '100%', sm: '50%', lg: '635px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '583px' }
+          }}
+          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.99)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
       </Box>
