@@ -144,9 +144,10 @@ const WebApp = () => {
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
-            height: { xs: 'auto', sm: 'auto', lg: '614px' }
+            height: { xs: 'auto', sm: 'auto', lg: '614px' },
+            mb:{xs:'0',sm:'-120px',md:'-150px',lg:'-10px'}
           }}
-          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
           badgeSx={{ 
             width: { lg: '153px' }, 
             height: { lg: '24px' },
@@ -162,7 +163,7 @@ const WebApp = () => {
             lineHeight: { lg: '25px' }, 
             maxWidth: { lg: '486px' }
           }}
-          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.9)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 3 */}
@@ -182,7 +183,8 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '391px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '557px' },
             ml: { xs: '0px', lg: '148px' },
-            mt: { xs: '0px', lg: '84px' } 
+            mt: { xs: '0px', lg: '84px' },
+            mb:{xs:'0',sm:'-100px',md:'-100px',lg:'-10px'}
           }}
           imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
@@ -204,7 +206,9 @@ const WebApp = () => {
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 537px' }, 
             width: { xs: '100%', sm: '50%', lg: '537px' }, 
-            height: { xs: 'auto', sm: 'auto', lg: '634px' }
+            height: { xs: 'auto', sm: 'auto', lg: '634px' },
+            mr:{xs:'0',sm:'-35px',md:'-150px',lg:'-10px'},
+            mb:{xs:'0',sm:'-60px',md:'-100px',lg:'-10px'}
           }}
           textContainerSx={{ pl: { sm: '30px', lg: '180px' } }}
           imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
@@ -227,7 +231,7 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '590px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '638px' }
           }}
-          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.85)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.999)', md: 'scale(0.999)', lg: 'scale(1)' } }}
         />
 
       </Box>
