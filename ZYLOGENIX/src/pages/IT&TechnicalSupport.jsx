@@ -115,15 +115,24 @@ const ITTechnicalSupport = () => {
         {/* Card 1 */}
         <FeatureCard 
           image={Img1}
-          objectFitOverride="contain"
-          imageScale={0.97}
           badgeText="Server Management & Security"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#050000"
           imagePosition="left"
-          
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 390px' }, 
+            width: { xs: '100%', sm: '50%', lg: '390px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '584px' },
+            ml: { xs: '0px', lg: '160px' },
+            mt: { xs: '-70px',sm:'10px',md:'0px', lg: '55px' },
+            mb:{xs:'-70px',sm:'-118px',md:'-110px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.75)', md: 'scale(0.7)', lg: 'scale(1)' } }}
         />
 
         {/* Card 2 */}
@@ -137,26 +146,48 @@ const ITTechnicalSupport = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: {sm:'20px', lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 574px' }, 
+            width: { xs: '100%', sm: '50%', lg: '574px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '430px' },
+            mt: { xs: '-40px', lg: '110px' },
+            mr: { xs: '0px', lg: '10px' },
+            mb:{xs:'10px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.85)'}}}
         />
 
         {/* Card 3 */}
         <FeatureCard 
           image={Img3}
-          objectFitOverride="contain"
-          imageScale={0.95}
           badgeText="Payment Gateway Integration"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
-          bgColor="#03060B"
+          bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 430px' }, 
+            width: { xs: '100%', sm: '50%', lg: '430px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '585px' },
+            ml: { xs: '0px', lg: '128px' },
+            mt: { xs: '-60px',sm:'44px', lg: '54px' },
+            mb:{xs:'-62px',sm:'-110px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 4 */}
         <FeatureCard 
           className="white-section"
           image={Img4}
-          objectFitOverride="contain"
           badgeText="QA & Testing"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
@@ -164,26 +195,46 @@ const ITTechnicalSupport = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: { sm:'20px',lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 405px' }, 
+            width: { xs: '100%', sm: '50%', lg: '405px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '561px' },
+            mt: { xs: '-70px', lg: '76px' },
+            mr: { xs: '0px', lg: '105px' },
+            mb:{xs:'-70px',sm:'-205px',md:'-85px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 5 */}
         <FeatureCard 
           image={Img5}
-          objectFitOverride="contain"
-
           badgeText="Virtual Tech Support"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#000000"
           imagePosition="left"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 472px' }, 
+            width: { xs: '100%', sm: '50%', lg: '472px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '574px' },
+            ml: { xs: '0px', lg: '125px' },
+            mt: { xs: '0px', md: '30px', lg: '67px' },
+            mb: { xs: '0px', md: '-74px',sm:'-40px' }
+          }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 6 */}
         <FeatureCard 
           className="white-section"
           image={Img6}
-          imageScale={0.8}
           badgeText="WhatsApp Business Integration"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
@@ -191,18 +242,45 @@ const ITTechnicalSupport = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageScale={1}
+          objectFitOverride="contain"
+          
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          textContainerSx={{ pl: { sm:'20px',lg: '180px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 383px' }, 
+            width: { xs: '100%', sm: '50%', lg: '383px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '574px' },
+            mt: { xs: '-60px',sm:'-60px', lg: '40px' },
+            mr: { xs: '0px', lg: '105px' },
+            mb:{xs:'-30px',sm:'-150px',md:'-90px'}
+
+          }}
+          imageSx={{ transform: { xs: 'scale(0.8)',sm: 'scale(0.75)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 7 */}
         <FeatureCard 
           image={Img7}
-          objectFitOverride="contain"
           badgeText="IT Outsourcing"
           title={"Lorem Lipsum Solor\nLorem Lipsms"}
           description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
-          bgColor="#01000C"
+          bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
+          imageScale={1}
+          objectFitOverride="contain"
+          containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+          imageContainerSx={{ 
+            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 597px' }, 
+            width: { xs: '100%', sm: '50%', lg: '597px' }, 
+            height: { xs: 'auto', sm: 'auto', lg: '585px' },
+            ml: { xs: '0px', lg: '-7px' },
+            mt: { xs: '0px', md: '50px', lg: '55px' },
+            mb:{sm:'-70px'}
+          }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1.3)', md: 'scale(0.999)', lg: 'scale(1)' } }}
+        
         />
 
       </Box>

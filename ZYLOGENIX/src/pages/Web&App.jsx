@@ -125,6 +125,7 @@ const WebApp = () => {
             ml: { xs: '0px', lg: '45px' },
             mt: { xs: '0px', lg: '0px' } 
           }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />
 
         {/* Card 2 */}
@@ -145,6 +146,7 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '614px' }
           }}
+          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
           badgeSx={{ 
             width: { lg: '153px' }, 
             height: { lg: '24px' },
@@ -160,6 +162,7 @@ const WebApp = () => {
             lineHeight: { lg: '25px' }, 
             maxWidth: { lg: '486px' }
           }}
+          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 3 */}
@@ -181,6 +184,7 @@ const WebApp = () => {
             ml: { xs: '0px', lg: '148px' },
             mt: { xs: '0px', lg: '84px' } 
           }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 4 */}
@@ -202,6 +206,8 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '537px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '634px' }
           }}
+          textContainerSx={{ pl: { sm: '30px', lg: '180px' } }}
+          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 5 */}
@@ -213,7 +219,7 @@ const WebApp = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#0D1614"
           imagePosition="left"
-          imageScale={0.999}
+          imageScale={1}
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -221,6 +227,7 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '590px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '638px' }
           }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />
 
       </Box>
