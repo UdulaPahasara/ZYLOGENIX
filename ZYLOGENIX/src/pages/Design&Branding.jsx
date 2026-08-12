@@ -109,13 +109,14 @@ const DesignBranding = () => {
           objectFitOverride='contain'
           imageScale={1}
           imagePosition="left"
+          
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 483px' }, 
             width: { xs: '100%', sm: '50%', lg: '483px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '613px' },
             ml: { xs: '0px', lg: '105px' },
-            mt: { xs: '0px', lg: '26px' } 
+            mt: { xs: '0px',sm:'80px', lg: '26px' } 
           }}
         />
 
@@ -132,6 +133,7 @@ const DesignBranding = () => {
           imageScale={1}
           imagePosition="right"
           objectFitOverride='contain'
+          textContainerSx={{ pl: { sm:'40px',lg: '180px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 433px' }, 
             width: { xs: '100%', sm: '50%', lg: '433px' }, 

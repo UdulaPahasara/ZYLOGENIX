@@ -90,7 +90,7 @@ const About = () => {
         sx={{
           position: 'relative',
           width: '100%',
-          height: { xs: '450px', sm: '430px', md: '410px',lg:'560px' },
+          height: { xs: '420px', sm: '430px', md: '410px',lg:'560px' },
           backgroundColor: '#0a0a0a', 
           display: 'flex',
           alignItems: 'center',
@@ -125,7 +125,7 @@ const About = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            top: { xs: '15%', sm: '39%', md: '25%' },
+            top: { xs: '50%', sm: '39%', md: '25%' },
             width: '100%',
           }}
         >
@@ -147,7 +147,7 @@ const About = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '40px', sm: '70px', md: '110px', lg: '140px' },
+              fontSize: { xs: '50px', sm: '70px', md: '110px', lg: '140px' },
               lineHeight: 1,
               color: 'rgba(255, 255, 255, 0.4)',
               textAlign: 'center',
@@ -170,7 +170,7 @@ const About = () => {
           sx={{
             position: 'absolute',
             zIndex: 2,
-            bottom: { xs: '-20px', sm: '-40px', md: '-50px' }, // sticks to bottom of section
+            bottom: { xs: '-10px', sm: '-40px', md: '-50px' }, // sticks to bottom of section
             width: { xs: '320px', sm: '450px', md: '600px', lg: '768px' },
             height: 'auto',
             objectFit: 'contain',
