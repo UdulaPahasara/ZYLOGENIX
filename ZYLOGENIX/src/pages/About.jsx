@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
 import AboutWhyCard from '../components/common/aboutWhycard';
 import DocumentIcon from '../assets/About/document.webp';
 import UsersIcon from '../assets/About/users.webp';
@@ -11,7 +11,8 @@ import VrBoxImg from '../assets/About/vrbox.webp';
 import HandTogetherImg from '../assets/About/handtogather.webp';
 import HeroBg from '../assets/About/hero.webp';
 import HeroManImg from '../assets/About/heroMan.webp';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import OurMissionAndVision from '../components/common/ourMission&vision';
 
 const cardsData = [
   {
@@ -47,8 +48,28 @@ const cardsData = [
 ];
 
 const About = () => {
+  const theme = useTheme();
+  // Target strictly mobile phones (<600px). Tablets (sm/600px+) act as desktop.
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
   const scrollRef = useRef(null);
+  const heroWrapperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showCards, setShowCards] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: heroWrapperRef,
+    offset: ['start start', 'end end']
+  });
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    // Show cards when past 30% into the sticky zone, hide when back above
+    if (latest > 0.3) {
+      setShowCards(true);
+    } else {
+      setShowCards(false);
+    }
+  });
 
   // Handle manual scrolling to update active dot
   const handleScroll = () => {
@@ -84,100 +105,140 @@ const About = () => {
   }, [activeIndex]);
 
   return (
-    <Box sx={{ width: '100%', overflowX: 'hidden' }}>
-      {/* Hero Section */}
+    <Box sx={{ width: '100%', overflow: 'clip' }}>
+    {/* Hero Sticky Scroll Wrapper — allows scroll-jacking on desktop only */}
       <Box
+        ref={heroWrapperRef}
         sx={{
           position: 'relative',
-          width: '100%',
-          height: { xs: '420px', sm: '430px', md: '410px',lg:'560px' },
-          backgroundColor: '#0a0a0a', 
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          pt: { xs: '60px', md: '80px' } // offset for navbar if needed
+          height: isMobile ? 'auto' : { sm: '170vh', md: '180vh' },
         }}
       >
-        {/* Matrix Background */}
+        {/* Hero Section — sticky on desktop, normal relative on mobile */}
         <Box
-          component="img"
-          src={HeroBg}
-          alt="Matrix Background"
           sx={{
-            position: 'absolute',
+            position: isMobile ? 'relative' : 'sticky',
             top: 0,
-            left: 0,
             width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.6,
-            zIndex: 0
-          }}
-        />
-
-        {/* Huge Background Text */}
-        <Box
-          sx={{
-            position: 'absolute',
-            zIndex: 1,
+            height: { xs: '420px', sm: '430px', md: '410px', lg: '560px' },
+            backgroundColor: '#0a0a0a',
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            top: { xs: '50%', sm: '39%', md: '25%' },
-            width: '100%',
+            overflow: 'hidden',
+            pt: { xs: '60px', md: '80px' }
           }}
         >
-          <Typography
+          {/* Matrix Background */}
+          <Box
+            component="img"
+            src={HeroBg}
+            alt="Matrix Background"
             sx={{
-              fontFamily: 'Poppins',
-              fontWeight: 800,
-              fontSize: { xs: '60px', sm: '100px', md: '160px', lg: '200px' },
-              lineHeight: 1,
-              color: 'rgba(255, 255, 255, 0.4)',
-              textAlign: 'center',
-              textTransform: 'uppercase',
-              letterSpacing: { xs: '2px', md: '5px' }
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              opacity: 0.6,
+              zIndex: 0
             }}
-          >
-            ABOUT
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: 'Poppins',
-              fontWeight: 800,
-              fontSize: { xs: '50px', sm: '70px', md: '110px', lg: '140px' },
-              lineHeight: 1,
-              color: 'rgba(255, 255, 255, 0.4)',
-              textAlign: 'center',
-              textTransform: 'uppercase',
-              letterSpacing: { xs: '2px', md: '5px' }
-            }}
-          >
-            ZYLOGENIX
-          </Typography>
-        </Box>
+          />
 
-        {/* Hero Character Image overriding text */}
-        <Box
-          component={motion.img}
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          src={HeroManImg}
-          alt="Zylogenix Hero"
-          sx={{
-            position: 'absolute',
-            zIndex: 2,
-            bottom: { xs: '-10px', sm: '-40px', md: '-50px' }, // sticks to bottom of section
-            width: { xs: '320px', sm: '450px', md: '600px', lg: '768px' },
-            height: 'auto',
-            objectFit: 'contain',
-            pointerEvents: 'none'
-          }}
-        />
+          {/* Huge Background Text */}
+          <Box
+            sx={{
+              position: 'absolute',
+              zIndex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              top: { xs: '50%', sm: '39%', md: '25%' },
+              width: '100%',
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Poppins',
+                fontWeight: 800,
+                fontSize: { xs: '60px', sm: '100px', md: '160px', lg: '200px' },
+                lineHeight: 1,
+                color: 'rgba(255, 255, 255, 0.4)',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: { xs: '2px', md: '5px' }
+              }}
+            >
+              ABOUT
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: 'Poppins',
+                fontWeight: 800,
+                fontSize: { xs: '50px', sm: '70px', md: '110px', lg: '140px' },
+                lineHeight: 1,
+                color: 'rgba(255, 255, 255, 0.4)',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: { xs: '2px', md: '5px' }
+              }}
+            >
+              ZYLOGENIX
+            </Typography>
+          </Box>
+
+          {/* Hero Character Image */}
+          <Box
+            component={motion.img}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            src={HeroManImg}
+            alt="Zylogenix Hero"
+            sx={{
+              position: 'absolute',
+              zIndex: 2,
+              bottom: { xs: '-10px', sm: '-40px', md: '-50px' },
+              width: { xs: '320px', sm: '450px', md: '600px', lg: '768px' },
+              height: 'auto',
+              objectFit: 'contain',
+              pointerEvents: 'none'
+            }}
+          />
+
+          {/* Mission and Vision — overlay on desktop/tablet only */}
+          {!isMobile && (
+            <Box
+              sx={{
+                position: 'absolute',
+                zIndex: 10,
+                bottom: { sm: '20px', md: '30px', lg: '40px' },
+                width: '100%',
+                px: { sm: 2, md: 4 }
+              }}
+            >
+              <OurMissionAndVision showCards={showCards} />
+            </Box>
+          )}
+        </Box>
       </Box>
+
+      {/* Mission & Vision — separate section below hero on mobile only */}
+      {isMobile && (
+        <Box
+          sx={{
+            width: '100%',
+            backgroundColor: '#0a0a0a',
+            py: { xs: '40px', sm: '50px' },
+            px: { xs: 2, sm: 3 },
+            boxSizing: 'border-box',
+          }}
+        >
+          <OurMissionAndVision showCards={true} />
+        </Box>
+      )}
 
       {/* Why Choose Zylogenix Section */}
       <Box
