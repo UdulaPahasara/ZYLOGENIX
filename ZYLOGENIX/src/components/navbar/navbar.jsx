@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, IconButton, useTheme, useMediaQuery, Menu, MenuItem } from '@mui/material';
+import { Box, Typography, IconButton, useTheme, useMediaQuery, Menu, MenuItem, Collapse } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ZylogenixLogo from '../../assets/Logo/ZylogenixLogo.webp';
 
@@ -8,6 +10,8 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState(null);
+  const [capabilitiesAnchorEl, setCapabilitiesAnchorEl] = useState(null);
+  const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const [isWhiteBackground, setIsWhiteBackground] = useState(false);
@@ -40,17 +44,37 @@ const Navbar = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    setMobileCapabilitiesOpen(false);
+  };
+
+  const handleCapabilitiesOpen = (event) => {
+    setCapabilitiesAnchorEl(event.currentTarget);
+  };
+
+  const handleCapabilitiesClose = () => {
+    setCapabilitiesAnchorEl(null);
   };
 
   const handleNavigation = (path) => {
     navigate(path);
     handleMenuClose();
+    handleCapabilitiesClose();
   };
 
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
-    { label: 'Capabilities', path: '/capabilities' },
+    { 
+      label: 'Capabilities', 
+      path: '/capabilities',
+      subItems: [
+        { label: 'Design & Branding', path: '/design-branding' },
+        { label: 'Content & Social Media', path: '/content-social-media' },
+        { label: 'Digital Marketing', path: '/digital-marketing' },
+        { label: 'Web & App', path: '/web-app' },
+        { label: 'IT & Technical Support', path: '/it-technical-support' }
+      ]
+    },
     { label: 'Technology', path: '/technology' },
   ];
 
@@ -106,25 +130,94 @@ const Navbar = () => {
       {!isMobile && (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '42px',marginLeft:{md:'130px',lg:'510px'} }}>
           {navItems.map((item) => (
-            <Typography
-              key={item.label}
-              onClick={() => handleNavigation(item.path)}
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: '16px',
-                lineHeight: '16px',
-                textTransform: 'capitalize',
-                color: location.pathname === item.path ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: 'rgba(190, 82, 206, 1)'
-                }
-              }}
-            >
-              {item.label}
-            </Typography>
+            <Box key={item.label}>
+              <Typography
+                onClick={(e) => item.subItems ? handleCapabilitiesOpen(e) : handleNavigation(item.path)}
+                sx={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '16px',
+                  lineHeight: '16px',
+                  textTransform: 'capitalize',
+                  color: location.pathname === item.path || (item.subItems && item.subItems.some(sub => location.pathname === sub.path)) ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  transition: 'color 0.3s ease',
+                  '&:hover': {
+                    color: 'rgba(190, 82, 206, 1)'
+                  }
+                }}
+              >
+                {item.label}
+                {item.subItems && <KeyboardArrowDownIcon sx={{ ml: 0.5, fontSize: 20 }} />}
+              </Typography>
+              
+              {item.subItems && (
+                <Menu
+                  anchorEl={capabilitiesAnchorEl}
+                  open={Boolean(capabilitiesAnchorEl)}
+                  onClose={handleCapabilitiesClose}
+                  disableScrollLock
+                  anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                  sx={{
+                    '& .MuiPaper-root': {
+                      mt: 1.5,
+                      backgroundColor: '#000000',
+                      background: '#000000',
+                      color: '#ffffff',
+                      borderRadius: '14px 14px 14px 14px',
+                      minWidth: '230px',
+                      boxShadow: '0 24px 70px rgba(0,0,0,1), 0 0 40px rgba(190,82,206,0.2)',
+                      '&::-webkit-scrollbar': { display: 'none' },
+                      scrollbarWidth: 'none',
+                    },
+                    '& .MuiList-root': {
+                      padding: 0,
+                      backgroundColor: '#000000',
+                    },
+                    '& .MuiMenuItem-root': {
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '15px',
+                      padding: '14px 28px',
+                      color: '#ffffff',
+                      borderLeft: '3px solid transparent',
+                      letterSpacing: '0.4px',
+                      transition: 'all 0.2s ease',
+                      '&:hover': {
+                        backgroundColor: 'rgba(190, 82, 206, 0.18)',
+                        color: 'rgba(190, 82, 206, 1)',
+                        borderLeft: '3px solid rgba(190, 82, 206, 1)',
+                        paddingLeft: '34px',
+                      },
+                    },
+                  }}
+                  MenuListProps={{
+                    onMouseLeave: handleCapabilitiesClose,
+                    disablePadding: true,
+                  }}
+                >
+                  {item.subItems.map((subItem, idx) => (
+                    <MenuItem
+                      key={subItem.label}
+                      onClick={() => handleNavigation(subItem.path)}
+                      sx={{
+                        borderBottom: idx < item.subItems.length - 1 ? '1px solid rgba(190, 82, 206, 0.15)' : 'none',
+                        ...(location.pathname === subItem.path && {
+                          color: 'rgba(190, 82, 206, 1) !important',
+                          backgroundColor: 'rgba(190, 82, 206, 0.15) !important',
+                          borderLeft: '3px solid rgba(190, 82, 206, 1) !important',
+                        }),
+                      }}
+                    >
+                      {subItem.label}
+                    </MenuItem>
+                  ))}
+                </Menu>
+              )}
+            </Box>
           ))}
         </Box>
       )}
@@ -191,23 +284,57 @@ const Navbar = () => {
             background: 'rgba(0, 0, 0, 0.9)',
             backdropFilter: 'blur(10px)',
             color: 'white',
-            width: '200px',
+            width: '240px',
             border: '1px solid rgba(190, 82, 206, 0.3)'
           }
         }}
       >
         {navItems.map((item) => (
-          <MenuItem 
-            key={item.label} 
-            onClick={() => handleNavigation(item.path)}
-            sx={{
-              fontFamily: 'Poppins, sans-serif',
-              color: location.pathname === item.path ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
-              fontWeight: 600
-            }}
-          >
-            {item.label}
-          </MenuItem>
+          <Box key={item.label}>
+            <MenuItem 
+              onClick={(e) => {
+                if (item.subItems) {
+                  setMobileCapabilitiesOpen(!mobileCapabilitiesOpen);
+                  e.stopPropagation();
+                } else {
+                  handleNavigation(item.path);
+                }
+              }}
+              sx={{
+                fontFamily: 'Poppins, sans-serif',
+                color: location.pathname === item.path || (item.subItems && item.subItems.some(sub => location.pathname === sub.path)) ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
+                fontWeight: 600,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}
+            >
+              {item.label}
+              {item.subItems && (
+                mobileCapabilitiesOpen ? <KeyboardArrowUpIcon sx={{ fontSize: 20 }} /> : <KeyboardArrowDownIcon sx={{ fontSize: 20 }} />
+              )}
+            </MenuItem>
+            
+            {item.subItems && (
+              <Collapse in={mobileCapabilitiesOpen} timeout="auto" unmountOnExit>
+                {item.subItems.map((subItem) => (
+                  <MenuItem
+                    key={subItem.label}
+                    onClick={() => handleNavigation(subItem.path)}
+                    sx={{
+                      fontFamily: 'Poppins, sans-serif',
+                      color: location.pathname === subItem.path ? 'rgba(190, 82, 206, 1)' : 'rgba(255, 255, 255, 0.7)',
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      paddingLeft: '32px',
+                    }}
+                  >
+                    {subItem.label}
+                  </MenuItem>
+                ))}
+              </Collapse>
+            )}
+          </Box>
         ))}
         <MenuItem onClick={() => handleNavigation('/contact')}>
           <Typography sx={{ 

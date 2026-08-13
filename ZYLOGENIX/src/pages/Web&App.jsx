@@ -145,7 +145,7 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '614px' },
-            mb:{xs:'0',sm:'-120px',md:'-150px',lg:'-10px'}
+            mb:{xs:'0',sm:'-120px',md:'-150px',lg:'-24px'}
           }}
           textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
           badgeSx={{ 

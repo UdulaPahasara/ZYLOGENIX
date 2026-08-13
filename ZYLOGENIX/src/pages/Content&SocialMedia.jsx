@@ -169,7 +169,7 @@ const ContentSocialMedia = () => {
             width: { xs: '100%', sm: '50%', lg: '632px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '631px' }
           }}
-          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1)', md: 'scale(0.999)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1)', md: 'scale(0.999)', lg: 'scale(1.02)' } }}
         />
 
         {/* Card 4 */}
@@ -192,9 +192,9 @@ const ContentSocialMedia = () => {
             width: { xs: '100%', sm: '50%', lg: '635px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '583px' },
             mb:{xs:'0',sm:'-190px',md:'-150px',lg:'-10px'},
-            mr:{xs:'0',sm:'40px',md:'-14px',lg:'-10px'}
+            mr:{xs:'0',sm:'40px',md:'-14px',lg:'0px'}
           }}
-          imageSx={{ transform: { xs: 'scale(0.99)', sm: 'scale(1.4)', md: 'scale(0.95)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.99)', sm: 'scale(1.4)', md: 'scale(0.95)', lg: 'scale(1.027)' } }}
         />
 
         {/* Card 5 */}
