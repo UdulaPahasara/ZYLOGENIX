@@ -259,7 +259,7 @@ const Home = () => {
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
       <Box
         sx={{
-          width: '100%',
+          width: '100.01%',
           height: { xs: '356px', md: '580px',sm:'400px',lg:'640px' },
           position: 'relative',
           display: 'flex',
