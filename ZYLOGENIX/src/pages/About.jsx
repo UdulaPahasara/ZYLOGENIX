@@ -658,6 +658,11 @@ const About = () => {
         <Box sx={{ position: 'relative', width: '100%', maxWidth: '940px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', mb: { xs: '40px', md: '80px' } }}>
           {/* Background Gradient Box */}
           <Box
+            component={motion.div}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             sx={{
               position: 'absolute',
               bottom: 0,
@@ -670,7 +675,11 @@ const About = () => {
           />
           {/* Hand Together Image */}
           <Box
-            component="img"
+            component={motion.img}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             src={HandTogetherImg}
             alt="Partnership"
             sx={{
