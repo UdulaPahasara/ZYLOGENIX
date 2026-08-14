@@ -23,6 +23,15 @@ const panGradient = keyframes`
   }
 `;
 
+const textLoadingFill = keyframes`
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+`;
+
 const cardsData = [
   {
     icon: DocumentIcon,
@@ -546,25 +555,36 @@ const About = () => {
             </Box>
           </Box>
 
-          {/* Right Side: Image Area with Animation */}
+          {/* Right Side: Image Area with 3D Animation (Option 2) */}
           <Box
             component={motion.div}
             variants={{
-              hidden: { opacity: 0, x: 50 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+              hidden: { opacity: 0, y: 60, scale: 0.82, rotateX: 12 },
+              visible: { 
+                opacity: 1, 
+                y: 0, 
+                scale: 1, 
+                rotateX: 0, 
+                transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } 
+              }
             }}
             sx={{
               flex: { xs: '1 1 100%', sm: '1 1 44.5%' },
               width: { xs: '100%', sm: '44.5%' },
               height: { xs: '350px', sm: '639px' },
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              perspective: '1000px'
             }}
           >
             <motion.div
-              animate={{ y: [0, -15, 0] }}
+              animate={{ 
+                y: [0, -14, 0],
+                rotateZ: [-1.5, 1.5, -1.5],
+                rotateY: [-3, 3, -3]
+              }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '100%', height: '100%', transformStyle: 'preserve-3d' }}
             >
               <Box
                 component="img"
@@ -573,7 +593,7 @@ const About = () => {
                 sx={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   objectPosition: 'center'
                 }}
               />
@@ -597,20 +617,24 @@ const About = () => {
         }}
       >
         <Typography
+          component={motion.h2}
+          initial={{ backgroundPosition: '100% 0' }}
+          whileInView={{ backgroundPosition: '0% 0' }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 6.0, ease: 'linear' }}
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
             fontSize: { xs: '28px', sm: '36px', md: '50px' },
             lineHeight: { xs: '38px', sm: '50px', md: '70px' },
-            background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 25%, #8D53DB 50%, #BE52CE 75%, #F6B0FE 100%)',
-            backgroundSize: '300% auto',
+            background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 20%, #8D53DB 50%, rgba(210, 180, 220, 0.4) 50.1%, rgba(210, 180, 220, 0.4) 100%)',
+            backgroundSize: '200% 100%',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textAlign: 'center',
             textTransform: 'capitalize',
             maxWidth: '940px',
-            marginBottom: '30px',
-            animation: `${panGradient} 5s ease-in-out infinite alternate`
+            marginBottom: '30px'
           }}
         >
           Get Found. Grow your Business with Zylogenix. Trackable Results.
