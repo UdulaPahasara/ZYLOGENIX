@@ -279,8 +279,9 @@ const Navbar = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
-        PaperProps={{
-          sx: {
+        sx={{
+          '& .MuiPaper-root': {
+            backgroundColor: '#000000',
             background: 'rgba(0, 0, 0, 0.9)',
             backdropFilter: 'blur(10px)',
             color: 'white',
