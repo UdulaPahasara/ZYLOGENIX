@@ -172,8 +172,8 @@ const DesignBranding = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 682px' }, 
             width: { xs: '100%', sm: '50%', lg: '682px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '639px' },
-            mt: { xs: '0px', lg: '0px' }, // Flush with top
-            mb: { xs: '0px', lg: '0px' }  // Flush with bottom
+            mt: { xs: '0px', lg: '0px' }, 
+            mb: { xs: '0px', lg: '0px' }  
           }}
         />
 

@@ -1,7 +1,26 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const InterestedCard = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: 'easeOut' }
+    }
+  };
+
   return (
     <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' }, display: 'flex', justifyContent: 'center' }}>
       <Box 
@@ -61,10 +80,19 @@ const InterestedCard = () => {
         </Box>
 
         {/* Right Side (Boxes Stack) */}
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%', maxWidth: '472px' }}>
+        <Box 
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          sx={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%', maxWidth: '472px' }}
+        >
           {/* Light Grey Boxes */}
           {[1, 2, 3].map((item) => (
             <Box
+              component={motion.div}
+              variants={cardVariants}
               key={item}
               sx={{
                 width: '100%',
@@ -108,6 +136,8 @@ const InterestedCard = () => {
 
           {/* Interested Box */}
           <Box
+            component={motion.div}
+            variants={cardVariants}
             sx={{
               width: '100%',
               minHeight: '155px',

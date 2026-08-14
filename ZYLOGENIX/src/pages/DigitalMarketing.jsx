@@ -130,6 +130,12 @@ const DigitalMarketing = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          imageContainerSx={{ 
+            ml: { xs: '160px', sm: '0px' },
+            mr: { xs: '0px', sm: '-160px' },
+            mt: { xs: '-100px', sm: '-60px' } 
+          }}
+          imageSx={{ transform: { sm: 'scale(1.3)' } }}
         />
 
         {/* Card 3 */}
@@ -142,6 +148,7 @@ const DigitalMarketing = () => {
           description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
           bgColor="#0B0813"
           imagePosition="left"
+         
         />
 
         {/* Card 4 */}
