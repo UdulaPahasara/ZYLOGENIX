@@ -15,11 +15,14 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
         height: '320px',
         boxSizing: 'border-box',
         flexShrink: 0,
-        transition: 'all 0.3s ease',
+        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         cursor: 'pointer',
+        border: '2px solid transparent', // Prevents layout shift on hover (matches 2px hover border)
         '&:hover': {
           transform: 'translateY(-10px) scale(1.02)',
-          boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.1)',
+         // boxShadow: '0px 15px 30px rgba(190, 82, 206, 0.2)', // Soft purple shadow
+          backgroundColor: '#FFFFFF', // Clean white background pop
+          border: `2px solid ${bgColor}`, // Use the card's specific background color for the border
         }
       }}
     >

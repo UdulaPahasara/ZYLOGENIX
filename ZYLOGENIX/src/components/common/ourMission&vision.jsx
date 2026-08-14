@@ -133,7 +133,9 @@ const OurMissionAndVision = ({ showCards }) => {
                 lineHeight: { xs: '18px', md: '22px' },
                 textTransform: 'uppercase',
                 color: 'rgba(255, 255, 255, 1)',
-                letterSpacing: '1px'
+                letterSpacing: '1px',
+                mt:{xs:'-5px',sm:'0',md:'-40px',lg:'-40px'},
+                pb:{xs:'0',md:'10px',lg:'40px'}
               }}
             >
               OUR MISSION
@@ -145,7 +147,7 @@ const OurMissionAndVision = ({ showCards }) => {
                 fontWeight: 400,
                 fontSize: { xs: '11px', sm: '12px', md: '13px', lg: '15px' },
                 lineHeight: { xs: '18px', sm: '20px', md: '22px' },
-                color: 'rgba(255, 255, 255, 1)'
+                color: 'rgba(255, 255, 255, 1)',
               }}
             >
               We Help Businesses Of All Sizes Transform Their Operations And Reach Their Full Potential Through Innovative, Affordable In Different Tiers, And Reliable Digital Solutions. We Are Committed To Providing Outstanding Customer Service And Building Long-Term Relationships With Our Clients.

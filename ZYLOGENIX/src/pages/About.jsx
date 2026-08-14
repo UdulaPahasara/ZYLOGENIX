@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, Button, useTheme, useMediaQuery, keyframes } from '@mui/material';
 import AboutWhyCard from '../components/common/aboutWhycard';
 import DocumentIcon from '../assets/About/document.webp';
 import UsersIcon from '../assets/About/users.webp';
@@ -13,6 +13,15 @@ import HeroBg from '../assets/About/hero.webp';
 import HeroManImg from '../assets/About/heroMan.webp';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import OurMissionAndVision from '../components/common/ourMission&vision';
+
+const panGradient = keyframes`
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+`;
 
 const cardsData = [
   {
@@ -46,6 +55,34 @@ const cardsData = [
     bgColor: 'rgba(243, 241, 235, 1)'
   }
 ];
+
+const WordRevealText = ({ text }) => {
+  const words = text.split(" ");
+  return (
+    <motion.span
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { staggerChildren: 0.04 } // 20ms between each word
+        }
+      }}
+    >
+      {words.map((word, index) => (
+        <motion.span
+          key={index}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 0.4 } } // Quick fade in
+          }}
+          style={{ display: 'inline-block', marginRight: '0.25em' }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+};
 
 const About = () => {
   const theme = useTheme();
@@ -332,7 +369,7 @@ const About = () => {
               width: '190px',
               height: '100%',
               background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.07%)',
-              pointerEvents: 'none', // Allows clicking/swiping through the gradient
+              pointerEvents: 'none', 
               zIndex: 10,
               display: { xs: 'none', sm: 'block' }
             }}
@@ -383,6 +420,17 @@ const About = () => {
         }}
       >
         <Box
+          component={motion.div}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 }
+            }
+          }}
           sx={{
             width: '100%',
             maxWidth: '1400px',
@@ -391,6 +439,11 @@ const About = () => {
           }}
         >
           <Box
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+            }}
             sx={{
               flex: { xs: '1 1 100%', sm: '1 1 55.5%' },
               width: { xs: '100%', sm: '55.5%' },
@@ -407,6 +460,11 @@ const About = () => {
             <Box sx={{ maxWidth: '424px', zIndex: 2, position: 'relative', left: { lg: '55px' } }}>
               {/* Top Quote */}
               <Typography
+                component={motion.span}
+                variants={{
+                  hidden: { opacity: 0, scale: 0 },
+                  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 0.4 } }
+                }}
                 sx={{
                   position: 'absolute',
                   top: '-20px',
@@ -416,64 +474,85 @@ const About = () => {
                   fontSize: { xs: '80px', sm: '110.4px' },
                   lineHeight: { xs: 1, sm: '110px' },
                   color: '#BE52CE',
-                  display: { xs: 'none', md: 'block' }
+                  display: { xs: 'none', md: 'inline-block' } // changed to inline-block for transform scale to work properly
                 }}
               >
                 “
               </Typography>
 
               <Typography
+                component={motion.p}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 } // The actual animation is handled by WordRevealText children
+                }}
                 sx={{
                   fontFamily: 'Poppins',
                   fontWeight: 400,
                   fontSize: { xs: '14px', sm: '15px', md: '16px' },
                   lineHeight: { xs: '22px', sm: '24px', md: '25px' },
                   color: '#FFFFFF',
-                  textAlign: { xs: 'center', sm: 'justify' },
+                  textAlign: { xs: 'center', sm: 'center', lg: 'center' },
                   mb: '25px',
+                  left: { lg: '20px' },
                   position: 'relative',
                   zIndex: 2
                 }}
               >
-                Zylogenix, a global Digital Solutions Company with a strong presence in Sri Lanka, specializes in Software Development. With our extensive experience in creating intelligent solutions, we take pride in our formidable team of highly skilled resources. Our mission is to create value for our clients by delivering effective and efficient solutions that harness the latest technologies, including PHP, Android, 10S, and more.
+                <WordRevealText text="Zylogenix, a global Digital Solutions Company with a strong presence in Sri Lanka, specializes in Software Development. With our extensive experience in creating intelligent solutions, we take pride in our formidable team of highly skilled resources. Our mission is to create value for our clients by delivering effective and efficient solutions that harness the latest technologies, including PHP, Android, 10S, and more." />
               </Typography>
               <Typography
+                component={motion.p}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 }
+                }}
                 sx={{
                   fontFamily: 'Poppins',
                   fontWeight: 400,
                   fontSize: { xs: '14px', sm: '15px', md: '16px' },
                   lineHeight: { xs: '22px', sm: '24px', md: '25px' },
                   color: '#FFFFFF',
-                  textAlign: { xs: 'center', sm: 'justify' },
+                  textAlign: { xs: 'center', sm: 'center', lg: 'center' },
                   position: 'relative',
+                  left: { lg: '20px' },
                   zIndex: 2
                 }}
               >
-                Embracing a culture of open communication across the organization, Zylogenix ensures a seamless implementation process. We cater to clients of all sizes, from small SMEs to large corporations, offering the perfect solution regardless of your business scale.
+                <WordRevealText text="Embracing a culture of open communication across the organization, Zylogenix ensures a seamless implementation process. We cater to clients of all sizes, from small SMEs to large corporations, offering the perfect solution regardless of your business scale." />
               </Typography>
 
               {/* Bottom Quote */}
               <Typography
+                component={motion.span}
+                variants={{
+                  hidden: { opacity: 0, scale: 0 },
+                  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 0.6 } }
+                }}
                 sx={{
                   position: 'absolute',
                   bottom: '-65px',
-                  right: { md: '-50px', lg: '-50px' },
+                  right: { md: '-23px', lg: '-35px' },
                   fontFamily: 'Monda, sans-serif',
                   fontWeight: 400,
                   fontSize: { xs: '80px', sm: '110.4px' },
                   lineHeight: { xs: 1, sm: '110px' },
                   color: '#BE52CE',
-                  transform: 'rotateY(180deg)',
-                  display: { xs: 'none', md: 'block' }
+                  display: { xs: 'none', md: 'inline-block' }
                 }}
               >
-               “
+                <span style={{ display: 'inline-block', transform: 'rotateY(180deg)' }}>“</span>
               </Typography>
             </Box>
           </Box>
 
           {/* Right Side: Image Area with Animation */}
           <Box
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+            }}
             sx={{
               flex: { xs: '1 1 100%', sm: '1 1 44.5%' },
               width: { xs: '100%', sm: '44.5%' },
@@ -483,10 +562,8 @@ const About = () => {
             }}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 1.1 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
               style={{ width: '100%', height: '100%' }}
             >
               <Box
@@ -525,13 +602,15 @@ const About = () => {
             fontWeight: 800,
             fontSize: { xs: '28px', sm: '36px', md: '50px' },
             lineHeight: { xs: '38px', sm: '50px', md: '70px' },
-            background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 36.97%, #8D53DB 82.38%)',
+            background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 25%, #8D53DB 50%, #BE52CE 75%, #F6B0FE 100%)',
+            backgroundSize: '300% auto',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textAlign: 'center',
             textTransform: 'capitalize',
             maxWidth: '940px',
-            marginBottom: '30px'
+            marginBottom: '30px',
+            animation: `${panGradient} 5s ease-in-out infinite alternate`
           }}
         >
           Get Found. Grow your Business with Zylogenix. Trackable Results.
