@@ -52,7 +52,7 @@ const ContentSocialMedia = () => {
             whiteSpace: 'pre-line'
           }}
         >
-          LOREM LIPSUM<br/>SOLO LORM
+          CONTENT &<br/>SOCIAL MEDIA
         </Typography>
       </Box>
 
@@ -82,7 +82,7 @@ const ContentSocialMedia = () => {
               textTransform: 'uppercase'
             }}
           >
-            LOREM LIPSUM SOLO LORM
+            CONTENT & SOCIAL MEDIA SERVICES
           </Typography>
         </Box>
 
@@ -112,9 +112,9 @@ const ContentSocialMedia = () => {
         <FeatureCard 
           image={Section1}
           badgeText="Content Creation & Marketing"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Content That Tells Your\nStory"}
+          description1="We Create Purposeful Content That Communicates Your Brand Message And Connects With Your Target Audience. From Creative Concepts To Digital Marketing Content, Our Approach Focuses On Relevance, Consistency, And Meaningful Engagement."
+          description2="Every Piece Of Content Is Developed To Support Your Brand Identity And Contribute To Your Broader Digital Marketing Goals."
           bgColor="rgba(16, 8, 1, 1)"
           imagePosition="left"
           imageScale={1}
@@ -133,9 +133,8 @@ const ContentSocialMedia = () => {
           className="white-section"
           image={Section2}
           badgeText="Social Media Management"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Grow Your Social\nPresence"}
+          description1="We Help Businesses Build A Consistent And Engaging Social Media Presence Through Strategic Content Planning, Publishing, And Audience Engagement. Our Solutions Are Designed To Strengthen Visibility, Build Relationships, And Keep Your Brand Connected With Its Audience."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -156,9 +155,9 @@ const ContentSocialMedia = () => {
         <FeatureCard 
           image={Section3}
           badgeText="Blog Management"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Share Knowledge. Build\nAuthority."}
+          description1="We Develop Valuable Blog Content That Informs Your Audience, Communicates Your Expertise, And Supports Your Digital Presence. Consistent, Relevant Content Can Help Your Business Build Credibility While Creating Meaningful Opportunities To Engage Potential Customers."
+          description2="Our Content Is Tailored To Your Brand And Audience, Helping You Share Useful Insights, Strengthen Your Online Presence, And Maintain A Consistent Flow Of Communication."
           bgColor="#1E0B36"
           imagePosition="left"
           imageScale={1}
@@ -177,9 +176,9 @@ const ContentSocialMedia = () => {
           className="white-section"
           image={Section4}
           badgeText="YouTube Management"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Turn Ideas Into\nEngaging Video Content"}
+          description1="We Help Businesses Establish And Manage Their YouTube Presence Through Engaging Video Content And Strategic Channel Development. From Content Planning To Presentation, We Help Communicate Your Message In A Format Your Audience Can Connect With."
+          description2="Our Approach Focuses On Creating Relevant Video Content That Reflects Your Brand, Strengthens Audience Engagement, And Supports A Consistent And Professional YouTube Presence."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -201,9 +200,9 @@ const ContentSocialMedia = () => {
         <FeatureCard 
           image={Section5}
           badgeText="LinkedIn Profile Optimization"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Strengthen Your\nProfessional Presence"}
+          description1="We Optimize LinkedIn Profiles To Present Your Professional Identity Clearly And Consistently. A Well-Structured Profile Helps Communicate Your Expertise, Strengthen Credibility, And Create A Stronger Professional Presence Online."
+          description2="We Refine Your Profile Content And Presentation To Ensure Your Professional Strengths Are Communicated Effectively And Aligned With Your Personal Or Business Goals."
           bgColor="#000000"
           imagePosition="left"
           imageScale={1}
@@ -225,9 +224,9 @@ const ContentSocialMedia = () => {
           className="white-section"
           image={Section6}
           badgeText="Video Production"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Bring Your Ideas To Life"}
+          description1="We Create Engaging Video Content Designed To Communicate Your Message Clearly And Capture Audience Attention. From Creative Concepts To Polished Visual Content, Our Approach Helps Businesses Tell Their Stories Through Impactful Video Experiences."
+          description2="We Focus On Creating Visually Compelling Content That Reflects Your Brand, Connects With Your Target Audience, And Supports Your Broader Digital Marketing Goals."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -247,25 +246,25 @@ const ContentSocialMedia = () => {
 
       {/* ─── Informational Grid Section (White Area) ─── */}
       <InterestedCard 
-        subtitle="CONTENT & SOCIAL MEDIA"
-        title="Engage Your Audience"
-        description="We create compelling content and manage your social media presence to build brand awareness and foster meaningful connections with your audience."
+        subtitle="OUR APPROACH"
+        title="Content Designed Around Your Goals"
+        description="Effective Digital Content Starts With Understanding Your Brand, Audience, And Objectives. We Combine Creativity, Strategic Thinking, And Consistent Execution To Help You Build A Stronger Digital Presence Across The Platforms That Matter To Your Business."
         boxData={[
           {
-            title: "Strategic Content",
-            description: "Developing high-quality, engaging content tailored to your target audience across various platforms and mediums."
+            title: "STRATEGIC CONTENT",
+            description: "Content Planned Around Your Brand, Audience, And Business Objectives."
           },
           {
-            title: "Community Management",
-            description: "Actively engaging with your followers, responding to inquiries, and building a loyal community around your brand."
+            title: "CONSISTENT ENGAGEMENT",
+            description: "Maintain An Active Digital Presence And Meaningful Connections With Your Audience."
           },
           {
-            title: "Performance Tracking",
-            description: "Analyzing social media metrics and content performance to optimize strategies and maximize engagement rates."
+            title: "MEASURABLE GROWTH",
+            description: "Build Stronger Visibility And Digital Experiences That Support Long-Term Business Growth."
           }
         ]}
-        interestedTitle="Elevate Your Brand"
-        interestedDescription="Let's collaborate to create a powerful content and social media strategy that resonates with your audience."
+        interestedTitle="INTERESTED ?"
+        interestedDescription="Let's Create Content And Digital Experiences That Help Your Brand Connect, Engage, And Grow."
       />
 
       {/* Footer */}
