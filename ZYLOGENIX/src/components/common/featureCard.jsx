@@ -136,7 +136,7 @@ const FeatureCard = ({
             fontFamily: 'Poppins',
             fontWeight: 600,
             fontSize: { xs: '28px', md: '37.81px' },
-            lineHeight: { xs: '36px', md: '34.79px' },
+            lineHeight: { xs: '36px', md: '34.79px',lg:'44px' },
             color: textColor,
             mb: '30px',
             textTransform: 'capitalize',

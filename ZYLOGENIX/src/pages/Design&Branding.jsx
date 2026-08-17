@@ -45,7 +45,7 @@ const DesignBranding = () => {
             whiteSpace: 'pre-line'
           }}
         >
-          LOREM LIPSUM<br/>SOLO LORM
+          DESIGN & <br/> BRANDING
         </Typography>
       </Box>
 
@@ -63,7 +63,7 @@ const DesignBranding = () => {
               mb: '10px'
             }}
           >
-            DESIGN & BRANDING
+            Designing Brands That Make an Impact
           </Typography>
           <Typography
             sx={{
@@ -75,7 +75,7 @@ const DesignBranding = () => {
               textTransform: 'uppercase'
             }}
           >
-            LOREM LIPSUM SOLO LORM
+            Creative Solutions for Stronger Brands
           </Typography>
         </Box>
 
@@ -102,9 +102,9 @@ const DesignBranding = () => {
         <FeatureCard 
           image={Img1}
           badgeText="Custom Graphic Design"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Visuals That Bring Your Brand to Life"}
+          description1="We create custom graphics that communicate your message clearly and make your brand visually memorable. From marketing materials to digital content, our designs are tailored to your identity, audience, and business objectives."
+          description2="Every visual element is crafted with consistency and purpose to help your brand stand out across digital platforms."
           bgColor="rgba(0, 0, 0, 1)"
           objectFitOverride='contain'
           imageScale={1}
@@ -125,9 +125,9 @@ const DesignBranding = () => {
           className='white-section'
           image={Img2}
           badgeText="Branding & Identity"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Build a Brand People Remember"}
+          description1="We develop cohesive brand identities that communicate who you are and what your business represents. From visual direction and brand elements to consistent digital presentation, we help create a recognizable identity across every customer touchpoint."
+          description2="Our approach combines creativity and strategy to build brands that communicate with confidence and consistency."
           bgColor="#FFFFFF"
           textColor="#000000"
           imageScale={1}
@@ -160,9 +160,9 @@ const DesignBranding = () => {
         <FeatureCard 
           image={Img3}
           badgeText="UI/UX Design"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Design Experiences People Enjoy"}
+          description1="We design intuitive and engaging digital experiences that make it easier for users to navigate, interact, and connect with your products or services. Our UI/UX process focuses on usability, functionality, and visually compelling interfaces."
+          description2="From user-focused layouts to polished interface designs, we create experiences that support both your users and business goals."
           bgColor="rgba(16, 8, 1, 1)"
           imagePosition="left"
           imageScale={1}
