@@ -14,7 +14,7 @@ const inputStyle = {
   padding: '0 28px',
   fontFamily: 'Poppins',
   fontWeight: 400,
-  fontSize: '16px',
+  fontSize: { xs: '13px', sm: '14px', md: '16px' },
   lineHeight: '25px',
   boxSizing: 'border-box',
   color: '#555',
@@ -89,7 +89,7 @@ const Contact = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
-            fontSize: { xs: '36px', sm: '52px', md: '75.72px' },
+            fontSize: { xs: '28px', sm: '52px', md: '75.72px' },
             lineHeight: 1.2,
             textAlign: 'center',
             textTransform: 'uppercase',
@@ -120,7 +120,7 @@ const Contact = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 600,
-              fontSize: { xs: '28px', sm: '38px', md: '50px' },
+              fontSize: { xs: '24px', sm: '28px', md: '50px' },
               lineHeight: 1.3,
               textTransform: 'capitalize',
               textAlign: { xs: 'center', md: 'left' },
@@ -245,7 +245,7 @@ const Contact = () => {
                   padding: '15px 28px',
                   fontFamily: 'Poppins',
                   fontWeight: 400,
-                  fontSize: '16px',
+                  fontSize: { xs: '13px', sm: '14px', md: '16px' },
                   lineHeight: '25px',
                   boxSizing: 'border-box',
                   resize: 'none',
@@ -261,7 +261,7 @@ const Contact = () => {
               type="submit"
               sx={{
                 width: '100%',
-                height: '68px',
+                height: '60px',
                 borderRadius: '20px',
                 background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
                 color: '#FFFFFF',
@@ -308,7 +308,7 @@ const Contact = () => {
               sx={{
                 fontFamily: 'Poppins',
                 fontWeight: 600,
-                fontSize: { xs: '24px', sm: '32px', md: '40px' },
+                fontSize: { xs: '24px', sm: '28px', md: '40px' },
                 lineHeight: 1.3,
                 textTransform: 'capitalize',
                 textAlign: 'center',
