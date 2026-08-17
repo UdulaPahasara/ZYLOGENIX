@@ -67,22 +67,25 @@ const ContentSocialMedia = () => {
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              textAlign: 'center',
               mb: '10px'
             }}
           >
-            CONTENT & SOCIAL MEDIA
+            Content That Connects. Social Media That Grows.
           </Typography>
           <Typography
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '40px' },
+              fontSize: { xs: '22px', sm: '28px', md: '40px' },
+              lineHeight: 1.3,
               color: '#000000',
               textAlign: 'center',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              maxWidth: { xs: '320px', sm: '100%' }
             }}
           >
-            CONTENT & SOCIAL MEDIA SERVICES
+            Build Your Digital Presence With Purpose
           </Typography>
         </Box>
 
@@ -126,6 +129,7 @@ const ContentSocialMedia = () => {
             height: { xs: 'auto', sm: 'auto', lg: '637px' }
           }}
           imageSx={{ transform: { xs: 'scale(0.999)', sm: 'scale(0.99) ', md: 'scale(1)', lg: 'scale(1) ' } }}
+          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1) 0%,rgba(255, 89, 0, 1) 100%)'
         />
 
         {/* Card 2 */}
@@ -138,6 +142,7 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          badgeBgColor='linear-gradient(90deg, rgba(82, 146, 206, 1) 0%,rgba(0, 144, 255, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
@@ -182,6 +187,7 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          badgeBgColor='linear-gradient(90deg, rgba(249, 106, 106, 1) 0%,rgba(255, 0, 0, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
@@ -205,6 +211,7 @@ const ContentSocialMedia = () => {
           description2="We Refine Your Profile Content And Presentation To Ensure Your Professional Strengths Are Communicated Effectively And Aligned With Your Personal Or Business Goals."
           bgColor="#000000"
           imagePosition="left"
+            badgeBgColor='linear-gradient(90deg, rgba(82, 146, 206, 1) 0%,rgba(0, 144, 255, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
@@ -230,6 +237,7 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+            badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}

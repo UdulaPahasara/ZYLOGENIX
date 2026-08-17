@@ -142,7 +142,7 @@ const DesignBranding = () => {
           badgeSx={{ 
             width: { lg: '153px' }, 
             height: { lg: '24px' },
-            padding: { lg: '0px' } // Reset default padding since we set fixed width/height
+            padding: { lg: '0px' } 
           }}
           titleSx={{ 
             fontSize: { xs: '25px',sm:'30px',lg: '37.81px' }, 
