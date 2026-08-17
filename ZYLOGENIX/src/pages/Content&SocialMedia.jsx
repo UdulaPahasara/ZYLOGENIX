@@ -141,7 +141,7 @@ const ContentSocialMedia = () => {
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          textContainerSx={{ pl: { xs: '20px', sm: '20px', lg: '180px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 578px' }, 
             width: { xs: '100%', sm: '50%', lg: '578px' }, 
@@ -185,7 +185,7 @@ const ContentSocialMedia = () => {
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          textContainerSx={{ pl: { xs: '20px', sm: '20px', lg: '180px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 635px' }, 
             width: { xs: '100%', sm: '50%', lg: '635px' }, 
@@ -233,7 +233,7 @@ const ContentSocialMedia = () => {
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: { sm: '20px', lg: '180px' } }}
+          textContainerSx={{ pl: { xs: '20px', sm: '20px', lg: '180px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 635px' }, 
             width: { xs: '100%', sm: '50%', lg: '635px' }, 
