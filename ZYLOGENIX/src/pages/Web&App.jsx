@@ -145,7 +145,7 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '614px' },
-            mb:{xs:'0',sm:'-120px',md:'-150px',lg:'-24px'}
+            mb:{xs:'-28px',sm:'-120px',md:'-150px',lg:'-24px'}
           }}
           textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
           badgeSx={{ 
@@ -183,10 +183,10 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '391px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '557px' },
             ml: { xs: '0px', lg: '148px' },
-            mt: { xs: '0px', lg: '84px' },
-            mb:{xs:'0',sm:'-100px',md:'-100px',lg:'-10px'}
+            mt: { xs: '-70px', lg: '84px' },
+            mb:{xs:'-68px',sm:'-100px',md:'-100px',lg:'-10px'}
           }}
-          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.7)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
         {/* Card 4 */}
@@ -207,8 +207,9 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 537px' }, 
             width: { xs: '100%', sm: '50%', lg: '537px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '634px' },
-            mr:{xs:'0',sm:'-35px',md:'-150px',lg:'-10px'},
-            mb:{xs:'0',sm:'-60px',md:'-100px',lg:'-10px'}
+            mr:{xs:'-48px',sm:'-35px',md:'-150px',lg:'-10px'},
+            mb:{xs:'-28px',sm:'-60px',md:'-100px',lg:'-10px'},
+            mt:{xs:'-40px'}
           }}
           textContainerSx={{ pl: { sm: '30px', lg: '180px' } }}
           imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
