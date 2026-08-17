@@ -50,7 +50,7 @@ const DigitalMarketing = () => {
             whiteSpace: 'pre-line'
           }}
         >
-          LOREM LIPSUM<br/>SOLO LORM
+          DIGITAL<br/>MARKETING
         </Typography>
       </Box>
 
@@ -68,7 +68,7 @@ const DigitalMarketing = () => {
               mb: '10px'
             }}
           >
-            DIGITAL MARKETING
+            STRATEGIES THAT CONNECT YOUR BRAND WITH THE RIGHT AUDIENCE
           </Typography>
           <Typography
             sx={{
@@ -80,7 +80,7 @@ const DigitalMarketing = () => {
               textTransform: 'uppercase'
             }}
           >
-            LOREM LIPSUM SOLO LORM
+            Grow Your Reach. Drive Meaningful Results.
           </Typography>
         </Box>
 
@@ -111,9 +111,9 @@ const DigitalMarketing = () => {
           disableBottomMargin={true}
           image={Section1}
           badgeText="SEO & Google Indexing"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Improve Your Search\nVisibility"}
+          description1="We Help Businesses Improve Their Online Discoverability Through SEO And Google Indexing Strategies. Our Approach Focuses On Making Your Digital Presence Easier For Search Engines And Potential Customers To Find."
+          description2="By Strengthening Your Search Presence, We Help Create Better Opportunities For Relevant Audiences To Discover Your Business And Services."
           bgColor="#0A1D1C"
           imagePosition="left"
         />
@@ -124,9 +124,9 @@ const DigitalMarketing = () => {
           className="white-section"
           image={Section2}
           badgeText="Online Advertising"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Reach The Right\nAudience"}
+          description1="We Create Targeted Online Advertising Strategies That Help Businesses Reach Potential Customers Across Relevant Digital Channels. Our Approach Focuses On Improving Visibility, Attracting Qualified Audiences, And Supporting Measurable Marketing Goals."
+          description2="From Campaign Planning To Performance Optimization, We Help Make Your Advertising Efforts More Focused And Effective."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -143,9 +143,9 @@ const DigitalMarketing = () => {
           disableBottomMargin={true}
           image={Section3}
           badgeText="Email Marketing"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Stay Connected With\nYour Audience"}
+          description1="We Develop Engaging Email Marketing Campaigns That Help Businesses Communicate Directly With Their Customers And Prospects. From Promotional Messages To Informative Campaigns, We Create Content That Keeps Your Audience Connected With Your Brand."
+          description2="Our Approach Focuses On Relevant Communication, Consistent Engagement, And Building Stronger Customer Relationships Over Time."
           bgColor="#0B0813"
           imagePosition="left"
          
@@ -158,9 +158,9 @@ const DigitalMarketing = () => {
           image={Section4}
           imageScale={1.35}
           badgeText="Google Services (Analytics, Ads)"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Turn Marketing Data\nInto Better Decisions"}
+          description1="We Help Businesses Make Better Use Of Google Analytics And Google Ads To Understand Performance, Track Audience Behavior, And Measure Marketing Results."
+          description2="By Combining Meaningful Insights With Targeted Advertising, Businesses Can Better Understand What Works And Make More Informed Decisions About Their Digital Marketing Efforts."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -171,9 +171,9 @@ const DigitalMarketing = () => {
           disableBottomMargin={true}
           image={Section5}
           badgeText="Digital Directory Listings"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Make Your Business\nEasier To Find"}
+          description1="We Help Businesses Maintain A Stronger Presence Across Relevant Digital Directories By Organizing And Optimizing Important Business Information."
+          description2="Accurate And Consistent Listings Can Help Improve Online Visibility While Making It Easier For Potential Customers To Discover And Connect With Your Business."
           bgColor="#0B0314"
           imagePosition="left"
         />
@@ -182,25 +182,25 @@ const DigitalMarketing = () => {
 
       {/* ─── Informational Grid Section (White Area) ─── */}
       <InterestedCard 
-        subtitle="DIGITAL MARKETING"
-        title="Boost Your Online Visibility"
-        description="Drive more traffic, generate leads, and increase your revenue with our comprehensive digital marketing strategies."
+        subtitle="OUR DIGITAL MARKETING APPROACH"
+        title="Marketing Built Around Your Business Goals"
+        description="Effective Digital Marketing Starts With Understanding Your Audience, Your Brand, And Your Objectives. We Combine Focused Strategies And Digital Tools To Help Businesses Strengthen Visibility, Connect With Customers, And Create Opportunities For Sustainable Growth."
         boxData={[
           {
-            title: "Data-Driven Strategies",
-            description: "We utilize advanced analytics and market research to craft strategies that deliver measurable results and high ROI."
+            title: "TARGETED STRATEGIES",
+            description: "Marketing Solutions Shaped Around Your Audience, Industry, And Business Objectives."
           },
           {
-            title: "Targeted Campaigns",
-            description: "Reach your ideal audience with precision through expertly managed SEO, PPC, and social media advertising campaigns."
+            title: "MEASURABLE PERFORMANCE",
+            description: "Use Meaningful Insights To Understand Results And Make Better Marketing Decisions."
           },
           {
-            title: "Continuous Optimization",
-            description: "We constantly monitor and refine your marketing campaigns to ensure maximum performance and efficiency."
+            title: "CONSISTENT GROWTH",
+            description: "Build A Stronger Digital Presence Through Continuous And Purposeful Marketing Efforts."
           }
         ]}
-        interestedTitle="Ready to Grow?"
-        interestedDescription="Partner with us to elevate your digital marketing efforts and achieve your business objectives."
+        interestedTitle="INTERESTED ?"
+        interestedDescription="Let's Build A Digital Marketing Strategy That Helps Your Business Reach The Right Audience And Grow Online."
       />
 
       {/* Footer */}
