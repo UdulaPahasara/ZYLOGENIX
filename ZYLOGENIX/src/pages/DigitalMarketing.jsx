@@ -135,6 +135,22 @@ const DigitalMarketing = () => {
             mr: { xs: '0px', sm: '-160px' },
             mt: { xs: '-100px', sm: '-60px' } 
           }}
+          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
+          badgeSx={{ 
+            width: { lg: '153px' }, 
+            height: { lg: '24px' },
+            padding: { lg: '0px' } 
+          }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
           imageSx={{ transform: { sm: 'scale(1.3)' } }}
         />
 
@@ -164,6 +180,22 @@ const DigitalMarketing = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
+          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
+          badgeSx={{ 
+            width: { lg: '153px' }, 
+            height: { lg: '24px' },
+            padding: { lg: '0px' } 
+          }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         />
 
         {/* Card 5 */}
