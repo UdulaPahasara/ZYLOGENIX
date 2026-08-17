@@ -1,6 +1,11 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, keyframes } from '@mui/material';
 import { motion } from 'framer-motion';
+
+const scrollAnimation = keyframes`
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+`;
 
 const InterestedCard = ({
   subtitle = "LOREM LIPSUM LORLM",
@@ -42,7 +47,7 @@ const InterestedCard = ({
   };
 
   return (
-    <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' }, display: 'flex', justifyContent: 'center' }}>
+    <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', pt: { xs: '60px', md: '70px' }, pb: { xs: '60px', md: '0px' }, display: 'flex', justifyContent: 'center' }}>
       <Box 
         sx={{ 
           width: '100%', 
@@ -101,101 +106,212 @@ const InterestedCard = ({
 
         {/* Right Side (Boxes Stack) */}
         <Box 
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          sx={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%', maxWidth: '472px',mt:{xs:'30px',md:'0px'} }}
+          sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            width: '100%', 
+            maxWidth: '472px',
+            mt: { xs: '30px', md: '0px' },
+            height: { md: '380px' },
+            overflow: { md: 'hidden' },
+            maskImage: { md: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' },
+            WebkitMaskImage: { md: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' },
+          }}
         >
-          {/* Light Grey Boxes */}
-          {boxData.map((item, index) => (
-            <Box
-              component={motion.div}
-              variants={cardVariants}
-              key={index}
-              sx={{
-                width: '100%',
-                minHeight: '155px',
-                backgroundColor: 'rgba(243, 243, 243, 1)',
-                borderRadius: '30px',
-                padding: '30px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                boxSizing: 'border-box'
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: 'Poppins',
-                  fontWeight: 600,
-                  fontSize: '14px',
-                  lineHeight: '25px',
-                  textTransform: 'uppercase',
-                  color: '#000000',
-                  mb: '10px'
-                }}
-              >
-                {item.title}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Poppins',
-                  fontWeight: 400,
-                  fontSize: '12px',
-                  lineHeight: '20px',
-                  textTransform: 'capitalize',
-                  color: '#000000'
-                }}
-              >
-                {item.description}
-              </Typography>
-            </Box>
-          ))}
-
-          {/* Interested Box */}
           <Box
-            component={motion.div}
-            variants={cardVariants}
             sx={{
-              width: '100%',
-              minHeight: '155px',
-              background: 'linear-gradient(90deg, #ED81FD 0%, #BE52CE 50.96%, #8D53DB 100%)',
-              borderRadius: '30px',
-              padding: '30px',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              boxSizing: 'border-box'
+              gap: '20px',
+              animation: { md: `${scrollAnimation} 20s linear infinite` },
+              '&:hover': {
+                animationPlayState: 'paused',
+              },
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: 'Poppins',
-                fontWeight: 700,
-                fontSize: '32.35px',
-                lineHeight: '57.77px',
-                textTransform: 'uppercase',
-                color: '#FFFFFF'
-              }}
-            >
-              {interestedTitle}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: 'Poppins',
-                fontWeight: 400,
-                fontSize: '12px',
-                lineHeight: '20px',
-                textTransform: 'capitalize',
-                color: '#FFFFFF',
-                textAlign: 'center'
-              }}
-            >
-              {interestedDescription}
-            </Typography>
+            {/* First Set of Cards */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {boxData.map((item, index) => (
+                <Box
+                  component={motion.div}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  key={index}
+                  sx={{
+                    width: '100%',
+                    minHeight: '155px',
+                    backgroundColor: 'rgba(243, 243, 243, 1)',
+                    borderRadius: '30px',
+                    padding: '30px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: 'Poppins',
+                      fontWeight: 600,
+                      fontSize: '14px',
+                      lineHeight: '25px',
+                      textTransform: 'uppercase',
+                      color: '#000000',
+                      mb: '10px'
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Poppins',
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '20px',
+                      textTransform: 'capitalize',
+                      color: '#000000'
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+                </Box>
+              ))}
+
+              <Box
+                component={motion.div}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                sx={{
+                  width: '100%',
+                  minHeight: '155px',
+                  background: 'linear-gradient(90deg, #ED81FD 0%, #BE52CE 50.96%, #8D53DB 100%)',
+                  borderRadius: '30px',
+                  padding: '30px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 700,
+                    fontSize: '32.35px',
+                    lineHeight: '57.77px',
+                    textTransform: 'uppercase',
+                    color: '#FFFFFF'
+                  }}
+                >
+                  {interestedTitle}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '20px',
+                    textTransform: 'capitalize',
+                    color: '#FFFFFF',
+                    textAlign: 'center'
+                  }}
+                >
+                  {interestedDescription}
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* Duplicated Set of Cards for Marquee Loop (Desktop Only) */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: '20px' }}>
+              {boxData.map((item, index) => (
+                <Box
+                  key={`dup-${index}`}
+                  sx={{
+                    width: '100%',
+                    minHeight: '155px',
+                    backgroundColor: 'rgba(243, 243, 243, 1)',
+                    borderRadius: '30px',
+                    padding: '30px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    boxSizing: 'border-box'
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: 'Poppins',
+                      fontWeight: 600,
+                      fontSize: '14px',
+                      lineHeight: '25px',
+                      textTransform: 'uppercase',
+                      color: '#000000',
+                      mb: '10px'
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Poppins',
+                      fontWeight: 400,
+                      fontSize: '12px',
+                      lineHeight: '20px',
+                      textTransform: 'capitalize',
+                      color: '#000000'
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+                </Box>
+              ))}
+
+              <Box
+                sx={{
+                  width: '100%',
+                  minHeight: '155px',
+                  background: 'linear-gradient(90deg, #ED81FD 0%, #BE52CE 50.96%, #8D53DB 100%)',
+                  borderRadius: '30px',
+                  padding: '30px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 700,
+                    fontSize: '32.35px',
+                    lineHeight: '57.77px',
+                    textTransform: 'uppercase',
+                    color: '#FFFFFF'
+                  }}
+                >
+                  {interestedTitle}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '12px',
+                    lineHeight: '20px',
+                    textTransform: 'capitalize',
+                    color: '#FFFFFF',
+                    textAlign: 'center'
+                  }}
+                >
+                  {interestedDescription}
+                </Typography>
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>

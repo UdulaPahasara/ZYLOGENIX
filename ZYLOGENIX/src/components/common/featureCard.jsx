@@ -21,7 +21,8 @@ const FeatureCard = ({
   textContainerSx = {},
   badgeSx = {},
   titleSx = {},
-  descriptionSx = {}
+  descriptionSx = {},
+  badgeBgColor = 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)'
 }) => {
   const isImageRight = imagePosition === 'right';
 
@@ -106,7 +107,7 @@ const FeatureCard = ({
         {/* Gradient Badge */}
         <Box
           sx={{
-            background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
+            background: badgeBgColor,
             borderRadius: '95.97px',
             padding: '6px 18px',
             mb: '24px',

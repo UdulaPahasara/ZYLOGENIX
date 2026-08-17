@@ -164,6 +164,7 @@ const DesignBranding = () => {
           description1="We design intuitive and engaging digital experiences that make it easier for users to navigate, interact, and connect with your products or services. Our UI/UX process focuses on usability, functionality, and visually compelling interfaces."
           description2="From user-focused layouts to polished interface designs, we create experiences that support both your users and business goals."
           bgColor="rgba(16, 8, 1, 1)"
+          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1) 0%,rgba(255, 89, 0, 1) 100%)'
           imagePosition="left"
           imageScale={1}
           objectFitOverride='cover'
