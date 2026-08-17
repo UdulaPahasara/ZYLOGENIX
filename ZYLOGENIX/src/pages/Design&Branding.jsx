@@ -35,7 +35,7 @@ const DesignBranding = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
-            fontSize: { xs: '40px', md: '75.72px' },
+            fontSize: { xs: '32px', sm: '42px', md: '75.72px' },
             lineHeight: { xs: 1.2, md: '89.4px' },
             color: '#FFFFFF',
             textAlign: 'center',
@@ -56,7 +56,7 @@ const DesignBranding = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 700,
-              fontSize: '14px',
+              fontSize:{xs:'11px',sm:'15px',md:'18px'},
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
@@ -69,7 +69,7 @@ const DesignBranding = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '28px', md: '40px' },
+              fontSize: { xs: '23px', sm: '28px', md: '40px' },
               color: '#000000',
               textAlign: 'center',
               textTransform: 'uppercase'
@@ -133,7 +133,7 @@ const DesignBranding = () => {
           imageScale={1}
           imagePosition="right"
           objectFitOverride='contain'
-          textContainerSx={{ pl: { sm:'40px',lg: '180px' } }}
+          textContainerSx={{ pl: {xs:'13px' ,sm:'40px',lg: '180px' }}}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 433px' }, 
             width: { xs: '100%', sm: '50%', lg: '433px' }, 
@@ -145,12 +145,12 @@ const DesignBranding = () => {
             padding: { lg: '0px' } // Reset default padding since we set fixed width/height
           }}
           titleSx={{ 
-            fontSize: { lg: '37.81px' }, 
+            fontSize: { xs: '25px',sm:'30px',lg: '37.81px' }, 
             lineHeight: { lg: '34.79px' }, 
             maxWidth: { lg: '472px' }
           }}
           descriptionSx={{ 
-            fontSize: { lg: '16px' }, 
+            fontSize: { xs: '15px',sm:'15px',lg: '16px' }, 
             lineHeight: { lg: '25px' }, 
             maxWidth: { lg: '486px' }
           }}
@@ -168,6 +168,7 @@ const DesignBranding = () => {
           imageScale={1}
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
+
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 682px' }, 
             width: { xs: '100%', sm: '50%', lg: '682px' }, 

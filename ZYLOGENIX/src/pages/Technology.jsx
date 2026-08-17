@@ -46,7 +46,7 @@ const Technology = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
-            fontSize: { xs: '40px', md: '75.72px' },
+            fontSize: { xs: '32px', sm: '42px', md: '75.72px' },
             lineHeight: { xs: 1.2, md: '89.4px' },
             color: '#FFFFFF',
             textAlign: 'center',
@@ -116,7 +116,7 @@ const Technology = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '32px', md: '55.51px' },
+              fontSize: { xs: '23px', sm: '28px', md: '55.51px' },
               lineHeight: { xs: 1.2, md: '66.61px' },
               textAlign: 'center',
               textTransform: 'capitalize',
@@ -133,7 +133,7 @@ const Technology = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: '16px',
+              fontSize: {xs:'11px',sm:'15px',md:'16px'},
               lineHeight: '25px',
               textAlign: 'center',
               color: '#333333',

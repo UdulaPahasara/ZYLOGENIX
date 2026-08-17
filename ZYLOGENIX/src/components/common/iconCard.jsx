@@ -41,7 +41,7 @@ const IconCard = ({ icon, title }) => {
         sx={{
           fontFamily: 'Poppins',
           fontWeight: 600,
-          fontSize: '16px',
+          fontSize: { xs: '13px', sm: '14px', md: '16px' },
           lineHeight: '25px',
           textAlign: 'center',
           textTransform: 'uppercase',

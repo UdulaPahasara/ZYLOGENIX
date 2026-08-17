@@ -135,7 +135,7 @@ const FeatureCard = ({
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 600,
-            fontSize: { xs: '28px', md: '37.81px' },
+            fontSize: { xs: '25px', md: '37.81px' },
             lineHeight: { xs: '36px', md: '34.79px',lg:'44px' },
             color: textColor,
             mb: '30px',
@@ -154,7 +154,7 @@ const FeatureCard = ({
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: '16px',
+              fontSize: { xs: '15px', sm: '15px', md: '16px' },
               lineHeight: '25px',
               color: textColor,
               mb: '20px',
@@ -172,7 +172,7 @@ const FeatureCard = ({
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: '16px',
+              fontSize: { xs: '15px', sm: '15px', md: '16px' },
               lineHeight: '25px',
               color: textColor,
               maxWidth: '486px',

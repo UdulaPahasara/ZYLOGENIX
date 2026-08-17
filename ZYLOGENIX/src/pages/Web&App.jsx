@@ -40,7 +40,7 @@ const WebApp = () => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 800,
-            fontSize: { xs: '40px', md: '75.72px' },
+            fontSize: { xs: '32px', sm: '42px', md: '75.72px' },
             lineHeight: { xs: 1.2, md: '89.4px' },
             color: '#FFFFFF',
             textAlign: 'center',
@@ -61,7 +61,7 @@ const WebApp = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 700,
-              fontSize: '14px',
+              fontSize: {xs:'11px',sm:'15px',md:'14px'},
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
@@ -74,7 +74,7 @@ const WebApp = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '28px', md: '40px' },
+              fontSize: { xs: '23px', sm: '28px', md: '40px' },
               color: '#000000',
               textAlign: 'center',
               textTransform: 'uppercase'

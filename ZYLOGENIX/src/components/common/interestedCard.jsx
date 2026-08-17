@@ -76,7 +76,7 @@ const InterestedCard = ({
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 600,
-              fontSize: { xs: '28px', md: '37.81px' },
+              fontSize: { xs: '24px', md: '37.81px' },
               lineHeight: { xs: '32px', md: '40px' },
               color: '#000000',
               textTransform: 'capitalize',
