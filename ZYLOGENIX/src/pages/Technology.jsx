@@ -133,7 +133,7 @@ const Technology = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 400,
-              fontSize: {xs:'11px',sm:'15px',md:'16px'},
+              fontSize: {xs:'14px',sm:'15px',md:'16px'},
               lineHeight: '25px',
               textAlign: 'center',
               color: '#333333',
@@ -153,39 +153,48 @@ const Technology = () => {
             gap: { xs: '30px', md: '60px' },
             width: '100%',
             boxSizing: 'border-box',
-            px: { xs: '16px', sm: '24px', md: '40px' }
+            px: { xs: '16px', sm: '24px', md: '40px' },
+            mt:{xs:-7}
           }}
         >
           <TecCard 
             image={AiImg}
-            badgeText="LOREM LIPSUM SOLOR"
+            badgeText="NEXT-GEN AI"
             title="AI Solutions"
-            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            description="Harness The Power Of Next-Generation AI To Enhance Efficiency, Optimize Marketing, And Create Personalized Customer Experiences For Your Business. Our AI Solutions Help Streamline Processes, Support Smarter Decision-Making, And Deliver Intelligent Digital Experiences Tailored To Your Business Goals."
             bgColor="#161616"
+            imageScale={0.87}
+            imageContainerSx={{mb:{xs:-4,sm:-8,lg:-4},mt:{xs:-6}}}
             imagePosition="right"
           />
           <TecCard 
             image={WebImg}
-            badgeText="LOREM LIPSUM SOLOR"
+            badgeText="WEB DEVELOPMENT"
             title="Web Platform Development"
-            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            description="We Design And Develop Tailored Websites And Digital Platforms That Combine Functionality, Usability, And Engaging Experiences To Meet Your Unique Business Needs. From Concept To Launch, We Build Scalable Solutions That Strengthen Your Online Presence, Engage Your Users, And Support Long-Term Digital Growth."
             bgColor="#13012a"
+            imageScale={0.87}
+            imageContainerSx={{mb:{xs:-4,sm:-7,lg:-4},mt:{xs:-4}}}
             imagePosition="left"
           />
           <TecCard 
             image={MobileImg}
-            badgeText="LOREM LIPSUM SOLOR"
+            badgeText="MOBILE DEVELOPMENT"
             title="Mobile Applications"
-            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            description="Build User-Friendly And Feature-Rich Mobile Applications Tailored To Your Requirements, With Development Across IOS, Android, And Other Supported Platforms. We Create Intuitive, Reliable, And Scalable Mobile Solutions That Deliver Seamless User Experiences, Support Business Operations, And Help You Connect With Your Customers Wherever They Are."
             bgColor="#011531"
+             
+             imageContainerSx={{mb:{xs:-4,sm:-6,lg:-6},mt:{xs:-6}}}
             imagePosition="right"
           />
           <TecCard 
             image={EcommerceImg}
-            badgeText="LOREM LIPSUM SOLOR"
+            badgeText="E-COMMERCE DEVELOPMENT"
             title="e-Commerce Development"
-            description="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
+            description="Create Secure, User-Friendly E-Commerce Platforms That Improve The Online Shopping Experience, Strengthen Customer Engagement, And Support Business Growth. We Develop Tailored Solutions With Seamless Functionality, Secure Payment Integrations, And Intuitive Experiences That Help Businesses Manage Online Sales And Build Lasting Customer Relationships."
             bgColor="#330101"
+            imageScale={0.87}
+            imageContainerSx={{mb:{xs:-5,sm:-11,lg:-7.3},mt:{xs:-6}}}
             imagePosition="left"
           />
         </Box>

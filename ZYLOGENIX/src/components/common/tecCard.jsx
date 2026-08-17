@@ -9,7 +9,11 @@ const TecCard = ({
   title, 
   description, 
   bgColor = '#161616', 
-  imagePosition = 'right' 
+  imagePosition = 'right',
+  imageSx = {},
+  imageContainerSx = {},
+  imageScale = 1,
+  objectFitOverride
 }) => {
   const isImageRight = imagePosition === 'right';
 
@@ -18,19 +22,42 @@ const TecCard = ({
       sx={{
         width: '100%',
         maxWidth: '902px',
-        minHeight: { xs: 'auto', md: '575px' },
+        minHeight: { xs: 'auto', sm: '280px', md: '300px', lg: '400px' },
         backgroundColor: bgColor,
-        borderRadius: { xs: '32px', md: '96px' },
+        borderRadius: { xs: '32px', sm: '48px', md: '96px' },
         display: 'flex',
         flexDirection: { 
           xs: 'column', 
+          sm: isImageRight ? 'row' : 'row-reverse',
           md: isImageRight ? 'row' : 'row-reverse' 
         },
         alignItems: 'center',
-        padding: { xs: '36px 24px', md: '0 60px' },
+        padding: { xs: '20px 24px', sm: '0 30px', md: '0 40px', lg: '0 60px' },
         boxSizing: 'border-box',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        transition: 'min-height 0.4s ease',
+        cursor: 'pointer',
+        '&:hover': {
+          '& .tec-description': {
+            WebkitLineClamp: 'unset',
+            maxHeight: '300px',
+          },
+          '& .tec-btn': {
+            opacity: 1,
+            maxHeight: '60px',
+            mt: '0px',
+          },
+          '& .tec-image': {
+            transform: { 
+              xs: `scale(${imageScale})`,
+              md: `scale(${imageScale * 0.9})`
+            }
+          },
+          '& .tec-fade': {
+            opacity: 1,
+          }
+        }
       }}
     >
       {/* Text Content Section */}
@@ -39,14 +66,14 @@ const TecCard = ({
           flex: 1, 
           display: 'flex', 
           flexDirection: 'column', 
-          alignItems: { xs: 'center', md: 'flex-start' },
+          alignItems: { xs: 'center', sm: 'flex-start' },
           justifyContent: 'center',
-          textAlign: { xs: 'center', md: 'left' },
+          textAlign: { xs: 'center', sm: 'left' },
           zIndex: 2,
-          py: { md: '60px' },
-          pr: { md: isImageRight ? '20px' : 0 },
-          pl: { md: isImageRight ? 0 : '20px' },
-          mb: { xs: '28px', md: 0 }
+          py: { sm: '30px', md: '50px', lg: '60px' },
+          pr: { sm: isImageRight ? '16px' : 0, md: isImageRight ? '20px' : 0 },
+          pl: { sm: isImageRight ? 0 : '16px', md: isImageRight ? 0 : '20px' },
+          mb: { xs: '28px', sm: 0, md: 0 }
         }}
       >
         {/* Gradient Badge */}
@@ -77,33 +104,41 @@ const TecCard = ({
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 600,
-            fontSize: { xs: '28px', md: '39.4px' },
+            fontSize: { xs: '28px', md: '35.4px' },
             lineHeight: 1.2,
             color: '#FFFFFF',
-            mb: '24px',
+            mb: '16px',
             textTransform: 'capitalize'
           }}
         >
           {title}
         </Typography>
 
-        {/* Description */}
+        {/* Description — truncated by default, full on hover */}
         <Typography
+          className="tec-description"
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 400,
-            fontSize: { xs: '14px', md: '16px' },
+            fontSize: { xs: '14px', md: '15px' },
             lineHeight: '25px',
             color: '#FFFFFF',
-            mb: '40px',
-            opacity: 0.9
+            mb: '16px',
+            opacity: 0.9,
+            overflow: 'hidden',
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3,
+            maxHeight: '75px',
+            transition: 'max-height 0.4s ease',
           }}
         >
           {description}
         </Typography>
 
-        {/* Learn More Glass Button */}
+        {/* Learn More Glass Button — hidden by default, appears on hover */}
         <Box
+          className="tec-btn"
           component="button"
           onClick={() => {}}
           sx={{
@@ -127,9 +162,12 @@ const TecCard = ({
             ].join(', '),
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.4s ease',
+            opacity: 0,
+            maxHeight: 0,
+            overflow: 'hidden',
             '&:hover': {
-              background: 'rgba(255, 255, 255, 0.1)',
+              background: 'rgba(255, 255, 255, 0.18)',
               transform: 'translateY(-2px)'
             }
           }}
@@ -142,15 +180,16 @@ const TecCard = ({
       {/* Image Section with Animations */}
       <Box
         sx={{
-          width: { xs: '80%', md: '392px' },
-          height: { xs: '240px', md: '539px' },
+          width: { xs: '80%', sm: '240px', md: '300px', lg: '392px' },
+          height: { xs: '240px', sm: '280px', md: '400px', lg: '539px' },
           flexShrink: 0,
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           zIndex: 1,
-          mx: { xs: 'auto', md: 0 }
+          mx: { xs: 'auto', md: 0 },
+          ...imageContainerSx
         }}
       >
         <motion.div
@@ -160,19 +199,39 @@ const TecCard = ({
           viewport={{ once: true, amount: 0.3 }}
           style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
-          <motion.img
+          <Box
+            component={motion.img}
             src={image}
             alt={title}
-            animate={{ y: [-15, 15, -15] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            style={{
+            className="tec-image"
+            sx={{
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
-              maxWidth: '392px'
+              objectFit: objectFitOverride || 'contain',
+              maxWidth: '392px',
+              transform: `scale(${imageScale})`,
+              transition: 'transform 0.4s ease',
+              ...imageSx
             }}
           />
         </motion.div>
+
+        {/* Bottom fade overlay */}
+        <Box
+          className="tec-fade"
+          sx={{
+            position: 'absolute',
+            bottom: { xs: '-20%', sm: '-20%', md: 0 },
+            left: 0,
+            right: 0,
+            height: { xs: '70%', sm: '70%', md: '50%' },
+            background: `linear-gradient(to bottom, transparent 0%, ${bgColor} 85%, ${bgColor} 100%)`,
+            pointerEvents: 'none',
+            zIndex: 2,
+            opacity: 0,
+            transition: 'opacity 0.4s ease',
+          }}
+        />
       </Box>
     </Box>
   );
