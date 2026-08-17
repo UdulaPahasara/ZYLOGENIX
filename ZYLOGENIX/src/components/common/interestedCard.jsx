@@ -112,10 +112,10 @@ const InterestedCard = ({
             width: '100%', 
             maxWidth: '472px',
             mt: { xs: '30px', md: '0px' },
-            height: { md: '380px' },
-            overflow: { md: 'hidden' },
-            maskImage: { md: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' },
-            WebkitMaskImage: { md: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' },
+            height: {xs:'270px',md:'380px'},
+            overflow: 'hidden',
+            maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
           }}
         >
           <Box
@@ -123,7 +123,7 @@ const InterestedCard = ({
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',
-              animation: { md: `${scrollAnimation} 20s linear infinite` },
+              animation: `${scrollAnimation} 20s linear infinite`,
               '&:hover': {
                 animationPlayState: 'paused',
               },
@@ -148,7 +148,8 @@ const InterestedCard = ({
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    textAlign: { xs: 'center', md: 'left' }
                   }}
                 >
                   <Typography
@@ -227,7 +228,7 @@ const InterestedCard = ({
             </Box>
 
             {/* Duplicated Set of Cards for Marquee Loop (Desktop Only) */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: '20px' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {boxData.map((item, index) => (
                 <Box
                   key={`dup-${index}`}
@@ -240,7 +241,8 @@ const InterestedCard = ({
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    textAlign: { xs: 'center', md: 'left' }
                   }}
                 >
                   <Typography

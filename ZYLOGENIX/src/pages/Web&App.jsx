@@ -50,7 +50,7 @@ const WebApp = () => {
             whiteSpace: 'pre-line'
           }}
         >
-          LOREM LIPSUM<br/>SOLO LORM
+          WEB & APP<br/>DEVELOPMENT
         </Typography>
       </Box>
 
@@ -68,7 +68,7 @@ const WebApp = () => {
               mb: '10px'
             }}
           >
-            WEB & APP DEVELOPMENT
+            BUILDING DIGITAL EXPERIENCES THAT WORK
           </Typography>
           <Typography
             sx={{
@@ -80,7 +80,7 @@ const WebApp = () => {
               textTransform: 'uppercase'
             }}
           >
-            LOREM LIPSUM SOLO LORM
+            Digital Solutions Built Around Your Business
           </Typography>
         </Box>
 
@@ -110,9 +110,9 @@ const WebApp = () => {
         <FeatureCard 
           image={Img1}
           badgeText="Web Design & Development"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Web Experiences\nDesigned Around Your\nBusiness"}
+          description1="We Deliver Websites That Seamlessly Integrate Functionality With Aesthetics, Creating Immersive And Intuitive Online Experiences. From Concept To Development, Our Solutions Are Tailored To Your Unique Business Needs."
+          description2="We Focus On Creating Engaging Digital Experiences That Provide Value To Your Audience While Supporting Your Business Objectives."
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
@@ -133,9 +133,9 @@ const WebApp = () => {
           className="white-section"
           image={Img2}
           badgeText="Website Redesign & Maintenance"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Keep Your Digital\nPresence Fresh &\nFunctional"}
+          description1="We Modernize Existing Websites To Improve Their Aesthetics, Usability, And Overall User Experience. Our Redesign Solutions Consider Current Trends And User Expectations To Give Your Online Presence A Contemporary Feel."
+          description2="Through Ongoing Maintenance, Updates, Security Checks, And Performance Optimization, We Help Keep Your Website Current, Reliable, And Performing Effectively."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
@@ -170,9 +170,9 @@ const WebApp = () => {
         <FeatureCard 
           image={Img3}
           badgeText="E-Commerce Development"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Create Better Online\nShopping Experiences"}
+          description1="We Develop User-Friendly And Secure E-Commerce Platforms That Make Online Shopping Simple And Engaging. Our Solutions Are Designed To Support Smooth Customer Experiences While Helping Businesses Strengthen Their Online Operations."
+          description2="From Platform Functionality To Secure Transactions, We Create E-Commerce Experiences That Support Customer Engagement, Growth, And Profitability."
           bgColor="#0B1117"
           imagePosition="left"
           imageScale={1}
@@ -194,9 +194,9 @@ const WebApp = () => {
           className="white-section"
           image={Img4}
           badgeText="Mobile App Development"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Connect With Your\nAudience Anywhere"}
+          description1="We Build User-Friendly And Feature-Rich Mobile Applications Tailored To Your Specific Requirements. Our Solutions Help Businesses Extend Their Reach, Enhance User Engagement, And Deliver Seamless Experiences Across Mobile Platforms."
+          description2="Each Application Is Developed Around Your Business Needs, With A Focus On Usability, Functionality, And A Reliable Mobile Experience."
           bgColor="rgba(232, 232, 232, 1)"
           textColor="#000000"
           imagePosition="right"
@@ -219,9 +219,9 @@ const WebApp = () => {
         <FeatureCard 
           image={Img5}
           badgeText="Custom Software Development"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Software Built Around\nYour Business"}
+          description1="Every Business Has Unique Requirements. We Work Closely With Clients To Understand Their Needs And Develop Tailored Software Solutions That Integrate Seamlessly With Their Business Processes."
+          description2="Our Custom Solutions Are Designed To Align With Your Objectives While Improving Operational Efficiency, Functionality, And Overall Performance."
           bgColor="#0D1614"
           imagePosition="left"
           imageScale={1}
@@ -239,25 +239,25 @@ const WebApp = () => {
 
       {/* ─── Informational Grid Section (White Area) ─── */}
       <InterestedCard 
-        subtitle="WEB & APP DEVELOPMENT"
-        title="Ready to Build Your Digital Presence?"
-        description="Our expert team creates stunning, responsive, and high-performance websites and applications tailored to your business needs."
+        subtitle="OUR APPROACH"
+        title={"Technology That\nSupports Your\nBusiness Goals"}
+        description="We Combine Functionality, Usability, And Thoughtful Digital Design To Create Solutions That Work For Both Businesses And Their Users. Our Approach Focuses On Building Practical, Scalable, And Impactful Digital Experiences."
         boxData={[
           {
-            title: "Custom Solutions",
-            description: "We build tailored web and mobile applications designed to meet your specific business requirements and goals."
+            title: "TAILORED SOLUTIONS",
+            description: "Digital Products Designed Around Your Unique Business Requirements And Objectives."
           },
           {
-            title: "Responsive Design",
-            description: "Ensuring your website looks and functions perfectly across all devices, from desktops to smartphones."
+            title: "SEAMLESS EXPERIENCES",
+            description: "Solutions Focused On Usability, Functionality, And Intuitive User Interactions."
           },
           {
-            title: "Scalable Architecture",
-            description: "Developing robust and scalable architectures that can grow seamlessly alongside your expanding business."
+            title: "SCALABLE DEVELOPMENT",
+            description: "Reliable Digital Solutions Built To Support Your Evolving Business Needs."
           }
         ]}
-        interestedTitle="Let's Get Started"
-        interestedDescription="Contact us today to discuss your web and app development needs and take your business to the next level."
+        interestedTitle="INTERESTED ?"
+        interestedDescription="Let's Build A Digital Solution That Fits Your Business And Creates Meaningful Value For Your Customers."
       />
 
       {/* Footer */}
