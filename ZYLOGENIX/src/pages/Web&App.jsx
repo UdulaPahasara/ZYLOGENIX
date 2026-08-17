@@ -237,7 +237,27 @@ const WebApp = () => {
       </Box>
 
       {/* ─── Informational Grid Section (White Area) ─── */}
-      <InterestedCard />
+      <InterestedCard 
+        subtitle="WEB & APP DEVELOPMENT"
+        title="Ready to Build Your Digital Presence?"
+        description="Our expert team creates stunning, responsive, and high-performance websites and applications tailored to your business needs."
+        boxData={[
+          {
+            title: "Custom Solutions",
+            description: "We build tailored web and mobile applications designed to meet your specific business requirements and goals."
+          },
+          {
+            title: "Responsive Design",
+            description: "Ensuring your website looks and functions perfectly across all devices, from desktops to smartphones."
+          },
+          {
+            title: "Scalable Architecture",
+            description: "Developing robust and scalable architectures that can grow seamlessly alongside your expanding business."
+          }
+        ]}
+        interestedTitle="Let's Get Started"
+        interestedDescription="Contact us today to discuss your web and app development needs and take your business to the next level."
+      />
 
       {/* Footer */}
       <Footer />

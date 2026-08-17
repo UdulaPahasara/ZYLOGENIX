@@ -179,7 +179,27 @@ const DesignBranding = () => {
 
       </Box>
 
-      <InterestedCard />
+      <InterestedCard 
+        subtitle="OUR CREATIVE APPROACH"
+        title="Designed With Purpose. Built Around Your Brand."
+        description="Great design goes beyond appearance. We combine creativity, consistency, and user-focused thinking to create digital experiences that communicate your brand effectively and support meaningful business growth."
+        boxData={[
+          {
+            title: "CUSTOMIZED APPROACH",
+            description: "CUSTOMIZED APPROACH"
+          },
+          {
+            title: "CONSISTENT BRANDING",
+            description: "Create a unified visual identity across your digital and marketing touchpoints."
+          },
+          {
+            title: "USER-CENTERED DESIGN",
+            description: "Design intuitive experiences that make your products easier and more enjoyable to use."
+          }
+        ]}
+        interestedTitle="Interested ?"
+        interestedDescription="Let’s create a distinctive digital presence that reflects your brand and connects with your audience."
+      />
 
       {/* Footer */}
       <Footer />

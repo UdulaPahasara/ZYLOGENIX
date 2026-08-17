@@ -246,7 +246,27 @@ const ContentSocialMedia = () => {
       </Box>
 
       {/* ─── Informational Grid Section (White Area) ─── */}
-      <InterestedCard />
+      <InterestedCard 
+        subtitle="CONTENT & SOCIAL MEDIA"
+        title="Engage Your Audience"
+        description="We create compelling content and manage your social media presence to build brand awareness and foster meaningful connections with your audience."
+        boxData={[
+          {
+            title: "Strategic Content",
+            description: "Developing high-quality, engaging content tailored to your target audience across various platforms and mediums."
+          },
+          {
+            title: "Community Management",
+            description: "Actively engaging with your followers, responding to inquiries, and building a loyal community around your brand."
+          },
+          {
+            title: "Performance Tracking",
+            description: "Analyzing social media metrics and content performance to optimize strategies and maximize engagement rates."
+          }
+        ]}
+        interestedTitle="Elevate Your Brand"
+        interestedDescription="Let's collaborate to create a powerful content and social media strategy that resonates with your audience."
+      />
 
       {/* Footer */}
       <Footer />

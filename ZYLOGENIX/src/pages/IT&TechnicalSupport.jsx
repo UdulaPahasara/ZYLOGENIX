@@ -286,7 +286,27 @@ const ITTechnicalSupport = () => {
       </Box>
 
       {/* ─── Informational Grid Section (White Area) ─── */}
-      <InterestedCard />
+      <InterestedCard 
+        subtitle="IT & TECHNICAL SUPPORT"
+        title="Reliable Tech Solutions"
+        description="Our dedicated IT support team provides comprehensive technical solutions to ensure your business operations run smoothly and securely."
+        boxData={[
+          {
+            title: "24/7 Support",
+            description: "Providing round-the-clock technical assistance to resolve issues promptly and minimize downtime for your business."
+          },
+          {
+            title: "Infrastructure Management",
+            description: "Managing and optimizing your IT infrastructure to ensure high performance, scalability, and seamless operations."
+          },
+          {
+            title: "Cybersecurity",
+            description: "Implementing robust security measures and protocols to protect your sensitive data and digital assets from threats."
+          }
+        ]}
+        interestedTitle="Need IT Assistance?"
+        interestedDescription="Contact our support team today for reliable and efficient IT solutions tailored to your business needs."
+      />
 
       {/* Footer */}
       <Footer />

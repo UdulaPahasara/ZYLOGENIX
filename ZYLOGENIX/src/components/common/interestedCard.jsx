@@ -2,7 +2,27 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
-const InterestedCard = () => {
+const InterestedCard = ({
+  subtitle = "LOREM LIPSUM LORLM",
+  title = "Lorem lipsum solor lorem",
+  description = "Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur.",
+  boxData = [
+    {
+      title: "Lorem ipsum dolor sit amet",
+      description: "Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consecte"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet",
+      description: "Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consecte"
+    },
+    {
+      title: "Lorem ipsum dolor sit amet",
+      description: "Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consecte"
+    }
+  ],
+  interestedTitle = "Interested ?",
+  interestedDescription = "Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit ae"
+}) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -36,7 +56,7 @@ const InterestedCard = () => {
         }}
       >
         {/* Left Side (Text) */}
-        <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '350px', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '444px', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
           <Typography
             sx={{
               fontFamily: 'Poppins',
@@ -50,7 +70,7 @@ const InterestedCard = () => {
               mb: '10px'
             }}
           >
-            LOREM LIPSUM LORLM
+            {subtitle}
           </Typography>
           <Typography
             sx={{
@@ -63,7 +83,7 @@ const InterestedCard = () => {
               mb: '20px'
             }}
           >
-            Lorem lipsum solor lorem 
+            {title}
           </Typography>
           <Typography
             sx={{
@@ -75,7 +95,7 @@ const InterestedCard = () => {
               textTransform: 'capitalize'
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur.
+            {description}
           </Typography>
         </Box>
 
@@ -86,14 +106,14 @@ const InterestedCard = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          sx={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%', maxWidth: '472px' }}
+          sx={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%', maxWidth: '472px',mt:{xs:'30px',md:'0px'} }}
         >
           {/* Light Grey Boxes */}
-          {[1, 2, 3].map((item) => (
+          {boxData.map((item, index) => (
             <Box
               component={motion.div}
               variants={cardVariants}
-              key={item}
+              key={index}
               sx={{
                 width: '100%',
                 minHeight: '155px',
@@ -117,7 +137,7 @@ const InterestedCard = () => {
                   mb: '10px'
                 }}
               >
-                Lorem ipsum dolor sit amet
+                {item.title}
               </Typography>
               <Typography
                 sx={{
@@ -129,7 +149,7 @@ const InterestedCard = () => {
                   color: '#000000'
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consecte
+                {item.description}
               </Typography>
             </Box>
           ))}
@@ -161,7 +181,7 @@ const InterestedCard = () => {
                 color: '#FFFFFF'
               }}
             >
-              Interested ?
+              {interestedTitle}
             </Typography>
             <Typography
               sx={{
@@ -174,7 +194,7 @@ const InterestedCard = () => {
                 textAlign: 'center'
               }}
             >
-              Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit ae
+              {interestedDescription}
             </Typography>
           </Box>
         </Box>

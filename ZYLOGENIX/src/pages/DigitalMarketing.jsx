@@ -181,7 +181,27 @@ const DigitalMarketing = () => {
       </Box>
 
       {/* ─── Informational Grid Section (White Area) ─── */}
-      <InterestedCard />
+      <InterestedCard 
+        subtitle="DIGITAL MARKETING"
+        title="Boost Your Online Visibility"
+        description="Drive more traffic, generate leads, and increase your revenue with our comprehensive digital marketing strategies."
+        boxData={[
+          {
+            title: "Data-Driven Strategies",
+            description: "We utilize advanced analytics and market research to craft strategies that deliver measurable results and high ROI."
+          },
+          {
+            title: "Targeted Campaigns",
+            description: "Reach your ideal audience with precision through expertly managed SEO, PPC, and social media advertising campaigns."
+          },
+          {
+            title: "Continuous Optimization",
+            description: "We constantly monitor and refine your marketing campaigns to ensure maximum performance and efficiency."
+          }
+        ]}
+        interestedTitle="Ready to Grow?"
+        interestedDescription="Partner with us to elevate your digital marketing efforts and achieve your business objectives."
+      />
 
       {/* Footer */}
       <Footer />
