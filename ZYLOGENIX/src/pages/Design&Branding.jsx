@@ -60,6 +60,7 @@ const DesignBranding = () => {
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              textAlign: 'center',
               mb: '10px'
             }}
           >
@@ -69,10 +70,12 @@ const DesignBranding = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '40px' },
+              fontSize: { xs: '22px', sm: '28px', md: '40px' },
+              lineHeight: 1.3,
               color: '#000000',
               textAlign: 'center',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              maxWidth: { xs: '320px', sm: '100%' }
             }}
           >
             Creative Solutions for Stronger Brands
@@ -138,11 +141,6 @@ const DesignBranding = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 433px' }, 
             width: { xs: '100%', sm: '50%', lg: '433px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '600px' }
-          }}
-          badgeSx={{ 
-            width: { lg: '153px' }, 
-            height: { lg: '24px' },
-            padding: { lg: '0px' } 
           }}
           titleSx={{ 
             fontSize: { xs: '25px',sm:'30px',lg: '37.81px' }, 

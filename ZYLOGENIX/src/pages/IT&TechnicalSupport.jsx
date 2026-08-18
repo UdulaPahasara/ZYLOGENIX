@@ -54,7 +54,7 @@ const ITTechnicalSupport = () => {
             whiteSpace: 'pre-line'
           }}
         >
-          LOREM LIPSUM<br/>SOLO LORM
+          IT & TECHNICAL<br/>SUPPORT
         </Typography>
       </Box>
 
@@ -69,22 +69,25 @@ const ITTechnicalSupport = () => {
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              textAlign: 'center',
               mb: '10px'
             }}
           >
-            IT & TECHNICAL SUPPORT
+            TECHNOLOGY SUPPORT YOU CAN RELY ON
           </Typography>
           <Typography
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '40px' },
+              fontSize: { xs: '22px', sm: '28px', md: '40px' },
+              lineHeight: 1.3,
               color: '#000000',
               textAlign: 'center',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              maxWidth: { xs: '320px', sm: '100%' }
             }}
           >
-            LOREM LIPSUM SOLO LORM
+            Reliable Technology. Secure Digital Operations.
           </Typography>
         </Box>
 
@@ -116,11 +119,12 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           image={Img1}
           badgeText="Server Management & Security"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Keep Your Digital\nInfrastructure Secure"}
+          description1="We Provide Robust Server Management And Security Services Designed To Maintain The Efficiency And Reliability Of Your Digital Infrastructure While Protecting The Integrity And Confidentiality Of Your Online Presence."
+          description2="Our Security-Focused Approach Helps Safeguard Digital Assets Against Evolving Threats And Provides Businesses With Greater Confidence In Their Technology Environment."
           bgColor="#050000"
           imagePosition="left"
+          badgeBgColor='linear-gradient(90deg, rgba(83, 115, 219, 1) 0%,rgba(0, 4, 255, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
@@ -140,16 +144,27 @@ const ITTechnicalSupport = () => {
           className="white-section"
           image={Img2}
           badgeText="Domain Management"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Protect Your Online\nIdentity"}
+          description1="We Simplify Domain Management To Help Keep Your Digital Identity Secure And Aligned With Your Brand. Our Solutions Provide Reliable Management Of Your Online Presence While Supporting A Consistent Digital Identity."
+          description2="From Maintaining Your Domain Presence To Keeping It Aligned With Your Brand, We Help Ensure Your Digital Footprint Remains Organized And Secure."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
+          
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: {sm:'20px', lg: '180px' } }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 574px' }, 
             width: { xs: '100%', sm: '50%', lg: '574px' }, 
@@ -165,12 +180,13 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           image={Img3}
           badgeText="Payment Gateway Integration"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Make Digital\nTransactions Simple &\nSecure"}
+          description1="We Seamlessly Integrate Secure Payment Options Into Your Digital Platforms To Enhance User Experience And Streamline Transactions. Our Solutions Focus On Providing Customers With A Smooth And Efficient Payment Process."
+          description2="With Security And Reliability At The Core, We Help Businesses Create A More Convenient Transaction Experience For Their Customers."
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1) 0%,rgba(255, 89, 0, 1) 100%)'
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -189,16 +205,27 @@ const ITTechnicalSupport = () => {
           className="white-section"
           image={Img4}
           badgeText="QA & Testing"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Quality Built Into Every\nDigital Solution"}
+          description1="We Follow Rigorous Testing And Quality Assurance Practices To Identify And Address Potential Issues Before They Affect Users. Our Approach Focuses On Maintaining Strong Functionality, Performance, Reliability, And User Satisfaction."
+          description2="Through Careful Testing And Quality Checks, We Help Businesses Deliver More Dependable Digital Products And Experiences."
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(255, 0, 0, 1) 0%,rgba(156, 1, 1, 1) 100%)'
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: { sm:'20px',lg: '180px' } }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 405px' }, 
             width: { xs: '100%', sm: '50%', lg: '405px' }, 
@@ -214,11 +241,12 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           image={Img5}
           badgeText="Virtual Tech Support"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Technical Support When\nYou Need It"}
+          description1="We Provide Reliable Virtual Technical Support To Help Keep Your Digital Infrastructure Operating Smoothly. Our Dedicated Team Supports Businesses Whenever And Wherever Assistance Is Required."
+          description2="Our Support Approach Helps Businesses Address Technical Needs Efficiently While Maintaining Continuity Across Their Digital Operations."
           bgColor="#000000"
           imagePosition="left"
+          badgeBgColor='linear-gradient(90deg, rgba(121, 206, 82, 1)0%,rgba(52, 199, 89, 1) 100%)'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 472px' }, 
@@ -236,17 +264,28 @@ const ITTechnicalSupport = () => {
           className="white-section"
           image={Img6}
           badgeText="WhatsApp Business Integration"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"Connect With Customers\nMore Directly"}
+          description1="We Integrate WhatsApp Into Your Communication Strategy To Strengthen Customer Engagement And Support. Our Customized Solutions Help Businesses Use The Platform As A Convenient Channel For Connecting With Their Audience."
+          description2="By Bringing Communication Closer To Your Customers, We Help Create More Accessible And Responsive Digital Interactions."
           bgColor="#FFFFFF"
           textColor="#000000"
+          badgeBgColor='linear-gradient(90deg, rgba(72, 112, 244, 1)0%,rgba(0, 4, 255, 1) 100%)'
           imagePosition="right"
           imageScale={1}
           objectFitOverride="contain"
           
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
-          textContainerSx={{ pl: { sm:'20px',lg: '180px' } }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 383px' }, 
             width: { xs: '100%', sm: '50%', lg: '383px' }, 
@@ -263,12 +302,13 @@ const ITTechnicalSupport = () => {
         <FeatureCard 
           image={Img7}
           badgeText="IT Outsourcing"
-          title={"Lorem Lipsum Solor\nLorem Lipsms"}
-          description1="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu"
-          description2="Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut euLorem ipsum dolor sit amet consectetur."
+          title={"A Reliable Technology\nPartner"}
+          description1="We Help Businesses Optimize Their Technology Resources Through Reliable IT Outsourcing Services. Our Approach Provides An Experienced Partner To Support Your Digital Journey While Allowing Your Team To Stay Focused On Core Business Priorities."
+          description2="We Work As An Extension Of Your Business, Providing The Technical Capabilities And Support Needed To Move Your Digital Operations Forward."
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(228, 196, 12, 1) 0%,rgba(170, 145, 4, 1) 100%)'
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -287,24 +327,24 @@ const ITTechnicalSupport = () => {
 
       {/* ─── Informational Grid Section (White Area) ─── */}
       <InterestedCard 
-        subtitle="IT & TECHNICAL SUPPORT"
-        title="Reliable Tech Solutions"
-        description="Our dedicated IT support team provides comprehensive technical solutions to ensure your business operations run smoothly and securely."
+        subtitle="OUR SUPPORT APPROACH"
+        title={"Technology Support\nThat Keeps You\nMoving"}
+        description="We Combine Technical Expertise, Security, Quality Assurance, And Responsive Support To Help Businesses Maintain Reliable Digital Operations. Our Goal Is To Provide Practical Solutions That Protect Your Infrastructure, Support Your Users, And Keep Your Technology Working Effectively."
         boxData={[
           {
-            title: "24/7 Support",
-            description: "Providing round-the-clock technical assistance to resolve issues promptly and minimize downtime for your business."
+            title: "RELIABLE SUPPORT",
+            description: "Practical Technical Assistance Designed To Keep Your Digital Operations Running Smoothly."
           },
           {
-            title: "Infrastructure Management",
-            description: "Managing and optimizing your IT infrastructure to ensure high performance, scalability, and seamless operations."
+            title: "SECURITY & PROTECTION",
+            description: "Solutions Focused On Protecting Your Digital Assets And Maintaining A Secure Technology Environment."
           },
           {
-            title: "Cybersecurity",
-            description: "Implementing robust security measures and protocols to protect your sensitive data and digital assets from threats."
+            title: "BUSINESS CONTINUITY",
+            description: "Dependable Infrastructure And Support That Help Your Business Stay Operational And Focused On Growth."
           }
         ]}
-        interestedTitle="Need IT Assistance?"
+        interestedTitle="INTERESTED ?"
         interestedDescription="Contact our support team today for reliable and efficient IT solutions tailored to your business needs."
       />
 

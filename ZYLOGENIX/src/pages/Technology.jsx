@@ -116,14 +116,14 @@ const Technology = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '55.51px' },
-              lineHeight: { xs: 1.2, md: '66.61px' },
+              fontSize: { xs: '22px', sm: '28px', md: '55.51px' },
+              lineHeight: { xs: 1.3, md: '66.61px' },
               textAlign: 'center',
               textTransform: 'capitalize',
               background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 36.97%, #8D53DB 82.38%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              maxWidth: '600px',
+              maxWidth: { xs: '320px', sm: '600px' },
               mb: '20px'
             }}
           >

@@ -65,6 +65,7 @@ const DigitalMarketing = () => {
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              textAlign: 'center',
               mb: '10px'
             }}
           >
@@ -74,10 +75,12 @@ const DigitalMarketing = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '40px' },
+              fontSize: { xs: '22px', sm: '28px', md: '40px' },
+              lineHeight: 1.3,
               color: '#000000',
               textAlign: 'center',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              maxWidth: { xs: '320px', sm: '100%' }
             }}
           >
             Grow Your Reach. Drive Meaningful Results.
@@ -115,6 +118,7 @@ const DigitalMarketing = () => {
           description1="We Help Businesses Improve Their Online Discoverability Through SEO And Google Indexing Strategies. Our Approach Focuses On Making Your Digital Presence Easier For Search Engines And Potential Customers To Find."
           description2="By Strengthening Your Search Presence, We Help Create Better Opportunities For Relevant Audiences To Discover Your Business And Services."
           bgColor="#0A1D1C"
+          badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
           imagePosition="left"
         />
 
@@ -129,18 +133,14 @@ const DigitalMarketing = () => {
           description2="From Campaign Planning To Performance Optimization, We Help Make Your Advertising Efforts More Focused And Effective."
           bgColor="#FFFFFF"
           textColor="#000000"
+          badgeBgColor='linear-gradient(90deg, rgba(255, 0, 0, 1)0%,rgba(156, 1, 1, 1)100%)'
           imagePosition="right"
           imageContainerSx={{ 
             ml: { xs: '160px', sm: '0px' },
             mr: { xs: '0px', sm: '-160px' },
             mt: { xs: '-100px', sm: '-60px' } 
           }}
-          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
-          badgeSx={{ 
-            width: { lg: '153px' }, 
-            height: { lg: '24px' },
-            padding: { lg: '0px' } 
-          }}
+          textContainerSx={{ pl: { xs: '15px',sm: '20px',md:'60px', lg: '180px' } }}
           titleSx={{ 
             fontSize: { lg: '37.81px' }, 
             lineHeight: { lg: '34.79px' }, 
@@ -163,6 +163,7 @@ const DigitalMarketing = () => {
           description1="We Develop Engaging Email Marketing Campaigns That Help Businesses Communicate Directly With Their Customers And Prospects. From Promotional Messages To Informative Campaigns, We Create Content That Keeps Your Audience Connected With Your Brand."
           description2="Our Approach Focuses On Relevant Communication, Consistent Engagement, And Building Stronger Customer Relationships Over Time."
           bgColor="#0B0813"
+          badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
           imagePosition="left"
          
         />
@@ -180,12 +181,8 @@ const DigitalMarketing = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
-          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
-          badgeSx={{ 
-            width: { lg: '153px' }, 
-            height: { lg: '24px' },
-            padding: { lg: '0px' } 
-          }}
+          badgeBgColor='linear-gradient(90deg, rgba(72, 112, 244, 1) 0%,rgba(0, 4, 255, 1)100%)'
+          textContainerSx={{ pl: { xs: '15px',sm: '20px',md:'60px', lg: '180px' } }}
           titleSx={{ 
             fontSize: { lg: '37.81px' }, 
             lineHeight: { lg: '34.79px' }, 

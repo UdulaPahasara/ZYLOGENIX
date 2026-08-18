@@ -237,7 +237,7 @@ const ContentSocialMedia = () => {
           bgColor="#FFFFFF"
           textColor="#000000"
           imagePosition="right"
-            badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
+          badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
           imageScale={1}
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}

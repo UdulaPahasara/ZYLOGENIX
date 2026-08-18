@@ -65,6 +65,7 @@ const WebApp = () => {
               color: '#BE52CE',
               textTransform: 'uppercase',
               letterSpacing: '1px',
+              textAlign: 'center',
               mb: '10px'
             }}
           >
@@ -74,10 +75,12 @@ const WebApp = () => {
             sx={{
               fontFamily: 'Poppins',
               fontWeight: 800,
-              fontSize: { xs: '23px', sm: '28px', md: '40px' },
+              fontSize: { xs: '22px', sm: '28px', md: '40px' },
+              lineHeight: 1.3,
               color: '#000000',
               textAlign: 'center',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              maxWidth: { xs: '320px', sm: '100%' }
             }}
           >
             Digital Solutions Built Around Your Business
@@ -116,6 +119,7 @@ const WebApp = () => {
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
+           badgeBgColor='linear-gradient(90deg, rgba(83, 115, 219, 1) 0%,rgba(0, 4, 255, 1)100%)'
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -147,12 +151,7 @@ const WebApp = () => {
             height: { xs: 'auto', sm: 'auto', lg: '614px' },
             mb:{xs:'-28px',sm:'-120px',md:'-150px',lg:'-24px'}
           }}
-          textContainerSx={{ pl: { sm: '20px',md:'60px', lg: '180px' } }}
-          badgeSx={{ 
-            width: { lg: '153px' }, 
-            height: { lg: '24px' },
-            padding: { lg: '0px' } 
-          }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
           titleSx={{ 
             fontSize: { lg: '37.81px' }, 
             lineHeight: { lg: '34.79px' }, 
@@ -176,6 +175,7 @@ const WebApp = () => {
           bgColor="#0B1117"
           imagePosition="left"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1) 0%,rgba(255, 89, 0, 1)100%)'
           objectFitOverride='contain'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -201,6 +201,7 @@ const WebApp = () => {
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1)0%,rgba(255, 89, 0, 1) 100%)'
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '633px' } }}
           imageContainerSx={{ 
@@ -211,7 +212,17 @@ const WebApp = () => {
             mb:{xs:'-28px',sm:'-60px',md:'-100px',lg:'-10px'},
             mt:{xs:'-40px'}
           }}
-          textContainerSx={{ pl: { sm: '30px', lg: '180px' } }}
+          textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
           imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
         />
 
@@ -225,6 +236,7 @@ const WebApp = () => {
           bgColor="#0D1614"
           imagePosition="left"
           imageScale={1}
+          badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
