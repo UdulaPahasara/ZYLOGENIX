@@ -151,7 +151,8 @@ const ContentSocialMedia = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 578px' }, 
             width: { xs: '100%', sm: '50%', lg: '578px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '609px' },
-            mb:{xs:'0',sm:'-150px',md:'-130px',lg:'-10px'}
+            mb:{xs:'-2px',sm:'-79px',md:'-130px',lg:'-15px'},
+            mr:{xs:'0px',sm:'-40px',md:'-44px',lg:'0px'}
           }}
           imageSx={{ transform: { xs: 'scale(0.99)', sm: 'scale(0.99)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />

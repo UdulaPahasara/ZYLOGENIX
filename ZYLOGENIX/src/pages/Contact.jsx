@@ -143,7 +143,7 @@ const Contact = () => {
               mb: '50px',
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu neque fringilla convallis elementum varius. Amet pulvinar bibendum a at
+            We'd Love To Hear From You. Whether You Have A Question, A Project In Mind, Or Just Want To Say Hello — Reach Out And Let's Start A Conversation.
           </Typography>
 
           {/* ─── Contact Form ─── */}
@@ -316,7 +316,7 @@ const Contact = () => {
                 mb: '15px',
               }}
             >
-              Lorem Lipsum Solor
+              Let's Start A Conversation
             </Typography>
 
             <Typography
@@ -332,7 +332,7 @@ const Contact = () => {
                 mb: '50px',
               }}
             >
-              Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor ut eu neque fringilla convallis elementum varius. Amet pulvinar bibendum a at
+              Whether You Need A New Digital Solution, Want To Improve An Existing Platform, Or Need Support With Your Digital Growth, Our Team Is Ready To Hear From You. Reach Out To Zylogenix And Let's Explore The Right Solution For Your Business.
             </Typography>
 
             <Box
@@ -344,17 +344,137 @@ const Contact = () => {
                 width: '100%',
               }}
             >
-              {[1, 2, 3].map((item) => (
-                <Box
-                  key={item}
+              {/* EMAIL US */}
+              <Box
+                sx={{
+                  width: { xs: '100%', sm: '300px' },
+                  minHeight: '190px',
+                  borderRadius: '16px',
+                  backgroundColor: 'rgba(241, 235, 243, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: '24px',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <Typography
                   sx={{
-                    width: { xs: '100%', sm: '300px' },
-                    height: '190px',
-                    borderRadius: '16px',
-                    backgroundColor: 'rgba(241, 235, 243, 1)',
+                    fontFamily: 'Poppins',
+                    fontWeight: 600,
+                    fontSize: '16px',
+                    lineHeight: '25px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: '#8D53DB',
+                    mb: '10px',
                   }}
-                />
-              ))}
+                >
+                  Email Us
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '21px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: 'rgba(10, 10, 10, 1)',
+                  }}
+                >
+                  Have An Enquiry Or Project Requirement? Reach Our Team Directly Through Email.
+                </Typography>
+              </Box>
+
+              {/* SOCIAL MEDIA */}
+              <Box
+                sx={{
+                  width: { xs: '100%', sm: '300px' },
+                  minHeight: '190px',
+                  borderRadius: '16px',
+                  backgroundColor: 'rgba(241, 235, 243, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: '24px',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 600,
+                    fontSize: '16px',
+                    lineHeight: '25px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: 'rgba(141, 83, 219, 1)',
+                    mb: '10px',
+                  }}
+                >
+                  Social Media
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '21px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: 'rgba(10, 10, 10, 1)',
+                  }}
+                >
+                  Stay Connected With Zylogenix Through Our Social Platforms And Follow Our Latest Updates, Services, And Digital Insights.
+                </Typography>
+              </Box>
+
+              {/* EXPLORE OUR SERVICES */}
+              <Box
+                sx={{
+                  width: { xs: '100%', sm: '300px' },
+                  minHeight: '190px',
+                  borderRadius: '16px',
+                  backgroundColor: 'rgba(241, 235, 243, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: '24px',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 600,
+                    fontSize: '16px',
+                    lineHeight: '25px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: 'rgba(141, 83, 219, 1)',
+                    mb: '10px',
+                  }}
+                >
+                  Explore Our Services
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '21px',
+                    textAlign: 'center',
+                    textTransform: 'capitalize',
+                    color: 'rgba(10, 10, 10, 1)',
+                  }}
+                >
+                  Zylogenix Helps Businesses Grow With Web, Mobile, Software, Marketing, UI/UX, Branding, Security, And More.
+                </Typography>
+              </Box>
             </Box>
           </Box>
 

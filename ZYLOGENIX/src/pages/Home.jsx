@@ -1144,7 +1144,7 @@ const Home = () => {
             width: '100%',
             maxWidth: '456px',
             height: { xs: 'auto', md: '590px' },
-            mt:{md:'-100px',lg:'-140px'}
+            mt:{md:'-100px',lg:'-70px'}
             
           }}
         >
@@ -1152,8 +1152,8 @@ const Home = () => {
           <Box
             sx={{
               position: 'absolute',
-              width: '100%',
-              height: {xs:'230px', md:'380px'},
+              width: '95%',
+              height: {xs:'230px', md:'320px'},
               bottom: 9,
               background: 'linear-gradient(116.48deg, #BE52CE 22.81%, #8D53DB 83.13%)',
               borderRadius: '53.42px',
@@ -1185,6 +1185,7 @@ const Home = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             maxWidth: '550px',
+            mt:{md:'40px',lg:'90px'},
             textAlign: { xs: 'center', sm: 'left' }
           }}
         >
