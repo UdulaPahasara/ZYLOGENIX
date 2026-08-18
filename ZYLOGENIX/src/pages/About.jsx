@@ -343,7 +343,7 @@ const About = () => {
               overflowX: 'auto',
               pt:'20px',
               paddingBottom: '20px',
-              paddingLeft: { xs: 'calc(50vw - 140px)', sm: '0px', lg: '160px' },
+              paddingLeft: { xs: 'calc(50vw - 140px)', sm: '0px', lg: '120px' },
               paddingRight: { xs: 'calc(50vw - 140px)', sm: '160px' }, 
               scrollSnapType: { xs: 'x mandatory', md: 'none' }, 
               '::-webkit-scrollbar': { display: 'none' },
@@ -375,9 +375,9 @@ const About = () => {
               position: 'absolute',
               right: 0,
               top: 0,
-              width: '190px',
+              width: '100px',
               height: '100%',
-              background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.07%)',
+              background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 62.07%)',
               pointerEvents: 'none', 
               zIndex: 10,
               display: { xs: 'none', sm: 'block' }
@@ -493,7 +493,7 @@ const About = () => {
                 component={motion.p}
                 variants={{
                   hidden: { opacity: 0 },
-                  visible: { opacity: 1 } // The actual animation is handled by WordRevealText children
+                  visible: { opacity: 1 }
                 }}
                 sx={{
                   fontFamily: 'Poppins',
