@@ -9,12 +9,12 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
         position: 'relative',
         backgroundColor: bgColor,
         borderRadius: '24px',
-        padding: '30px',
+        padding: { xs: '30px', sm: '20px', lg: '30px' },
         display: 'flex',
         flexDirection: 'column',
-        minWidth: '280px',
-        width: '280px',
-        height: '320px',
+        minWidth: { xs: '280px', sm: '230px', md: '250px', lg: '280px' },
+        width: { xs: '280px', sm: '230px', md: '250px', lg: '280px' },
+        height: { xs: '320px', sm: '270px', md: '290px', lg: '320px' },
         boxSizing: 'border-box',
         flexShrink: 0,
         overflow: 'hidden',
@@ -61,10 +61,10 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
           src={icon}
           alt={title}
           sx={{
-            width: '45px',
-            height: '45px',
+            width: { xs: '45px', sm: '35px', md: '40px', lg: '45px' },
+            height: { xs: '45px', sm: '35px', md: '40px', lg: '45px' },
             objectFit: 'contain',
-            marginBottom: '30px',
+            marginBottom: { xs: '30px', sm: '20px', md: '25px', lg: '30px' },
             filter: 'brightness(0) invert(1)',
             transition: 'filter 0.4s ease',
           }}
@@ -74,11 +74,11 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 600,
-            fontSize: '20px',
-            lineHeight: '25px',
+            fontSize: { xs: '20px', sm: '16px', md: '18px', lg: '20px' },
+            lineHeight: { xs: '25px', sm: '20px', md: '22px', lg: '25px' },
             textTransform: 'capitalize',
             color: '#FFFFFF',
-            marginBottom: '15px',
+            marginBottom: { xs: '15px', sm: '10px', md: '12px', lg: '15px' },
             transition: 'color 0.4s ease',
           }}
         >
@@ -89,8 +89,8 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 400,
-            fontSize: '14px',
-            lineHeight: '22px',
+            fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '14px' },
+            lineHeight: { xs: '22px', sm: '18px', md: '20px', lg: '22px' },
             textTransform: 'capitalize',
             color: 'rgba(255,255,255,0.85)',
             transition: 'color 0.4s ease',

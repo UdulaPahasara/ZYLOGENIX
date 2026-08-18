@@ -1152,8 +1152,8 @@ const Home = () => {
           <Box
             sx={{
               position: 'absolute',
-              width: '95%',
-              height: {xs:'230px', md:'320px'},
+              width: { xs: '100%', sm: '99%', md: '95%' },  
+              height: { xs: '230px', md: '320px' },
               bottom: 9,
               background: 'linear-gradient(116.48deg, #BE52CE 22.81%, #8D53DB 83.13%)',
               borderRadius: '53.42px',

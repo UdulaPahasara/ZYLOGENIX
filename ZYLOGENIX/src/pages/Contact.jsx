@@ -347,7 +347,8 @@ const Contact = () => {
               {/* EMAIL US */}
               <Box
                 sx={{
-                  width: { xs: '100%', sm: '300px' },
+                  flex: { xs: '1 1 100%', sm: '1 1 0' },
+                  minWidth: 0,
                   minHeight: '190px',
                   borderRadius: '16px',
                   backgroundColor: 'rgba(241, 235, 243, 1)',
@@ -391,7 +392,8 @@ const Contact = () => {
               {/* SOCIAL MEDIA */}
               <Box
                 sx={{
-                  width: { xs: '100%', sm: '300px' },
+                  flex: { xs: '1 1 100%', sm: '1 1 0' },
+                  minWidth: 0,
                   minHeight: '190px',
                   borderRadius: '16px',
                   backgroundColor: 'rgba(241, 235, 243, 1)',
@@ -435,7 +437,8 @@ const Contact = () => {
               {/* EXPLORE OUR SERVICES */}
               <Box
                 sx={{
-                  width: { xs: '100%', sm: '300px' },
+                  flex: { xs: '1 1 100%', sm: '1 1 0' },
+                  minWidth: 0,
                   minHeight: '190px',
                   borderRadius: '16px',
                   backgroundColor: 'rgba(241, 235, 243, 1)',

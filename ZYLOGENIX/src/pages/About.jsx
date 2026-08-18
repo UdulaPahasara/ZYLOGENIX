@@ -121,7 +121,7 @@ const About = () => {
   const handleScroll = () => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
-      const cardWidth = 310; // 280px card + 30px gap
+      const cardWidth = scrollRef.current.children[0] ? scrollRef.current.children[0].offsetWidth + 30 : 310;
       const newIndex = Math.round(scrollLeft / cardWidth);
       if (newIndex !== activeIndex) {
         setActiveIndex(newIndex);
@@ -129,14 +129,14 @@ const About = () => {
     }
   };
 
-  // Auto-swipe feature for mobile & tablet
+  // Auto-swipe feature for mobile only
   useEffect(() => {
     const interval = setInterval(() => {
-      // Only auto-swipe on screens smaller than desktop (1024px)
-      if (window.innerWidth < 1024 && scrollRef.current) {
+      // Only auto-swipe on mobile screens (< 600px)
+      if (window.innerWidth < 600 && scrollRef.current) {
         const maxIndex = cardsData.length - 1;
         const nextIndex = activeIndex >= maxIndex ? 0 : activeIndex + 1;
-        const cardWidth = 310;
+        const cardWidth = scrollRef.current.children[0] ? scrollRef.current.children[0].offsetWidth + 30 : 310;
         
         scrollRef.current.scrollTo({
           left: nextIndex * cardWidth,
@@ -391,7 +391,7 @@ const About = () => {
             display: { xs: 'flex', sm: 'none' }, 
             justifyContent: 'center', 
             gap: '10px',
-            marginTop: '20px' 
+            marginTop: '0px' 
           }}
         >
           {cardsData.map((_, index) => (
@@ -399,8 +399,9 @@ const About = () => {
               key={index}
               onClick={() => {
                 if (scrollRef.current) {
+                  const cardWidth = scrollRef.current.children[0] ? scrollRef.current.children[0].offsetWidth + 30 : 310;
                   scrollRef.current.scrollTo({
-                    left: index * 310,
+                    left: index * cardWidth,
                     behavior: 'smooth'
                   });
                   setActiveIndex(index);
