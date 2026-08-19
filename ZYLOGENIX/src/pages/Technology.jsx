@@ -184,7 +184,7 @@ const Technology = () => {
             description="Build User-Friendly And Feature-Rich Mobile Applications Tailored To Your Requirements, With Development Across IOS, Android, And Other Supported Platforms. We Create Intuitive, Reliable, And Scalable Mobile Solutions That Deliver Seamless User Experiences, Support Business Operations, And Help You Connect With Your Customers Wherever They Are."
             bgColor="#011531"
              
-             imageContainerSx={{mb:{xs:-4,sm:-6,lg:-6},mt:{xs:-6}}}
+             imageContainerSx={{mb:{xs:-4,sm:-6,lg:-6},mt:{xs:-6},mt:{xs:'-10px'}}}
             imagePosition="right"
           />
           <TecCard 
