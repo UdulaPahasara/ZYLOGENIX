@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import deliverBg from '../../assets/home/deleverbg.webp';
+import deliverBg from '../../assets/Home/deleverbg.webp';
 
 const DeliverCard = ({ title, description }) => {
   return (

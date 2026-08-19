@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import deliverBg from '../../assets/home/deleverbg.webp';
+import deliverBg from '../../assets/Home/deleverbg.webp';
 
 const AboutWhyCard = ({ icon, title, description, bgColor }) => {
   return (
