@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Box, Typography, Button, Grid, Alert } from '@mui/material';
 import emailjs from '@emailjs/browser';
-import contactHeroImg from '../assets/contactus/contactHero.webp';
+import contactHeroImg from '../assets/ContactUs/contactHero.webp';
 import Footer from '../components/footer/footer';
 
 const inputStyle = {
