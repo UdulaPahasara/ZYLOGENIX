@@ -17,6 +17,7 @@ import LevestageImg from '../assets/company/levestage.webp';
 import InfluencerhubImg from '../assets/company/influencerhub.webp';
 import TransformBusinessImg from '../assets/home/transformBussines.webp';
 import ZylogenixImg from '../assets/home/ZYLOGENIX.webp';
+import VectorImg from '../assets/home/Vector.webp';
 import Footer from '../components/footer/footer';
 
 const servicesData = [
@@ -96,6 +97,33 @@ const slidesData = [
 
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  // Touch swipe state
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swiped left (next slide)
+      setActiveSlide((prev) => (prev < slidesData.length - 1 ? prev + 1 : prev));
+    } else if (touchStartX.current - touchEndX.current < -50) {
+      // Swiped right (previous slide)
+      setActiveSlide((prev) => (prev > 0 ? prev - 1 : prev));
+    }
+    
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -352,6 +380,9 @@ const Home = () => {
       <Box
         ref={sliderRef}
         className="white-section"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         sx={{
           width: '100%',
           maxWidth: '1440px',
@@ -447,20 +478,39 @@ const Home = () => {
 
               <Button
                 sx={{
-                  background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
+                  minWidth: '151px',
+                  width: 'fit-content',
+                  height: '45px',
+                  background: 'rgba(243, 243, 243, 1)',
+                  border: '1px solid rgba(0, 0, 0, 1)',
                   borderRadius: '10px',
-                  padding: '11px 25px',
-                  color: '#ffffff',
+                  padding: '10px 13px 11px 9px',
+                  color: 'rgba(0, 0, 0, 1)',
                   fontFamily: 'Poppins',
                   fontWeight: 500,
                   fontSize: '16px',
                   textTransform: 'none',
+                  whiteSpace: 'nowrap',
+                  gap: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
                   '&:hover': {
-                    background: 'linear-gradient(90deg, #8D53DB 0%, #BE52CE 100%)',
+                    background: 'rgba(225, 225, 225, 1)',
                   },
                 }}
               >
                 {slidesData[activeSlide].buttonText}
+                <Box
+                  component="img"
+                  src={VectorImg}
+                  alt="arrow"
+                  sx={{
+                    width: '12px',
+                    height: '12px',
+                    transform: 'rotate(360deg)',
+                    opacity: 1,
+                  }}
+                />
               </Button>
             </Box>
           </motion.div>
@@ -469,11 +519,12 @@ const Home = () => {
         <Box
           sx={{
             position: 'absolute',
-            right: { xs: '5px', md: '10px', lg: '60px', xl: '196px' },
-            top: '50%',
-            transform: 'translateY(-50%)',
+            right: { xs: '50%', md: '10px', lg: '60px', xl: '196px' },
+            bottom: { xs: '15px', md: 'auto' },
+            top: { xs: 'auto', md: '50%' },
+            transform: { xs: 'translateX(50%)', md: 'translateY(-50%)' },
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: { xs: 'row', md: 'column' },
             alignItems: 'center',
             gap: '12px',
             zIndex: 10,
@@ -484,17 +535,17 @@ const Home = () => {
               key={index}
               onClick={() => setActiveSlide(index)}
               sx={{
-                width: '10px',
-                height: activeSlide === index ? '40px' : '10px',
+                width: { xs: activeSlide === index ? '40px' : '10px', md: '10px' },
+                height: { xs: '10px', md: activeSlide === index ? '40px' : '10px' },
                 borderRadius: '100px',
                 background: activeSlide === index 
-                  ? 'linear-gradient(180deg, #BE52CE 10.1%, #8D53DB 100%)' 
+                  ? { xs: 'linear-gradient(90deg, #BE52CE 10.1%, #8D53DB 100%)', md: 'linear-gradient(180deg, #BE52CE 10.1%, #8D53DB 100%)' }
                   : 'rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 '&:hover': {
                   background: activeSlide === index 
-                    ? 'linear-gradient(180deg, #BE52CE 10.1%, #8D53DB 100%)' 
+                    ? { xs: 'linear-gradient(90deg, #BE52CE 10.1%, #8D53DB 100%)', md: 'linear-gradient(180deg, #BE52CE 10.1%, #8D53DB 100%)' }
                     : 'rgba(0, 0, 0, 0.3)',
                 }
               }}
@@ -526,14 +577,16 @@ const Home = () => {
         <Box
           sx={{
             position: 'absolute',
-            width: '391.82px',
-            height: '391.82px',
-            top: { xs: '-50px', md: '166px' },
-            left: { xs: '-50px', md: '102px' },
-            backgroundColor: 'rgba(229, 221, 230, 0.35)',
-            filter: 'blur(200px)',
+            width: { xs: '300px', md: '600px' },
+            height: { xs: '400px', md: '600px' },
+            top: { xs: '0px', md: '-60px' },
+            left: { xs: '00px', md: '-20px' },
+            pt: { xs: '1500px', md: '0' },
+            background: 'radial-gradient(ellipse at center, rgba(229, 221, 230, 0.35) 30%, rgba(190, 82, 206, 0.18) 45%, transparent 9%)',
+            filter: 'blur(60px)',
             borderRadius: '50%',
             zIndex: 0,
+            pointerEvents: 'none',
           }}
         />
 

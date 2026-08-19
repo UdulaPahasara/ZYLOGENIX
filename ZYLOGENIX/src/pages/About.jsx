@@ -11,6 +11,7 @@ import VrBoxImg from '../assets/About/vrbox.webp';
 import HandTogetherImg from '../assets/About/handtogather.webp';
 import HeroBg from '../assets/About/hero.webp';
 import HeroManImg from '../assets/About/heroMan.webp';
+import VectorImg from '../assets/home/Vector.webp';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import OurMissionAndVision from '../components/common/ourMission&vision';
 
@@ -660,23 +661,39 @@ const About = () => {
         <Button
           href="/contact"
           sx={{
-            width: '156px',
+            width: '151px',
             height: '45px',
             borderRadius: '10px',
+            border: '1px solid rgba(0, 0, 0, 1)',
             padding: '10px 13px 11px 9px',
-            background: 'linear-gradient(180deg, #BE52CE 0%, #8D53DB 100%)',
-            color: '#FFFFFF',
+            background: 'rgba(243, 243, 243, 1)',
+            color: 'rgba(0, 0, 0, 1)',
             fontFamily: 'Poppins',
             fontWeight: 600,
             fontSize: '14px',
             textTransform: 'uppercase',
             marginBottom: '80px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
             '&:hover': {
-              background: 'linear-gradient(180deg, #8D53DB 0%, #BE52CE 100%)'
+              background: 'rgba(225, 225, 225, 1)'
             }
           }}
         >
           Contact Us
+          <Box
+            component="img"
+            src={VectorImg}
+            alt="arrow"
+            sx={{
+              width: '12px',
+              height: '12px',
+              transform: 'rotate(360deg)',
+              opacity: 1,
+            }}
+          />
         </Button>
 
         {/* Image Container with Background Shape */}
