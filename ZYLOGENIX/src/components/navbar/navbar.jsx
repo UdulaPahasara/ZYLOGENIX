@@ -64,6 +64,7 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
+    { label: 'Technology', path: '/technology' },
     { 
       label: 'Capabilities', 
       path: '/capabilities',
@@ -75,7 +76,7 @@ const Navbar = () => {
         { label: 'IT & Technical Support', path: '/it-technical-support' }
       ]
     },
-    { label: 'Technology', path: '/technology' },
+    
   ];
 
   return (

@@ -11,7 +11,7 @@ import VrBoxImg from '../assets/About/vrbox.webp';
 import HandTogetherImg from '../assets/About/handtogather.webp';
 import HeroBg from '../assets/About/hero.webp';
 import HeroManImg from '../assets/About/heroMan.webp';
-import VectorImg from '../assets/home/Vector.webp';
+import VectorImg from '../assets/Home/Vector.webp';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import OurMissionAndVision from '../components/common/ourMission&vision';
 
