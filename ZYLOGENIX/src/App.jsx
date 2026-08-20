@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 import ScrollToTop from './components/common/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
-import Capabilities from './pages/Capabilities';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
 import DesignBranding from './pages/Design&Branding';
@@ -34,7 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/capabilities" element={<Navigate to="/web-app" replace />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/design-branding" element={<DesignBranding />} />
           <Route path="/content-social-media" element={<ContentSocialMedia />} />

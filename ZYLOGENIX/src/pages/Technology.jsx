@@ -123,11 +123,11 @@ const Technology = () => {
               background: 'linear-gradient(90deg, #F6B0FE 0%, #BE52CE 36.97%, #8D53DB 82.38%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              maxWidth: { xs: '320px', sm: '600px' },
+              maxWidth: { xs: '320px', sm: '600px', md: '1000px' },
               mb: '20px'
             }}
           >
-            Solutions that<br/>evolve with you
+            Technology That Powers<br/>Your Digital Growth
           </Typography>
           <Typography
             sx={{
@@ -140,7 +140,7 @@ const Technology = () => {
               maxWidth: '735px'
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Ipsum vel dolor
+            From intelligent AI solutions to web, mobile, e-commerce, and enterprise development, Zylogenix combines modern technologies with practical digital expertise to create solutions tailored to your business needs.
           </Typography>
         </Box>
 

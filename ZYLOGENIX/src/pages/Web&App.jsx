@@ -149,7 +149,8 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '614px' },
-            mb:{xs:'-28px',sm:'-120px',md:'-150px',lg:'-24px'}
+            mb:{xs:'0px',sm:'3px',md:'1px',lg:'-24px'},
+            mr:{xs:'-18px',sm:'15px',md:'-40px',lg:'70px'},
           }}
            textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
           titleSx={{ 
@@ -162,7 +163,11 @@ const WebApp = () => {
             lineHeight: { lg: '25px' }, 
             maxWidth: { lg: '486px' }
           }}
-          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.9)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ 
+            objectPosition: 'bottom center',
+            transformOrigin: 'bottom center',
+            transform: { xs: 'scale(1)', sm: 'scale(1.2)', md: 'scale(0.9)', lg: 'scale(1.4)' } 
+          }}
         />
 
         {/* Card 3 */}
@@ -172,7 +177,7 @@ const WebApp = () => {
           title={"Create Better Online\nShopping Experiences"}
           description1="We Develop User-Friendly And Secure E-Commerce Platforms That Make Online Shopping Simple And Engaging. Our Solutions Are Designed To Support Smooth Customer Experiences While Helping Businesses Strengthen Their Online Operations."
           description2="From Platform Functionality To Secure Transactions, We Create E-Commerce Experiences That Support Customer Engagement, Growth, And Profitability."
-          bgColor="#0B1117"
+          bgColor="rgba(16, 16, 18, 1)"
           imagePosition="left"
           imageScale={1}
           badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1) 0%,rgba(255, 89, 0, 1)100%)'
@@ -183,10 +188,18 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '391px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '557px' },
             ml: { xs: '0px', lg: '148px' },
-            mt: { xs: '-70px', lg: '84px' },
+            mt: { xs: '0px', lg: '64px',md:'-80px' },
             mb:{xs:'-68px',sm:'-100px',md:'-100px',lg:'-10px'}
           }}
-          imageSx={{ transform: { xs: 'scale(0.7)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ 
+            objectPosition: 'bottom center',
+            transformOrigin: 'bottom center',
+            transform: { xs: 'scale(1)', sm: 'scale(0.95)', md: 'scale(1)', lg: 'scale(1.35)' },
+            objectFit:'contain',
+            ml: { lg:'-100px' },
+            mb: { xs:'70px', sm: '0px' },
+            mt:{sm:'-190px',lg:'1px'}
+          }}
         />
 
         {/* Card 4 */}
@@ -208,9 +221,9 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 537px' }, 
             width: { xs: '100%', sm: '50%', lg: '537px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '634px' },
-            mr:{xs:'-48px',sm:'-35px',md:'-150px',lg:'-10px'},
+            mr:{xs:'-48px',sm:'-37px',md:'-64px',lg:'0px'},
             mb:{xs:'-28px',sm:'-60px',md:'-100px',lg:'-10px'},
-            mt:{xs:'-40px'}
+            mt:{xs:'-40px',}
           }}
           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
           titleSx={{ 
@@ -223,7 +236,7 @@ const WebApp = () => {
             lineHeight: { lg: '25px' }, 
             maxWidth: { lg: '486px' }
           }}
-          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.85)', sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' },mt:{lg:'39px'} }}
         />
 
         {/* Card 5 */}

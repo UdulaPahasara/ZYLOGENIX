@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography, Button, useTheme, useMediaQuery, keyframes } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import AboutWhyCard from '../components/common/aboutWhycard';
 import DocumentIcon from '../assets/About/document.webp';
 import UsersIcon from '../assets/About/users.webp';
@@ -95,6 +96,7 @@ const WordRevealText = ({ text }) => {
 };
 
 const About = () => {
+  const navigate = useNavigate();
   const theme = useTheme();
   // Target strictly mobile phones (<600px). Tablets (sm/600px+) act as desktop.
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -326,9 +328,10 @@ const About = () => {
             textAlign: 'center',
             maxWidth: '650px',
             marginBottom: '60px'
+            
           }}
         >
-          At Zylogenix Digital Solutions, we're equipped to handle projects of any size, dedicated to enhancing our clients' productivity and fostering growth. When you choose us, you can expect:
+          At Zylogenix Digital Solutions, We're Equipped To Handle Projects Of Any Size, Dedicated To Enhancing Our Clients' Productivity And Fostering Growth. When You Choose Us, You Can Expect:
         </Typography>
 
         {/* Cards Container with Horizontal Scroll and Right Fade */}
@@ -678,9 +681,10 @@ const About = () => {
             justifyContent: 'center',
             gap: '10px',
             '&:hover': {
-              background: 'rgba(225, 225, 225, 1)'
+            background: 'rgba(225, 225, 225, 1)'
             }
           }}
+          onClick={() => navigate('/contact')}
         >
           Contact Us
           <Box

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useMotionTemplate } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HomeHeroVideo from '../assets/Home/Vhero.mp4';
@@ -96,6 +97,7 @@ const slidesData = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
 
   // Touch swipe state
@@ -133,9 +135,16 @@ const Home = () => {
   const imageX = useTransform(smoothX, [-0.5, 0.5], [-25, 25]);
   const imageY = useTransform(smoothY, [-0.5, 0.5], [-25, 25]);
 
+  const whyZylogenixRect = useRef({ left: 0, top: 0, width: 0, height: 0 });
+
+  const handleWhyZylogenixMouseEnter = (e) => {
+    whyZylogenixRect.current = e.currentTarget.getBoundingClientRect();
+  };
+
   const handleWhyZylogenixMouseMove = (e) => {
-    const { currentTarget, clientX, clientY } = e;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = whyZylogenixRect.current;
+    if (width === 0) return;
     const x = (clientX - left) / width - 0.5;
     const y = (clientY - top) / height - 0.5;
     mouseX.set(x);
@@ -148,9 +157,15 @@ const Home = () => {
   const smoothSpotlightY = useSpring(spotlightY, { damping: 40, stiffness: 250 });
   const spotlightBackground = useMotionTemplate`radial-gradient(150px circle at ${smoothSpotlightX}px ${smoothSpotlightY}px, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)`;
 
+  const spotlightRect = useRef({ left: 0, top: 0 });
+
+  const handleSpotlightMouseEnter = (e) => {
+    spotlightRect.current = e.currentTarget.getBoundingClientRect();
+  };
+
   const handleSpotlightMouseMove = (e) => {
-    const { currentTarget, clientX, clientY } = e;
-    const { left, top } = currentTarget.getBoundingClientRect();
+    const { clientX, clientY } = e;
+    const { left, top } = spotlightRect.current;
     spotlightX.set(clientX - left);
     spotlightY.set(clientY - top);
   };
@@ -189,6 +204,31 @@ const Home = () => {
     });
   };
 
+  // Services Touch swipe state
+  const serviceTouchStartX = useRef(0);
+  const serviceTouchEndX = useRef(0);
+
+  const handleServiceTouchStart = (e) => {
+    serviceTouchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleServiceTouchMove = (e) => {
+    serviceTouchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleServiceTouchEnd = () => {
+    if (!serviceTouchStartX.current || !serviceTouchEndX.current) return;
+    
+    if (serviceTouchStartX.current - serviceTouchEndX.current > 50) {
+      paginateService(1);
+    } else if (serviceTouchStartX.current - serviceTouchEndX.current < -50) {
+      paginateService(-1);
+    }
+    
+    serviceTouchStartX.current = 0;
+    serviceTouchEndX.current = 0;
+  };
+
   useEffect(() => {
     activeServiceSlideRef.current = activeServiceSlide;
   }, [activeServiceSlide]);
@@ -198,6 +238,9 @@ const Home = () => {
     if (!servicesSlider) return;
 
     const handleServicesWheel = (e) => {
+      // Only enable scroll-shift on desktop (width > 1024px)
+      if (window.innerWidth <= 1024) return;
+
       if (isServicesScrolling.current) {
         e.preventDefault();
         return;
@@ -227,23 +270,22 @@ const Home = () => {
   const serviceVariants = {
     enter: (direction) => {
       return {
+        x: direction > 0 ? 100 : -100,
         opacity: 0,
-        filter: 'brightness(1)',
-        transition: { duration: 1.2, ease: "easeInOut" }
       };
     },
     center: {
       zIndex: 1,
+      x: 0,
       opacity: 1,
-      filter: 'brightness(1)',
-      transition: { duration: 1.2, ease: "easeInOut" }
+      transition: { duration: 0.4, ease: "easeOut" }
     },
     exit: (direction) => {
       return {
         zIndex: 0,
+        x: direction < 0 ? 100 : -100,
         opacity: 0,
-        filter: 'brightness(0.2)',
-        transition: { duration: 0.3, ease: "easeInOut" }
+        transition: { duration: 0.3, ease: "easeIn" }
       };
     }
   };
@@ -431,11 +473,13 @@ const Home = () => {
               <Typography
                 sx={{
                   fontFamily: 'Poppins',
-                  fontWeight: 600,
-                  fontSize: { xs: '32px', md: '48px' },
-                  lineHeight: { xs: '42px', md: '61.2px' },
+                  fontWeight: 800,
+                  fontSize: { xs: '32px', md: '39.41px' },
+                  lineHeight: { xs: '42px', md: '45.52px' },
                   textTransform: 'uppercase',
-                  color: 'rgba(0, 0, 0, 1)',
+                  background: 'linear-gradient(90deg, #BE52CE 0%, #8D53DB 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
                   mb: '42px',
                   wordWrap: 'break-word',
                   textAlign: { xs: 'center', md: 'left' }
@@ -477,6 +521,11 @@ const Home = () => {
               </Typography>
 
               <Button
+                onClick={() => {
+                  if (slidesData[activeSlide].buttonText === "Contact Us") {
+                    navigate('/contact');
+                  }
+                }}
                 sx={{
                   minWidth: '151px',
                   width: 'fit-content',
@@ -555,11 +604,12 @@ const Home = () => {
       </Box>
 
       <Box
+        onMouseEnter={handleWhyZylogenixMouseEnter}
         onMouseMove={handleWhyZylogenixMouseMove}
         onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
         sx={{
           width: '100%',
-          maxWidth: '1440px',
+          maxWidth: '100%',
           margin: '0 auto',
           height: { xs: 'auto', sm: '380px', md: '500px' },
           backgroundColor: 'rgba(26, 12, 47, 1)',
@@ -575,22 +625,6 @@ const Home = () => {
         }}
       >
         <Box
-          sx={{
-            position: 'absolute',
-            width: { xs: '300px', md: '600px' },
-            height: { xs: '400px', md: '600px' },
-            top: { xs: '0px', md: '-60px' },
-            left: { xs: '00px', md: '-20px' },
-            pt: { xs: '1500px', md: '0' },
-            background: 'radial-gradient(ellipse at center, rgba(229, 221, 230, 0.35) 30%, rgba(190, 82, 206, 0.18) 45%, transparent 9%)',
-            filter: 'blur(60px)',
-            borderRadius: '50%',
-            zIndex: 0,
-            pointerEvents: 'none',
-          }}
-        />
-
-        <Box
           component={motion.div}
           style={{ x: imageX, y: imageY }}
           sx={{
@@ -598,8 +632,28 @@ const Home = () => {
             alignSelf: { xs: 'center', sm: 'flex-end', md: 'flex-end' },
             display: 'flex',
             flexShrink: 0,
+            position: 'relative',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
+          {/* Glowing background anchored behind the image */}
+          <Box
+            sx={{
+              position: 'absolute',
+              width: { xs: '300px', sm: '400px', md: '500px', lg: '600px' },
+              height: { xs: '300px', sm: '400px', md: '500px', lg: '600px' },
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              background: 'radial-gradient(ellipse at center, rgba(229, 221, 230, 0.35) 30%, rgba(190, 82, 206, 0.18) 45%, transparent 60%)',
+              filter: 'blur(60px)',
+              borderRadius: '50%',
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          />
+
           <Box
             component="img"
             src={WhyZylogenixImg}
@@ -615,6 +669,8 @@ const Home = () => {
                 md: 'scale(1) translateY(40px)' 
               }, 
               transformOrigin: 'bottom center',
+              zIndex: 1,
+              position: 'relative',
             }}
           />
         </Box>
@@ -660,7 +716,7 @@ const Home = () => {
               textAlign: { xs: 'center', sm: 'left', md: 'left' }
             }}
           >
-            Solutions Built Around Your Business Vision
+            Solutions Built Around <br /> Your Business Vision
           </Typography>
 
           <Typography
@@ -789,6 +845,9 @@ const Home = () => {
       {/* Services Cards Section */}
       <Box
         ref={servicesRef}
+        onTouchStart={handleServiceTouchStart}
+        onTouchMove={handleServiceTouchMove}
+        onTouchEnd={handleServiceTouchEnd}
         sx={{
           width: '100%',
         
@@ -1148,6 +1207,7 @@ const Home = () => {
                   transform: 'scale(1.05)'
                 }
               }}
+              onClick={() => navigate('/contact')}
             >
               <Typography
                 sx={{
@@ -1267,7 +1327,7 @@ const Home = () => {
               mb: '25px'
             }}
           >
-            Your Trusted Partner In Digital Transformation
+            Your Trusted Partner In <br />Digital Transformation
           </Typography>
 
           <Typography

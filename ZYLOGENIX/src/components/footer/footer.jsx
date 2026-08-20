@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, Link, Divider } from '@mui/material';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import ZylogenixLogo from '../../assets/Logo/ZylogenixLogo.webp';
 import FacebookIcon from '../../assets/socialmedia/facebook.webp';
 import InstagramIcon from '../../assets/socialmedia/instragram.webp';
@@ -7,6 +8,25 @@ import WhatsappIcon from '../../assets/socialmedia/whatssapp.webp';
 import ThreadsIcon from '../../assets/socialmedia/threads.webp';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Technology', path: '/technology' },
+    { label: 'Capabilities', path: '' },
+    { label: 'Contact Us', path: '/contact' },
+  ];
+
+  const handleFooterNav = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCapabilitiesHighlight = () => {
+    window.dispatchEvent(new CustomEvent('highlight-capabilities'));
+  };
+
   return (
     <Box
       sx={{
@@ -80,10 +100,11 @@ const Footer = () => {
             mb: '18px'
           }}
         >
-          {['Home', 'About', 'Capabilities', 'Technology', 'Contact Us'].map((text) => (
+          {navLinks.map((item) => (
             <Link
-              key={text}
-              href={`#${text.toLowerCase().replace(' ', '-')}`}
+              key={item.label}
+              component="button"
+              onClick={() => item.label === 'Capabilities' ? handleCapabilitiesHighlight() : handleFooterNav(item.path)}
               underline="none"
               sx={{
                 fontFamily: 'Poppins',
@@ -93,10 +114,13 @@ const Footer = () => {
                 color: 'rgba(255, 255, 255, 0.7)',
                 textTransform: 'capitalize',
                 transition: 'color 0.3s ease',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
                 '&:hover': { color: '#FFFFFF' }
               }}
             >
-              {text}
+              {item.label}
             </Link>
           ))}
         </Box>

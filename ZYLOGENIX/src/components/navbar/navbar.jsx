@@ -15,6 +15,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isWhiteBackground, setIsWhiteBackground] = useState(false);
+  const [capabilitiesFlash, setCapabilitiesFlash] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,15 @@ const Navbar = () => {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleHighlight = () => {
+      setCapabilitiesFlash(true);
+      setTimeout(() => setCapabilitiesFlash(false), 2000);
+    };
+    window.addEventListener('highlight-capabilities', handleHighlight);
+    return () => window.removeEventListener('highlight-capabilities', handleHighlight);
   }, []);
 
   const handleMenuOpen = (event) => {
@@ -140,11 +150,24 @@ const Navbar = () => {
                   fontSize: '16px',
                   lineHeight: '16px',
                   textTransform: 'capitalize',
-                  color: location.pathname === item.path || (item.subItems && item.subItems.some(sub => location.pathname === sub.path)) ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
+                  color: (
+                    location.pathname === item.path ||
+                    (item.subItems && item.subItems.some(sub => location.pathname === sub.path)) ||
+                    (item.label === 'Capabilities' && capabilitiesFlash)
+                  ) ? 'rgba(190, 82, 206, 1)' : 'rgba(118, 118, 118, 1)',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  transition: 'color 0.3s ease',
+                  transition: 'color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease',
+                  ...(item.label === 'Capabilities' && capabilitiesFlash && {
+                    transform: 'scale(1.18)',
+                    textShadow: '0 0 12px rgba(190, 82, 206, 0.9), 0 0 24px rgba(141, 83, 219, 0.6)',
+                    animation: 'capPulse 0.6s ease-in-out infinite alternate',
+                    '@keyframes capPulse': {
+                      from: { transform: 'scale(1.1)', textShadow: '0 0 8px rgba(190,82,206,0.7)' },
+                      to:   { transform: 'scale(1.22)', textShadow: '0 0 20px rgba(190,82,206,1), 0 0 40px rgba(141,83,219,0.8)' },
+                    },
+                  }),
                   '&:hover': {
                     color: 'rgba(190, 82, 206, 1)'
                   }

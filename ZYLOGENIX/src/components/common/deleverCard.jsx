@@ -29,13 +29,13 @@ const DeliverCard = ({ title, description }) => {
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 700,
-            fontSize: '16.21px',
+            fontSize: { xs: '14px', sm: '15px', md: '16.21px' },
             lineHeight: '21.62px',
             textAlign: 'center',
             textTransform: 'uppercase',
             color: 'rgba(255, 255, 255, 1)',
             width: '100%',
-            maxWidth: '237px',
+            whiteSpace: 'nowrap',
             mb: '36px',
           }}
         >

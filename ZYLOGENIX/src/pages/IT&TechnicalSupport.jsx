@@ -126,17 +126,25 @@ const ITTechnicalSupport = () => {
           imagePosition="left"
           badgeBgColor='linear-gradient(90deg, rgba(83, 115, 219, 1) 0%,rgba(0, 4, 255, 1) 100%)'
           imageScale={1}
-          objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
-            flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 390px' }, 
+            flex: { xs: '0 0 100%', sm: '1 1 50%', lg: '0 0 390px' }, 
             width: { xs: '100%', sm: '50%', lg: '390px' }, 
-            height: { xs: 'auto', sm: 'auto', lg: '584px' },
-            ml: { xs: '0px', lg: '160px' },
-            mt: { xs: '-70px',sm:'10px',md:'0px', lg: '55px' },
-            mb:{xs:'-70px',sm:'-118px',md:'-110px'}
+            height: { xs: '130px', sm: 'auto', lg: '639px' },
+            ml: { xs: '0px', lg: '99px' },
+            mt: { xs: '0px', sm: '0px', md: '0px', lg: '0px' },
+            mb: { xs: '0px', sm: '0px', md: '0px', lg: '0px' },
+            alignSelf: { xs: 'auto', sm: 'stretch' },
           }}
-          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.75)', md: 'scale(0.7)', lg: 'scale(1)' } }}
+          imageSx={{ 
+            objectFit: 'cover',
+            objectPosition: 'center center',
+            width: '200%',
+            height: '100%',
+            transform: 'none',
+            ml:{sm:'-180px'}
+          }}
+          textContainerSx={{ pl: { xs: '20px', sm: '40px', md: '80px', lg: '160px' } }}
         />
 
         {/* Card 2 */}
@@ -197,7 +205,7 @@ const ITTechnicalSupport = () => {
             mt: { xs: '-60px',sm:'44px', lg: '54px' },
             mb:{xs:'-62px',sm:'-110px'}
           }}
-          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' },mt:{xs:'10px',sm:'10px',md:'-20px',lg:'50px'} }}
         />
 
         {/* Card 4 */}
@@ -230,11 +238,11 @@ const ITTechnicalSupport = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 405px' }, 
             width: { xs: '100%', sm: '50%', lg: '405px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '561px' },
-            mt: { xs: '-70px', lg: '76px' },
-            mr: { xs: '0px', lg: '105px' },
+            mt: { xs: '-100px',sm:'-280px', md:'-80px',lg: '-55px' },
+            mr: { xs: '-120px',sm:'0px', lg: '0px' },
             mb:{xs:'-70px',sm:'-205px',md:'-85px'}
           }}
-          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.65)',sm: 'scale(1)', md: 'scale(1)', lg: 'scale(1)' } }}
         />
 
         {/* Card 5 */}
@@ -252,7 +260,7 @@ const ITTechnicalSupport = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 472px' }, 
             width: { xs: '100%', sm: '50%', lg: '472px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '574px' },
-            ml: { xs: '0px', lg: '125px' },
+            ml: { xs: '0px',sm:'-50px', lg: '125px' },
             mt: { xs: '0px', md: '30px', lg: '67px' },
             mb: { xs: '0px', md: '-74px',sm:'-40px' }
           }}
@@ -316,10 +324,10 @@ const ITTechnicalSupport = () => {
             width: { xs: '100%', sm: '50%', lg: '597px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '585px' },
             ml: { xs: '0px', lg: '-7px' },
-            mt: { xs: '0px', md: '50px', lg: '55px' },
+            mt: { xs: '0px', md: '0px', lg: '22px' },
             mb:{sm:'-70px'}
           }}
-          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1.3)', md: 'scale(0.999)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1)', md: 'scale(1)', lg: 'scale(1.1)' },objectFit: 'cover',}}
         
         />
 
