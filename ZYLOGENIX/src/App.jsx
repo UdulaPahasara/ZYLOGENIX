@@ -18,12 +18,20 @@ import './App.css';
 import ScrollToTopButton from './components/common/ScrollToTopButton';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    // Only show loading screen once per browser session
+    return !sessionStorage.getItem('zylogenix_loaded');
+  });
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('zylogenix_loaded', 'true');
+    setIsLoading(false);
+  };
 
   return (
     <>
       <AnimatePresence>
-        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+        {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       </AnimatePresence>
       
       <Router>
