@@ -119,7 +119,7 @@ const WebApp = () => {
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
-           badgeBgColor='linear-gradient(90deg, rgba(83, 115, 219, 1) 0%,rgba(0, 4, 255, 1)100%)'
+           badgeBgColor='linear-gradient(90deg, rgba(192, 184, 86, 1) 0%,rgba(255, 195, 0, 1)100%)'
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -128,6 +128,17 @@ const WebApp = () => {
             height: { xs: 'auto', sm: 'auto', lg: '639px' },
             ml: { xs: '0px', lg: '45px' },
             mt: { xs: '0px', lg: '0px' } 
+          }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
           }}
           imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.85)', lg: 'scale(1)' } }}
         />
@@ -149,7 +160,7 @@ const WebApp = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 487px' }, 
             width: { xs: '100%', sm: '50%', lg: '487px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '614px' },
-            mb:{xs:'0px',sm:'3px',md:'1px',lg:'-24px'},
+            mb:{xs:'0px',sm:'3px',md:'1px',lg:'0px'},
             mr:{xs:'-18px',sm:'15px',md:'-40px',lg:'70px'},
           }}
            textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
@@ -200,6 +211,17 @@ const WebApp = () => {
             mb: { xs:'70px', sm: '0px' },
             mt:{sm:'-190px',lg:'1px'}
           }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         />
 
         {/* Card 4 */}
@@ -214,7 +236,7 @@ const WebApp = () => {
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
-          badgeBgColor='linear-gradient(90deg, rgba(206, 140, 82, 1)0%,rgba(255, 89, 0, 1) 100%)'
+          badgeBgColor='linear-gradient(90deg, rgba(255, 0, 0, 1)0%,rgba(156, 1, 1, 1) 100%)'
           objectFitOverride='cover'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '633px' } }}
           imageContainerSx={{ 
@@ -257,6 +279,18 @@ const WebApp = () => {
             width: { xs: '100%', sm: '50%', lg: '590px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '638px' }
           }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
+          
           imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.999)', md: 'scale(0.999)', lg: 'scale(1)' } }}
         />
 

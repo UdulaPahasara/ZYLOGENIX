@@ -205,6 +205,18 @@ const ITTechnicalSupport = () => {
             mt: { xs: '-60px',sm:'44px', lg: '54px' },
             mb:{xs:'-62px',sm:'-110px'}
           }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
+          
           imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' },mt:{xs:'10px',sm:'10px',md:'-20px',lg:'50px'} }}
         />
 
@@ -238,11 +250,11 @@ const ITTechnicalSupport = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 405px' }, 
             width: { xs: '100%', sm: '50%', lg: '405px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '561px' },
-            mt: { xs: '-100px',sm:'-280px', md:'-80px',lg: '-55px' },
-            mr: { xs: '-120px',sm:'0px', lg: '0px' },
+            mt: { xs: '-100px',sm:'-280px', md:'-80px',lg: '23px' },
+            mr: { xs: '-120px',sm:'0px', lg: '69px' },
             mb:{xs:'-70px',sm:'-205px',md:'-85px'}
           }}
-          imageSx={{ transform: { xs: 'scale(0.65)',sm: 'scale(1)', md: 'scale(1)', lg: 'scale(1)' } }}
+          imageSx={{ transform: { xs: 'scale(0.65)',sm: 'scale(1)', md: 'scale(1)', lg: 'scale(1.34)' } }}
         />
 
         {/* Card 5 */}
@@ -254,7 +266,7 @@ const ITTechnicalSupport = () => {
           description2="Our Support Approach Helps Businesses Address Technical Needs Efficiently While Maintaining Continuity Across Their Digital Operations."
           bgColor="#000000"
           imagePosition="left"
-          badgeBgColor='linear-gradient(90deg, rgba(121, 206, 82, 1)0%,rgba(52, 199, 89, 1) 100%)'
+          badgeBgColor='linear-gradient(90deg, rgba(206, 82, 82, 1) 0%,rgba(173, 0, 3, 1) 100%)'
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 472px' }, 
@@ -265,6 +277,17 @@ const ITTechnicalSupport = () => {
             mb: { xs: '0px', md: '-74px',sm:'-40px' }
           }}
           imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(0.85)', md: 'scale(0.75)', lg: 'scale(1)' } }}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         />
 
         {/* Card 6 */}
@@ -277,7 +300,7 @@ const ITTechnicalSupport = () => {
           description2="By Bringing Communication Closer To Your Customers, We Help Create More Accessible And Responsive Digital Interactions."
           bgColor="#FFFFFF"
           textColor="#000000"
-          badgeBgColor='linear-gradient(90deg, rgba(72, 112, 244, 1)0%,rgba(0, 4, 255, 1) 100%)'
+          badgeBgColor='linear-gradient(90deg, rgba(61, 222, 152, 1)0%,rgba(8, 147, 29, 1) 100%)'
           imagePosition="right"
           imageScale={1}
           objectFitOverride="contain"
@@ -316,7 +339,7 @@ const ITTechnicalSupport = () => {
           bgColor="rgba(0, 0, 0, 1)"
           imagePosition="left"
           imageScale={1}
-          badgeBgColor='linear-gradient(90deg, rgba(228, 196, 12, 1) 0%,rgba(170, 145, 4, 1) 100%)'
+          badgeBgColor='linear-gradient(90deg,rgba(190, 82, 206, 1) 0%,rgba(141, 83, 219, 1) 100%)'
           objectFitOverride="contain"
           containerSx={{ minHeight: { xs: 'auto', sm: 'auto', md: '520px', lg: '639px' } }}
           imageContainerSx={{ 
@@ -328,6 +351,17 @@ const ITTechnicalSupport = () => {
             mb:{sm:'-70px'}
           }}
           imageSx={{ transform: { xs: 'scale(1)', sm: 'scale(1)', md: 'scale(1)', lg: 'scale(1.1)' },objectFit: 'cover',}}
+           textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
+          titleSx={{ 
+            fontSize: { lg: '37.81px' }, 
+            lineHeight: { lg: '34.79px' }, 
+            maxWidth: { lg: '472px' }
+          }}
+          descriptionSx={{ 
+            fontSize: { lg: '16px' }, 
+            lineHeight: { lg: '25px' }, 
+            maxWidth: { lg: '486px' }
+          }}
         
         />
 
