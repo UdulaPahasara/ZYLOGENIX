@@ -31,22 +31,29 @@ const FeatureCard = ({
       className={className}
       sx={{
         width: '100%',
-        maxWidth: '1407px',
-        minHeight: { xs: 'auto', sm: '450px', md: '500px', lg: '639px' },
         backgroundColor: bgColor,
         display: 'flex',
-        flexDirection: { 
-          xs: 'column-reverse', 
-          sm: isImageRight ? 'row-reverse' : 'row' 
-        },
-        alignItems: 'center',
-        boxSizing: 'border-box',
-        position: 'relative',
-        margin: '0 auto',
-        overflow: 'hidden',
-        ...containerSx
+        justifyContent: 'center',
+        ...containerSx // Apply containerSx to the outer wrapper so minHeight/etc applies correctly to the background
       }}
     >
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: '1407px',
+          minHeight: containerSx?.minHeight || { xs: 'auto', sm: '450px', md: '500px', lg: '639px' },
+          display: 'flex',
+          flexDirection: { 
+            xs: 'column-reverse', 
+            sm: isImageRight ? 'row-reverse' : 'row' 
+          },
+          alignItems: 'center',
+          boxSizing: 'border-box',
+          position: 'relative',
+          margin: '0 auto',
+          overflow: 'hidden',
+        }}
+      >
       {/* Image Section */}
       <Box
         sx={{
@@ -183,6 +190,7 @@ const FeatureCard = ({
             {description2}
           </Typography>
         )}
+      </Box>
       </Box>
     </Box>
   );
