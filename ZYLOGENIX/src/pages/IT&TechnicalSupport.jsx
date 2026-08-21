@@ -201,8 +201,8 @@ const ITTechnicalSupport = () => {
             flex: { xs: '1 1 100%', sm: '1 1 50%', lg: '0 0 430px' }, 
             width: { xs: '100%', sm: '50%', lg: '430px' }, 
             height: { xs: 'auto', sm: 'auto', lg: '585px' },
-            ml: { xs: '0px', lg: '128px' },
-            mt: { xs: '-60px',sm:'44px', lg: '54px' },
+            ml: { xs: '90px', lg: '128px' },
+            mt: { xs: '-60px',sm:'44px',md:'59px', lg: '54px' },
             mb:{xs:'-62px',sm:'-110px'}
           }}
            textContainerSx={{ pl: { xs: '20px',sm: '20px',md:'60px', lg: '180px' } }}
@@ -217,7 +217,7 @@ const ITTechnicalSupport = () => {
             maxWidth: { lg: '486px' }
           }}
           
-          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' },mt:{xs:'10px',sm:'10px',md:'-20px',lg:'50px'} }}
+          imageSx={{ transform: { xs: 'scale(0.75)',sm: 'scale(0.8)', md: 'scale(0.75)', lg: 'scale(1)' },mt:{xs:'10px',sm:'30px',md:'-20px',lg:'50px'} }}
         />
 
         {/* Card 4 */}

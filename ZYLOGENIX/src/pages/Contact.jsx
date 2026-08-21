@@ -63,9 +63,11 @@ const Contact = () => {
       );
       setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
       setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+      setTimeout(() => setStatus({ type: '', message: '' }), 5000);
     } catch (error) {
       console.error('EmailJS Error:', error);
       setStatus({ type: 'error', message: 'Failed to send message. Please ensure EmailJS credentials are configured.' });
+      setTimeout(() => setStatus({ type: '', message: '' }), 5000);
     }
   };
 
