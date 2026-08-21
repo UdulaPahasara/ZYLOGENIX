@@ -14,7 +14,7 @@ const AboutWhyCard = ({ icon, title, description, bgColor }) => {
         flexDirection: 'column',
         minWidth: { xs: '280px', sm: '230px', md: '250px', lg: '280px' },
         width: { xs: '280px', sm: '230px', md: '250px', lg: '280px' },
-        height: { xs: '320px', sm: '270px', md: '290px', lg: '320px' },
+        height: { xs: '320px', sm: '270px', md: '290px', lg: '310px' },
         boxSizing: 'border-box',
         flexShrink: 0,
         overflow: 'hidden',

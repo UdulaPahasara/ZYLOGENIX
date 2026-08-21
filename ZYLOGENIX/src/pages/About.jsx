@@ -105,6 +105,9 @@ const About = () => {
   const heroWrapperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [showCards, setShowCards] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const scrollLeftPos = useRef(0);
 
   const { scrollYProgress } = useScroll({
     target: heroWrapperRef,
@@ -130,6 +133,29 @@ const About = () => {
         setActiveIndex(newIndex);
       }
     }
+  };
+
+  // Mouse drag-to-scroll handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeftPos.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // Scroll speed
+    scrollRef.current.scrollLeft = scrollLeftPos.current - walk;
   };
 
   // Auto-swipe feature for mobile only
@@ -294,7 +320,7 @@ const About = () => {
         className="white-section"
         sx={{
           width: '100%',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#F3F3F3',
           padding: { xs: '60px 20px', md: '100px 40px' },
           display: 'flex',
           flexDirection: 'column',
@@ -341,6 +367,10 @@ const About = () => {
           <Box
             ref={scrollRef}
             onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
             sx={{
               display: 'flex',
               gap: '30px',
@@ -358,9 +388,11 @@ const About = () => {
             {cardsData.map((card, index) => (
               <Box 
                 key={index} 
+                onDragStart={(e) => e.preventDefault()} // Prevent image/text dragging
                 sx={{ 
                   scrollSnapAlign: { xs: 'center', md: 'start' },
-                  display: 'flex'
+                  display: 'flex',
+                  userSelect: 'none' // Prevent text selection while dragging
                 }}
               >
                 <AboutWhyCard
@@ -612,7 +644,7 @@ const About = () => {
       className="white-section"
         sx={{
           width: '100%',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#F3F3F3',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
