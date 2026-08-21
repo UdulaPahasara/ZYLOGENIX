@@ -72,7 +72,7 @@ const Contact = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', overflowX: 'hidden', backgroundColor: '#FFFFFF' }}>
+    <Box sx={{ width: '100%', overflowX: 'hidden', backgroundColor: '#F3F3F3' }}>
 
       {/* ─── Hero Section ─── */}
       <Box

@@ -55,7 +55,7 @@ const DigitalMarketing = () => {
       </Box>
 
       {/* ─── Icons Section (White Area) ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' } }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', py: { xs: '60px', md: '100px' } }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '60px' }}>
           <Typography
             sx={{
@@ -131,7 +131,7 @@ const DigitalMarketing = () => {
           title={"Reach The Right\nAudience"}
           description1="We Create Targeted Online Advertising Strategies That Help Businesses Reach Potential Customers Across Relevant Digital Channels. Our Approach Focuses On Improving Visibility, Attracting Qualified Audiences, And Supporting Measurable Marketing Goals."
           description2="From Campaign Planning To Performance Optimization, We Help Make Your Advertising Efforts More Focused And Effective."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           badgeBgColor='linear-gradient(90deg, rgba(255, 0, 0, 1)0%,rgba(156, 1, 1, 1)100%)'
           imagePosition="right"
@@ -178,7 +178,7 @@ const DigitalMarketing = () => {
           title={"Turn Marketing Data\nInto Better Decisions"}
           description1="We Help Businesses Make Better Use Of Google Analytics And Google Ads To Understand Performance, Track Audience Behavior, And Measure Marketing Results."
           description2="By Combining Meaningful Insights With Targeted Advertising, Businesses Can Better Understand What Works And Make More Informed Decisions About Their Digital Marketing Efforts."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           badgeBgColor='linear-gradient(90deg, rgba(72, 112, 244, 1) 0%,rgba(0, 4, 255, 1)100%)'

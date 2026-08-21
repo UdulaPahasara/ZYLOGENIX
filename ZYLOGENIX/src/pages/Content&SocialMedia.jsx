@@ -57,7 +57,7 @@ const ContentSocialMedia = () => {
       </Box>
 
       {/* ─── Icons Section (White Area) ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' } }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', py: { xs: '60px', md: '100px' } }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '60px' }}>
           <Typography
             sx={{
@@ -139,7 +139,7 @@ const ContentSocialMedia = () => {
           badgeText="Social Media Management"
           title={"Grow Your Social\nPresence"}
           description1="We Help Businesses Build A Consistent And Engaging Social Media Presence Through Strategic Content Planning, Publishing, And Audience Engagement. Our Solutions Are Designed To Strengthen Visibility, Build Relationships, And Keep Your Brand Connected With Its Audience."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           badgeBgColor='linear-gradient(90deg, rgba(82, 146, 206, 1) 0%,rgba(0, 144, 255, 1) 100%)'
@@ -185,7 +185,7 @@ const ContentSocialMedia = () => {
           title={"Turn Ideas Into\nEngaging Video Content"}
           description1="We Help Businesses Establish And Manage Their YouTube Presence Through Engaging Video Content And Strategic Channel Development. From Content Planning To Presentation, We Help Communicate Your Message In A Format Your Audience Can Connect With."
           description2="Our Approach Focuses On Creating Relevant Video Content That Reflects Your Brand, Strengthens Audience Engagement, And Supports A Consistent And Professional YouTube Presence."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           badgeBgColor='linear-gradient(90deg, rgba(249, 106, 106, 1) 0%,rgba(255, 0, 0, 1) 100%)'
@@ -235,7 +235,7 @@ const ContentSocialMedia = () => {
           title={"Bring Your Ideas To Life"}
           description1="We Create Engaging Video Content Designed To Communicate Your Message Clearly And Capture Audience Attention. From Creative Concepts To Polished Visual Content, Our Approach Helps Businesses Tell Their Stories Through Impactful Video Experiences."
           description2="We Focus On Creating Visually Compelling Content That Reflects Your Brand, Connects With Your Target Audience, And Supports Your Broader Digital Marketing Goals."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           badgeBgColor='linear-gradient(90deg, rgba(144, 249, 106, 1) 0%,rgba(6, 166, 41, 1) 100%)'

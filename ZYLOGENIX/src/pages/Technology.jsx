@@ -59,7 +59,7 @@ const Technology = () => {
       </Box>
 
       {/* ─── Main White Section ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', pb: '100px' }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', pb: '100px' }}>
         
         {/* Tech Stack Marquee */}
         <Box

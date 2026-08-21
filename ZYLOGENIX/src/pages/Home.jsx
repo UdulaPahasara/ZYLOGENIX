@@ -967,7 +967,7 @@ const Home = () => {
         className="white-section"
         sx={{
           width: '100%',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#F3F3F3',
           padding: { xs: '60px 20px', md: '100px 20px' },
           display: 'flex',
           flexDirection: 'column',
@@ -1231,8 +1231,8 @@ const Home = () => {
         className="white-section"
         sx={{
           width: '100%',
-          backgroundColor: '#FFFFFF',
-          padding: { xs: '60px 20px', md: '100px 40px', lg: '120px 80px' },
+          backgroundColor: '#F3F3F3',
+          padding: { xs: '60px 20px', md: '100px 40px', lg: '100px 105px' },
           display: 'flex',
           flexDirection: { xs: 'column-reverse', sm: 'row' },
           alignItems: 'center',

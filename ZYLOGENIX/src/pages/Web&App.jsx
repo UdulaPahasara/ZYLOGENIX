@@ -55,7 +55,7 @@ const WebApp = () => {
       </Box>
 
       {/* ─── Icons Section (White Area) ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' } }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', py: { xs: '60px', md: '100px' } }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '60px' }}>
           <Typography
             sx={{
@@ -151,7 +151,7 @@ const WebApp = () => {
           title={"Keep Your Digital\nPresence Fresh &\nFunctional"}
           description1="We Modernize Existing Websites To Improve Their Aesthetics, Usability, And Overall User Experience. Our Redesign Solutions Consider Current Trends And User Expectations To Give Your Online Presence A Contemporary Feel."
           description2="Through Ongoing Maintenance, Updates, Security Checks, And Performance Optimization, We Help Keep Your Website Current, Reliable, And Performing Effectively."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           imageScale={1}

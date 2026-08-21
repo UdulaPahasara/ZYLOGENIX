@@ -50,7 +50,7 @@ const DesignBranding = () => {
       </Box>
 
       {/* ─── Icons Section (White Area) ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' } }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', py: { xs: '60px', md: '100px' } }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '60px' }}>
           <Typography
             sx={{
@@ -131,7 +131,7 @@ const DesignBranding = () => {
           title={"Build a Brand People Remember"}
           description1="We develop cohesive brand identities that communicate who you are and what your business represents. From visual direction and brand elements to consistent digital presentation, we help create a recognizable identity across every customer touchpoint."
           description2="Our approach combines creativity and strategy to build brands that communicate with confidence and consistency."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imageScale={1}
           imagePosition="right"

@@ -59,7 +59,7 @@ const ITTechnicalSupport = () => {
       </Box>
 
       {/* ─── Icons Section (White Area) ─── */}
-      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#FFFFFF', py: { xs: '60px', md: '100px' } }}>
+      <Box className="white-section" sx={{ width: '100%', backgroundColor: '#F3F3F3', py: { xs: '60px', md: '100px' } }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: '20px', mb: '60px' }}>
           <Typography
             sx={{
@@ -155,7 +155,7 @@ const ITTechnicalSupport = () => {
           title={"Protect Your Online\nIdentity"}
           description1="We Simplify Domain Management To Help Keep Your Digital Identity Secure And Aligned With Your Brand. Our Solutions Provide Reliable Management Of Your Online Presence While Supporting A Consistent Digital Identity."
           description2="From Maintaining Your Domain Presence To Keeping It Aligned With Your Brand, We Help Ensure Your Digital Footprint Remains Organized And Secure."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
@@ -228,7 +228,7 @@ const ITTechnicalSupport = () => {
           title={"Quality Built Into Every\nDigital Solution"}
           description1="We Follow Rigorous Testing And Quality Assurance Practices To Identify And Address Potential Issues Before They Affect Users. Our Approach Focuses On Maintaining Strong Functionality, Performance, Reliability, And User Satisfaction."
           description2="Through Careful Testing And Quality Checks, We Help Businesses Deliver More Dependable Digital Products And Experiences."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           imagePosition="right"
           imageScale={1}
@@ -298,7 +298,7 @@ const ITTechnicalSupport = () => {
           title={"Connect With Customers\nMore Directly"}
           description1="We Integrate WhatsApp Into Your Communication Strategy To Strengthen Customer Engagement And Support. Our Customized Solutions Help Businesses Use The Platform As A Convenient Channel For Connecting With Their Audience."
           description2="By Bringing Communication Closer To Your Customers, We Help Create More Accessible And Responsive Digital Interactions."
-          bgColor="#FFFFFF"
+          bgColor="#F3F3F3"
           textColor="#000000"
           badgeBgColor='linear-gradient(90deg, rgba(61, 222, 152, 1)0%,rgba(8, 147, 29, 1) 100%)'
           imagePosition="right"
