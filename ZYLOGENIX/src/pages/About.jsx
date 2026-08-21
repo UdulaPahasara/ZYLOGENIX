@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography, Button, useTheme, useMediaQuery, keyframes } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import AboutWhyCard from '../components/common/aboutWhycard';
 import DocumentIcon from '../assets/About/document.webp';
 import UsersIcon from '../assets/About/users.webp';
@@ -181,6 +182,11 @@ const About = () => {
 
   return (
     <Box sx={{ width: '100%', overflow: 'clip' }}>
+      <SEO 
+        title="About Us | Zylogenix Digital Solutions"
+        description="Your trusted partner in digital transformation. Learn how Zylogenix combines strategy, creativity, and technical expertise to foster growth."
+        url="https://zylogenix.com/about"
+      />
     {/* Hero Sticky Scroll Wrapper — allows scroll-jacking on desktop only */}
       <Box
         ref={heroWrapperRef}

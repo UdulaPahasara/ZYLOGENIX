@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import IconCard from '../components/common/iconCard';
@@ -22,6 +23,11 @@ import Img5 from '../assets/Web&App/img5.webp';
 const WebApp = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="Web & Mobile App Development | Zylogenix"
+        description="Build scalable, responsive websites and intuitive Android/iOS mobile applications designed to streamline business operations and engage users."
+        url="https://zylogenix.com/services/web-app"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useMotionTemplate } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HomeHeroVideo from '../assets/Home/Vhero.mp4';
@@ -327,6 +328,30 @@ const Home = () => {
 
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="Zylogenix | Modern Digital Solutions & Software Development"
+        description="Empowering your business with modern solutions. Zylogenix offers web design, custom software, UI/UX, and digital marketing to scale your brand."
+        url="https://zylogenix.com"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Zylogenix Digital Solutions",
+          "telephone": "071 798 0427",
+          "email": "[ENTER_OFFICIAL_EMAIL_HERE]",
+          "url": "https://zylogenix.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[ENTER_STREET_ADDRESS_HERE]",
+            "addressLocality": "[ENTER_CITY_HERE]",
+            "addressCountry": "[ENTER_COUNTRY_HERE]"
+          },
+          "sameAs": [
+            "[ENTER_LINKEDIN_URL_HERE]",
+            "[ENTER_TWITTER_URL_HERE]",
+            "[ENTER_FACEBOOK_URL_HERE]"
+          ]
+        }}
+      />
       <Box
         sx={{
           width: '100.01%',

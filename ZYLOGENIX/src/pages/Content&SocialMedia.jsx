@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import IconCard from '../components/common/iconCard';
@@ -24,6 +25,11 @@ import Section6 from '../assets/Content&SocialMedia/section6.webp';
 const ContentSocialMedia = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="Content & Social Media Marketing | Zylogenix"
+        description="Grow your social presence and connect with your audience through strategic content planning, video creation, and YouTube management."
+        url="https://zylogenix.com/services/content-social-media"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

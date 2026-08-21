@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import TecCard from '../components/common/tecCard';
@@ -28,6 +29,11 @@ const techIcons = [Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9
 const Technology = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="Our Technology Stack | Zylogenix"
+        description="Explore the modern technologies and practical digital expertise Zylogenix uses to power your digital growth."
+        url="https://zylogenix.com/technology"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

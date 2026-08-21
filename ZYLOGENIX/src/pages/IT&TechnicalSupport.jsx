@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import IconCard from '../components/common/iconCard';
@@ -26,6 +27,11 @@ import Img7 from '../assets/It&Technical/img7.webp';
 const ITTechnicalSupport = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="IT & Technical Support Services | Zylogenix"
+        description="Keep your digital operations running smoothly with reliable domain management, quality assurance, and technical support integrations."
+        url="https://zylogenix.com/services/it-technical-support"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

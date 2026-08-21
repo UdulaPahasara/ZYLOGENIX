@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import IconCard from '../components/common/iconCard';
@@ -22,6 +23,11 @@ import Section5 from '../assets/Digital Marketing/DigitalDirectoryListings.webp'
 const DigitalMarketing = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="Digital Marketing & SEO Services | Zylogenix"
+        description="Increase visibility and generate qualified leads with our data-driven digital marketing, Google Ads, and SEO strategies."
+        url="https://zylogenix.com/services/digital-marketing"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography } from '@mui/material';
 import Footer from '../components/footer/footer';
 import IconCard from '../components/common/iconCard';
@@ -17,6 +18,11 @@ import Img3 from '../assets/Design&Branding/img3.webp';
 const DesignBranding = () => {
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <SEO 
+        title="UI/UX Design & Branding | Zylogenix"
+        description="Visuals that bring your brand to life. We create custom graphics, cohesive brand identities, and engaging UI/UX designs."
+        url="https://zylogenix.com/services/design-branding"
+      />
       {/* ─── Hero Section ─── */}
       <Box
         sx={{

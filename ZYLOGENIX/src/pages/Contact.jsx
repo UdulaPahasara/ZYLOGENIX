@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import SEO from '../components/common/SEO';
 import { Box, Typography, Button, Grid, Alert } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import contactHeroImg from '../assets/ContactUs/contactHero.webp';
@@ -73,6 +74,30 @@ const Contact = () => {
 
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden', backgroundColor: '#F3F3F3' }}>
+      <SEO 
+        title="Contact Us | Zylogenix"
+        description="Get in touch with Zylogenix today to discuss your digital transformation, software development, or marketing needs."
+        url="https://zylogenix.com/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Zylogenix Digital Solutions",
+          "telephone": "071 798 0427",
+          "email": "[ENTER_OFFICIAL_EMAIL_HERE]",
+          "url": "https://zylogenix.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[ENTER_STREET_ADDRESS_HERE]",
+            "addressLocality": "[ENTER_CITY_HERE]",
+            "addressCountry": "[ENTER_COUNTRY_HERE]"
+          },
+          "sameAs": [
+            "[ENTER_LINKEDIN_URL_HERE]",
+            "[ENTER_TWITTER_URL_HERE]",
+            "[ENTER_FACEBOOK_URL_HERE]"
+          ]
+        }}
+      />
 
       {/* ─── Hero Section ─── */}
       <Box
